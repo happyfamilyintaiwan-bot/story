@@ -1,11 +1,13 @@
-"""上線前檢查：每一頁都要有 Travelpayouts Drive、AdSense、手動廣告格、GA4 故事事件、og:image，sitemap 有收錄、沒有 href="#" 空連結。
+"""上線前檢查：每一頁都要有 Travelpayouts Drive、AdSense、手動廣告格、GA4 故事事件、og:image、spec-version，sitemap 有收錄、沒有 href="#" 空連結。
+作品頁（books／drama／comics 底下）不開自動廣告：AdSense 載入碼不帶 ?client=，連結有 vignette 標記；只有首頁開自動廣告。
+舊網址轉址頁（有 meta refresh）不檢查。
 用法：在 story-home 資料夾裡執行  python3 _template/check.py
 """
 import glob, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHECKS = {
     'Travelpayouts Drive': 'emrld.ltd/NTc4NjI0.js',
-    'AdSense 腳本': 'adsbygoogle.js?client=ca-pub-2022028565680247',
+    'AdSense 腳本': 'pagead/js/adsbygoogle.js',
     'GA4': 'G-ZQZHTYTRMQ',
     'GA4 跨子網域': '.knittinghiyori.com',
 }
@@ -22,7 +24,21 @@ sitemap = open(os.path.join(ROOT, 'sitemap.xml'), encoding='utf-8').read()
 for p in pages:
     rel = os.path.relpath(p, ROOT)
     s = open(p, encoding='utf-8').read()
+    if 'http-equiv="refresh"' in s:
+        continue  # 舊網址轉址頁
     miss = [k for k, v in CHECKS.items() if v not in s]
+    if rel == 'index.html':
+        if 'adsbygoogle.js?client=' not in s:
+            miss.append('首頁自動廣告（載入碼要帶 ?client=）')
+    else:
+        if 'adsbygoogle.js?client=' in s:
+            miss.append('作品頁不開自動廣告（拿掉載入碼的 ?client=）')
+        if 'data-google-vignette' not in s:
+            miss.append('vignette 標記')
+        if 'name="spec-version"' not in s:
+            miss.append('spec-version meta')
+        if rel.split('/')[0] not in ('books', 'drama', 'comics'):
+            miss.append('要放在 books／drama／comics 類別資料夾裡')
     if rel != 'index.html' and '<ins class="adsbygoogle"' not in s:
         miss.append('手動廣告格')
     if rel != 'index.html' and '/hy-story.js' not in s:
@@ -46,7 +62,7 @@ for p in pages:
             if not os.path.exists(local):
                 miss.append('og:image 檔案不存在（' + img + '）')
     url = 'https://story.knittinghiyori.com/' + os.path.dirname(rel) + ('/' if os.path.dirname(rel) else '')
-    if rel.count('/') == 1 and rel not in SITEMAP_SKIP and url not in sitemap:
+    if rel.count('/') == 2 and rel not in SITEMAP_SKIP and url not in sitemap:
         miss.append('sitemap 沒有這頁')
     live_lines = [l for l in s.splitlines() if not l.lstrip().startswith('//')]
     if any('href="#"' in l for l in live_lines):

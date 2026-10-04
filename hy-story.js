@@ -4,7 +4,7 @@
  *   1. GA4 載入碼（config 要有 cookie_domain: '.knittinghiyori.com'）
  *   2. <script src="/hy-story.js"></script>
  *
- * story_id 預設用網址第一層資料夾名稱（例如 /hidden-love/ → hidden-love），
+ * story_id 預設用作品資料夾名稱，略過類別資料夾（例如 /drama/hidden-love/ → hidden-love），
  * 要自訂就在它前面寫 <script>var HY_STORY_ID = '…';</script>
  *
  * 自動送出的標準事件：
@@ -20,6 +20,7 @@
   window.__hyStoryLoaded = true;
 
   var seg = location.pathname.split('/').filter(Boolean);
+  if (/^(books|drama|comics)$/.test(seg[0] || '')) seg.shift();
   var STORY_ID = window.HY_STORY_ID || seg[0] || 'home';
   var IS_HUB = STORY_ID === 'home';
   var LANG = window.HY_PAGE_LANG || document.documentElement.lang || 'zh-Hant';

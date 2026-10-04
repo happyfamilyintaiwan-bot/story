@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Travelpayouts Drive（放在 head 最前面） -->
+<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.setAttribute("data-cmp-ab","2");
+      script.src = 'https://emrld.ltd/NTc4NjI0.js?t=578624';
+      document.head.appendChild(script);
+  })();
+</script>
+<!-- Google AdSense（Auto ads＋手動單元） -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" crossorigin="anonymous"></script>
+<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href]').forEach(function(a){a.setAttribute('data-google-vignette','false')})});</script>
+<style>
+.kh-ad{display:block;width:100%;max-width:728px;margin:48px auto;padding:0 16px;text-align:center;clear:both;box-sizing:border-box}
+.kh-ad--game{margin-top:150px}
+.kh-lift{position:relative;z-index:6}
+.kh-ad__label{display:block;font-size:12px;letter-spacing:.08em;opacity:.6;margin-bottom:6px;line-height:1.4}
+.kh-legal{display:block;max-width:640px;font-size:12px;line-height:1.8;opacity:.7;text-align:center;margin:16px auto 24px;padding:0 16px;box-sizing:border-box}
+.kh-legal a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+</style>
+<title>The Early Spring, explained | Ten years in three acts</title>
+<meta name="description" content="A reading of The Early Spring in three acts across ten years — how an unequal balance of power became the foundation of the romance, six years of favouritism without a single confession, a grand retreat, and the structure that turns over at the reunion.">
+<meta name="theme-color" content="#0F2C52">
+<link rel="canonical" href="https://story.knittinghiyori.com/drama/the-early-spring/en/">
+<link rel="alternate" hreflang="zh-Hant" href="https://story.knittinghiyori.com/drama/the-early-spring/">
+<link rel="alternate" hreflang="ja" href="https://story.knittinghiyori.com/drama/the-early-spring/ja/">
+<link rel="alternate" hreflang="en" href="https://story.knittinghiyori.com/drama/the-early-spring/en/">
+<link rel="alternate" hreflang="x-default" href="https://story.knittinghiyori.com/drama/the-early-spring/">
+<link rel="icon" href="/icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- ===== GA4：編織日和 統一追蹤 v1 ===== -->
+<script>
+  /* 本頁身分：整份追蹤碼中「唯一」需要逐頁修改的三行 */
+  window.HY_STORY_ID    = 'the-early-spring';
+  window.HY_STORY_TITLE = '互動頁｜早春晴朗 The Early Spring（English）';
+  window.HY_PAGE_LANG   = 'en';
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZHTYTRMQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  /* set 的參數會自動附加到「所有」事件，包含 GA4 自動蒐集的 page_view 與外連 click */
+  gtag('set', {
+    story_id:      window.HY_STORY_ID,
+    page_lang:     window.HY_PAGE_LANG || document.documentElement.lang || 'zh-Hant',
+    content_group: 'interactive-story'
+  });
+  gtag('config', 'G-ZQZHTYTRMQ', {
+    page_title: window.HY_STORY_TITLE,
+    cookie_domain: '.knittinghiyori.com'
+  });
+</script>
+<script>
+/* ── 編織日和・互動頁共用追蹤 v1 ──────────────────────────────
+   四支互動頁貼一模一樣的這段，不要逐頁修改。
+   對外提供：hyEvent / hyStart / hyInteract / hySection / hyComplete / hyCount
+   ───────────────────────────────────────────────────────── */
+(function () {
+  var STORY = window.HY_STORY_ID || 'unknown';
+  var started = false, completed = false, exited = false;
+  var actCount = 0, actSeen = {}, progSeen = {}, secSeen = {}, maxScroll = 0;
+
+  function send(name, params) {
+    if (typeof window.gtag !== 'function') return;
+    params = params || {};
+    params.story_id = STORY;
+    window.gtag('event', name, params);
+  }
+  window.hyEvent = send;
+
+  /* 1. story_start：第一次捲動或第一次互動，只送一次 */
+  function start(entry) {
+    if (started) return;
+    started = true;
+    send('story_start', { entry_point: entry || 'scroll' });
+  }
+  window.hyStart = start;
+
+  /* 2. interaction：所有頁內互動都走這裡 */
+  window.hyInteract = function (type, id, index) {
+    start(String(id));
+    var key = type + '|' + id;
+    if (!actSeen[key]) { actSeen[key] = 1; actCount++; }
+    var p = { interaction_type: type, interaction_id: String(id) };
+    if (index !== undefined && index !== null && index !== '') p.interaction_index = Number(index);
+    send('interaction', p);
+  };
+  window.hyCount = function () { return actCount; };
+
+  /* 3. section_view：章節到達，同一段只送一次 */
+  window.hySection = function (id, index) {
+    if (secSeen[id]) return;
+    secSeen[id] = 1;
+    var p = { section_id: String(id) };
+    if (index !== undefined && index !== null) p.section_index = Number(index);
+    send('section_view', p);
+  };
+
+  /* 4. story_complete：讀到結尾，只送一次 */
+  window.hyComplete = function () {
+    if (completed) return;
+    completed = true;
+    send('story_complete', { interactions_count: actCount, max_scroll: maxScroll });
+  };
+
+  /* 5. story_progress：捲動 25 / 50 / 75 / 100 各一次 */
+  var MARKS = [25, 50, 75, 100], ticking = false, fallbackAt = 0;
+  /* 頁面若因 prefers-reduced-motion 而不跑 IntersectionObserver，用捲動百分比當備援 */
+  window.hyCompleteAtScroll = function (pct) { fallbackAt = Number(pct) || 95; };
+  function measure() {
+    ticking = false;
+    var d = document.documentElement;
+    var max = Math.max(d.scrollHeight, document.body ? document.body.scrollHeight : 0) - window.innerHeight;
+    if (max < 1) return;
+    var pct = Math.min(100, Math.max(0, Math.round(window.scrollY / max * 100)));
+    if (pct > maxScroll) maxScroll = pct;
+    if (pct >= 5) start('scroll');
+    if (fallbackAt && pct >= fallbackAt) window.hyComplete();
+    for (var i = 0; i < MARKS.length; i++) {
+      if (pct >= MARKS[i] && !progSeen[MARKS[i]]) {
+        progSeen[MARKS[i]] = 1;
+        send('story_progress', { percent_scrolled: MARKS[i] });
+      }
+    }
+  }
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(measure);
+  }, { passive: true });
+  window.addEventListener('resize', measure);
+
+  /* 6. cta_click：任何帶 data-cta 的元素，四頁共用同一組值 */
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+    var a = t.closest('[data-cta]');
+    if (!a) return;
+    var id = a.getAttribute('data-cta') || '';
+    send('cta_click', {
+      cta_id: id,
+      cta_type: id.split('_')[0],
+      link_url: a.href || ''
+    });
+  }, true);
+
+  /* 7. story_exit：離開頁面時的總結，只送一次 */
+  function exit() {
+    if (exited || !started) return;
+    exited = true;
+    send('story_exit', { interactions_count: actCount, max_scroll: maxScroll });
+  }
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') exit();
+  });
+  window.addEventListener('pagehide', exit);
+})();
+</script>
+<!-- ===== GA4 統一追蹤結束 ===== -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="編織日和 Story">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="The Early Spring’s Ten Years">
+<meta property="og:description" content="A reading of The Early Spring in three acts across ten years — how an unequal balance of power became the foundation of the romance, six years of favouritism without a single confession, a grand retreat, and the structure that turns over at the reunion.">
+<meta property="og:url" content="https://story.knittinghiyori.com/drama/the-early-spring/en/">
+<meta property="og:image" content="https://story.knittinghiyori.com/drama/the-early-spring/en/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>html,body{margin:0;padding:0;background:#0F2C52;color-scheme:dark}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500&family=Noto+Serif:wght@400;700;900&family=Pinyon+Script&display=swap">
+
+<style>
+/* ============================================================
+   《早春晴朗》故事頁 — 片頭美術語言
+   深藍底 ・ 珊瑚紅／冰藍／白剪紙平塗 ・ 直排中文 ・ 手寫英文
+   單一視覺世界：兩種主題都維持深藍，所有顏色明確指定
+   ============================================================ */
+
+.sf{
+  --navy-deep:#081B36;
+  --navy:#0F2C52;
+  --navy-lift:#16406F;
+  --navy-line:rgba(183,202,221,.22);
+  --coral:#EE6E68;
+  --coral-deep:#D2534E;
+  --ice:#B7CADD;
+  --ice-dim:rgba(183,202,221,.62);
+  --paper:#F1F6FA;
+  --serif:"Noto Serif",Georgia,"Times New Roman",serif;
+  --sans:"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --script:"Pinyon Script","Snell Roundhand",cursive;
+
+  display:block;
+  position:relative;
+  background:var(--navy);
+  color:var(--paper);
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:16px;
+  line-height:2;
+  overflow:hidden;
+  -webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;
+}
+.sf *,.sf *::before,.sf *::after{ box-sizing:border-box }
+
+/* 底噪：片頭那層顆粒 */
+.sf .grain{
+  position:absolute; inset:0; z-index:3; pointer-events:none; opacity:.5;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='.16'/></svg>");
+  mix-blend-mode:soft-light;
+}
+.sf .stage{ position:relative; z-index:1 }
+.sf .langbar{
+  position:absolute; top:16px; right:20px; z-index:4;
+  display:flex; gap:14px; font-family:var(--serif); font-size:12px; letter-spacing:.14em;
+}
+.sf .langbar a{ color:var(--ice-dim); text-decoration:none; transition:color .3s }
+.sf .langbar a:hover{ color:var(--paper) }
+.sf .langbar a[aria-current="page"]{ color:var(--coral) }
+@media (max-width:480px){ .sf .langbar{ top:12px; right:14px; gap:11px; font-size:11px } }
+
+.sf .wrap{ width:min(100% - 44px, 760px); margin-inline:auto }
+@media (max-width:560px){ .sf .wrap{ width:min(100% - 34px, 760px) } }
+
+.sf section{ padding-block:clamp(64px,13vw,120px); position:relative }
+
+/* ---------- 字級 ---------- */
+.sf h1,.sf h2,.sf h3{ font-family:var(--serif); margin:0; text-wrap:balance; line-height:1.45; color:var(--paper) }
+.sf h2{ font-size:clamp(24px,5.6vw,38px); font-weight:700 }
+.sf h3{ font-size:clamp(18px,3.8vw,22px); font-weight:700 }
+.sf p{ margin:0; color:var(--ice) }
+.sf .lede{ font-size:clamp(16px,3.6vw,18px); max-width:34em }
+.sf strong{ color:var(--paper); font-weight:500 }
+.sf em{ color:var(--coral); font-style:normal }
+
+.sf .script{
+  font-family:var(--script); font-weight:400; color:var(--ice);
+  font-size:clamp(21px,5vw,32px); line-height:1.5; letter-spacing:.04em;
+}
+
+/* 直排中文標 —— 片頭的字幕語言 */
+.sf .vlabel{
+  writing-mode:horizontal-tb; display:block;
+  font-family:var(--serif); font-size:11.5px; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--ice-dim); white-space:nowrap; user-select:none;
+}
+.sf .actno{
+  font-family:var(--serif); font-size:11px; letter-spacing:.42em;
+  color:var(--coral); text-transform:uppercase; display:block; margin-bottom:16px;
+}
+
+.sf :where(button,summary,a,input):focus-visible{
+  outline:1.5px solid var(--coral); outline-offset:4px; border-radius:4px;
+}
+
+/* 進場 */
+.sf .rise{ opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s cubic-bezier(.19,1,.22,1) }
+.sf .rise.in{ opacity:1; transform:none }
+@media (prefers-reduced-motion:reduce){
+  .sf .rise{ opacity:1; transform:none; transition:none }
+  .sf *{ animation:none !important }
+}
+
+/* ============================================================
+   序幕
+   ============================================================ */
+.sf .prologue{
+  min-height:min(96vh,860px);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding-block:clamp(56px,10vw,90px);
+  background:radial-gradient(120% 78% at 50% 34%, var(--navy-lift) 0%, var(--navy) 52%, var(--navy-deep) 100%);
+}
+.sf .window-art{ width:min(74%,300px); margin-bottom:clamp(26px,5vw,38px) }
+.sf .window-art svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .drift-a{ animation:driftA 13s ease-in-out infinite }
+.sf .drift-b{ animation:driftB 17s ease-in-out infinite }
+@keyframes driftA{ 0%,100%{transform:translate(0,0) rotate(0)} 50%{transform:translate(-7px,-11px) rotate(-4deg)} }
+@keyframes driftB{ 0%,100%{transform:translate(0,0) rotate(0)} 50%{transform:translate(9px,7px) rotate(3deg)} }
+.sf .pf{ animation-name:petalFloat; animation-timing-function:ease-in-out; animation-iteration-count:infinite }
+@keyframes petalFloat{
+  0%,100%{ transform:translate(0,0) rotate(0deg) }
+  25%    { transform:translate(4px,-8px) rotate(7deg) }
+  50%    { transform:translate(-5px,-14px) rotate(-6deg) }
+  75%    { transform:translate(6px,-6px) rotate(5deg) }
+}
+
+.sf .prologue h1{
+  font-size:clamp(34px,9vw,64px); font-weight:900; letter-spacing:.16em;
+  text-indent:.16em;
+}
+.sf .prologue .sub{
+  margin-top:18px; font-size:12px; letter-spacing:.4em; color:var(--ice-dim); text-indent:.4em;
+}
+.sf .prologue .script{ margin-top:clamp(26px,5vw,34px) }
+.sf .script-cn{
+  margin-top:12px; font-family:var(--serif); font-size:clamp(15px,3.4vw,18px);
+  letter-spacing:.34em; text-indent:.34em; color:var(--ice-dim);
+}
+.sf .prologue .kicker{
+  margin-top:30px; font-size:14.5px; color:var(--ice); max-width:26em;
+}
+.sf .scroll-cue{
+  margin-top:clamp(34px,6vw,52px); display:flex; flex-direction:column; align-items:center; gap:10px;
+  font-family:var(--serif); font-size:11px; letter-spacing:.36em; color:var(--ice-dim); text-indent:.36em;
+}
+.sf .scroll-cue i{
+  width:1px; height:44px; background:linear-gradient(var(--ice-dim),transparent); display:block;
+  animation:cue 2.6s ease-in-out infinite;
+}
+@keyframes cue{ 0%,100%{opacity:.3;transform:scaleY(.6)} 50%{opacity:1;transform:scaleY(1)} }
+
+/* ============================================================
+   命題
+   ============================================================ */
+.sf .thesis{ text-align:center; border-top:1px solid var(--navy-line) }
+.sf .thesis blockquote{
+  margin:0; font-family:var(--serif); font-weight:400;
+  font-size:clamp(21px,5vw,30px); line-height:1.9; color:var(--paper);
+}
+.sf .thesis blockquote em{ color:var(--coral) }
+.sf .rule{
+  display:block; width:1px; height:clamp(40px,8vw,66px); background:var(--coral); margin:0 auto clamp(26px,5vw,36px);
+}
+
+/* ============================================================
+   幕
+   ============================================================ */
+.sf .act{ border-top:1px solid var(--navy-line) }
+.sf .act-grid{ display:grid; gap:clamp(26px,5vw,44px) }
+@media (min-width:820px){
+  .sf .act-grid{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center }
+  .sf .act.flip .act-art{ order:2 }
+  .sf .act.noart .act-grid{ grid-template-columns:1fr }
+}
+.sf .act.noart .lede{ font-size:clamp(17px,3.8vw,19.5px); max-width:38em }
+.sf .act.noart .act-text h2{ font-size:clamp(26px,6vw,42px) }
+.sf .act-art svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .act-text h2{ margin-bottom:16px }
+.sf .act-text p + p{ margin-top:14px }
+.sf .act-meta{
+  margin-top:22px; font-family:var(--serif); font-size:13px; letter-spacing:.02em;
+  color:var(--ice-dim); border-top:1px solid var(--navy-line); padding-top:14px; text-indent:0;
+  line-height:1.8;
+}
+.sf .act-head{ display:block }
+.sf .act-head .vlabel{ margin:0 0 12px }
+
+/* ============================================================
+   權力天秤
+   ============================================================ */
+.sf .balance{ background:var(--navy-deep); border-top:1px solid var(--navy-line) }
+.sf .bal-head{ text-align:center; margin-bottom:clamp(24px,4vw,34px) }
+.sf .bal-head p{ margin-top:14px; margin-inline:auto }
+.sf .bal-stage svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .beam,.sf .fig-a,.sf .fig-b{ transition:transform .85s cubic-bezier(.22,1,.28,1) }
+.sf .bal-caption{
+  min-height:132px; text-align:center; margin-top:6px;
+  display:flex; flex-direction:column; justify-content:flex-start; gap:10px;
+}
+.sf .bal-caption h3{ font-size:clamp(19px,4.4vw,24px) }
+.sf .bal-caption .ep{
+  font-family:var(--serif); font-size:11.5px; letter-spacing:.32em; color:var(--coral); text-indent:.32em;
+}
+.sf .bal-caption p{ font-size:15px; max-width:32em; margin-inline:auto }
+
+.sf .bal-track{ margin-top:26px; position:relative; padding:0 4px }
+.sf .bal-track input[type=range]{
+  -webkit-appearance:none; appearance:none; width:100%; height:34px;
+  background:transparent; cursor:pointer; display:block; margin:0;
+}
+.sf .bal-track input[type=range]::-webkit-slider-runnable-track{
+  height:1px; background:var(--navy-line);
+}
+.sf .bal-track input[type=range]::-moz-range-track{ height:1px; background:var(--navy-line) }
+.sf .bal-track input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none; width:17px; height:17px; border-radius:50%;
+  background:var(--coral); border:3px solid var(--navy-deep); margin-top:-8px;
+  box-shadow:0 0 0 4px rgba(238,110,104,.22);
+}
+.sf .bal-track input[type=range]::-moz-range-thumb{
+  width:17px; height:17px; border-radius:50%; background:var(--coral);
+  border:3px solid var(--navy-deep); box-shadow:0 0 0 4px rgba(238,110,104,.22);
+}
+.sf .bal-steps{
+  display:grid; grid-template-columns:repeat(6,1fr); gap:4px; margin-top:2px;
+}
+.sf .bal-steps button{
+  font:inherit; font-family:var(--serif); font-size:11px; letter-spacing:.14em;
+  background:none; border:none; color:var(--ice-dim); padding:8px 2px; cursor:pointer;
+  transition:color .3s;
+}
+.sf .bal-steps button[aria-current="true"]{ color:var(--coral) }
+@media (max-width:480px){ .sf .bal-steps button{ font-size:10px; letter-spacing:.04em } }
+
+/* ============================================================
+   六個證據
+   ============================================================ */
+.sf .proof{ border-top:1px solid var(--navy-line) }
+.sf .proof-grid{
+  display:grid; gap:12px; align-items:start;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); margin-top:clamp(24px,4vw,34px);
+}
+.sf .card{
+  position:relative; text-align:left; font:inherit; cursor:pointer; line-height:1.6;
+  background:var(--navy-lift); border:1px solid var(--navy-line); border-radius:2px;
+  padding:22px 20px 20px; color:var(--paper); overflow:hidden;
+  transition:background .35s, border-color .35s, transform .35s;
+}
+.sf .card:hover{ transform:translateY(-3px); border-color:var(--coral) }
+.sf .card .ic{ display:block; margin-bottom:14px }
+.sf .card .ic svg{ width:38px; height:38px; display:block; overflow:visible }
+.sf .card h3{ font-size:16.5px; font-weight:700 }
+.sf .card .body{
+  display:grid; grid-template-rows:0fr;
+  transition:grid-template-rows .45s ease, opacity .35s;
+  opacity:0;
+}
+.sf .card[aria-expanded="true"] .body{ grid-template-rows:1fr; opacity:1 }
+.sf .card .body > span{ overflow:hidden; display:block; min-height:0 }
+.sf .card .body p{ font-size:14px; line-height:1.85; padding-top:10px }
+.sf .card .body p + p{ padding-top:8px }
+.sf .card .body .q{ color:var(--paper); font-family:var(--serif); font-size:14.5px }
+.sf .card .body .src{ color:var(--ice-dim); font-size:12px; letter-spacing:.02em }
+.sf .card .body ol{ margin:10px 0 0; padding-left:1.5em; color:var(--ice) }
+.sf .card .body li{ font-size:13.5px; line-height:1.9 }
+.sf .card .body li::marker{ color:var(--coral) }
+.sf .card .body li:last-child{ color:var(--paper) }
+.sf .card .more{
+  margin-top:12px; font-family:var(--serif); font-size:11px; letter-spacing:.26em; color:var(--coral);
+  display:block; text-indent:.26em;
+}
+.sf .card[aria-expanded="true"]{ background:var(--navy-deep); border-color:var(--coral) }
+.sf .card[aria-expanded="true"] .more{ color:var(--ice-dim) }
+.sf .proof-note{ margin-top:22px; font-size:13px; color:var(--ice-dim) }
+
+/* ============================================================
+   郵筒
+   ============================================================ */
+.sf .mail{ background:var(--navy-deep); border-top:1px solid var(--navy-line); text-align:center }
+.sf .mail-art{ width:min(84%,340px); margin:clamp(24px,5vw,36px) auto 0; position:relative }
+.sf .mail-art svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .drop{ transform-box:fill-box; transform-origin:center }
+.sf .drop.go{ animation:drop 1.5s cubic-bezier(.4,.05,.6,1) forwards }
+@keyframes drop{
+  0%{ transform:translateY(-120px) rotate(-16deg); opacity:0 }
+  16%{ opacity:1 }
+  100%{ transform:translateY(150px) rotate(22deg); opacity:0 }
+}
+.sf .post-btn{
+  margin-top:clamp(24px,4vw,32px); font:inherit; font-family:var(--serif);
+  font-size:12.5px; letter-spacing:.16em; text-indent:.16em; cursor:pointer;
+  background:none; color:var(--paper); border:1px solid var(--ice-dim);
+  padding:14px 30px; border-radius:1px; transition:background .3s, color .3s, border-color .3s;
+}
+.sf .post-btn:hover{ background:var(--coral); border-color:var(--coral); color:var(--navy-deep) }
+.sf .post-out{ margin-top:20px; font-size:14.5px; color:var(--ice); min-height:32px }
+
+/* ============================================================
+   航線
+   ============================================================ */
+.sf .flights{ border-top:1px solid var(--navy-line); text-align:center }
+.sf .fly-art{ width:min(96%,520px); margin:clamp(22px,4vw,32px) auto 0 }
+.sf .fly-art svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .fly-count{
+  margin-top:16px; font-family:var(--serif); font-size:12px; letter-spacing:.34em;
+  color:var(--coral); text-indent:.34em;
+}
+.sf .flights .post-btn{ margin-top:16px }
+
+/* ============================================================
+   金句
+   ============================================================ */
+.sf .lines{ border-top:1px solid var(--navy-line) }
+.sf .letter{
+  border-top:1px solid var(--navy-line); padding:clamp(22px,4vw,30px) 0;
+}
+.sf .letter:last-of-type{ border-bottom:1px solid var(--navy-line) }
+.sf .letter > summary{
+  list-style:none; cursor:pointer; display:grid; grid-template-columns:auto 1fr auto;
+  gap:18px; align-items:start;
+}
+.sf .letter > summary::-webkit-details-marker{ display:none }
+.sf .letter .no{
+  font-family:var(--serif); font-size:12px; letter-spacing:.2em; color:var(--coral); padding-top:8px;
+}
+.sf .letter q{
+  font-family:var(--serif); font-weight:700; font-size:clamp(18px,4.4vw,25px);
+  line-height:1.8; color:var(--paper); quotes:"「" "」"; display:block;
+}
+.sf .letter .tag{
+  font-family:var(--serif); font-size:11px; letter-spacing:.14em; color:var(--ice-dim);
+  display:block; margin-top:10px; text-indent:.24em;
+}
+.sf .letter .mark{
+  flex:none; width:26px; height:26px; margin-top:6px; color:var(--ice-dim);
+  transition:transform .4s ease, color .3s;
+}
+.sf .letter[open] .mark{ transform:rotate(45deg); color:var(--coral) }
+.sf .letter .unfold{ padding-top:18px; padding-left:calc(12px + 18px); }
+.sf .letter .unfold p{ font-size:15px; max-width:36em }
+.sf .letter .unfold p + p{ margin-top:12px }
+.sf .letter .unfold .watch{ color:var(--coral); font-size:13.5px; letter-spacing:.02em }
+@media (max-width:520px){ .sf .letter .unfold{ padding-left:0 } }
+
+/* ============================================================
+   尾聲
+   ============================================================ */
+.sf .coda{
+  text-align:center; border-top:1px solid var(--navy-line);
+  background:radial-gradient(110% 76% at 50% 62%, var(--navy-lift) 0%, var(--navy) 58%, var(--navy-deep) 100%);
+}
+.sf .coda .harbin{ width:min(76%,330px); margin:0 auto clamp(26px,5vw,36px) }
+.sf .coda .harbin svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .coda h2{ font-size:clamp(22px,5.2vw,32px) }
+.sf .coda .script{ margin-top:clamp(24px,4vw,32px) }
+.sf .cta{
+  display:inline-block; margin-top:clamp(28px,5vw,38px); font-family:var(--serif);
+  font-size:12.5px; letter-spacing:.16em; text-indent:.16em; text-decoration:none;
+  color:var(--navy-deep); background:var(--paper); padding:15px 32px; border-radius:1px;
+  transition:background .3s, transform .3s;
+}
+.sf .cta:hover{ background:var(--coral); transform:translateY(-2px) }
+
+/* ============================================================
+   資料條
+   ============================================================ */
+.sf .facts{ border-top:1px solid var(--navy-line); background:var(--navy-deep) }
+.sf .facts h2{ font-size:clamp(17px,3.6vw,20px); margin-bottom:20px }
+.sf .facts dl{
+  display:grid; grid-template-columns:auto 1fr; gap:0; margin:0;
+  border-top:1px solid var(--navy-line);
+}
+.sf .facts dt{
+  font-family:var(--serif); font-size:12px; letter-spacing:.08em; color:var(--ice-dim);
+  padding:10px 22px 10px 0; border-bottom:1px solid var(--navy-line); white-space:nowrap;
+}
+.sf .facts dd{
+  margin:0; padding:10px 0; border-bottom:1px solid var(--navy-line);
+  font-size:14.5px; color:var(--ice); line-height:1.75;
+}
+.sf .facts .fine{ margin-top:22px; font-size:12px; color:var(--ice-dim); line-height:1.9 }
+
+/* ============================================================
+   支持這篇 —— 聯盟連結區
+   ============================================================ */
+.sf .support{
+  text-align:center; border-top:1px solid var(--navy-line); background:var(--navy-deep);
+}
+.sf .support .mark{ width:min(34%,124px); margin:0 auto clamp(20px,4vw,28px) }
+.sf .support .mark svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .support h2{ font-size:clamp(20px,4.6vw,27px) }
+.sf .support .lede{ margin:16px auto 0 }
+.sf .support .acts{
+  display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+  margin-top:clamp(24px,4vw,32px);
+}
+.sf .support .acts .cta{ margin-top:0 }
+.sf .cta--ghost{
+  background:transparent; color:var(--paper);
+  border:1px solid rgba(183,202,221,.45);
+  padding:14px 31px;
+}
+.sf .cta--ghost:hover{ background:transparent; border-color:var(--coral); color:var(--coral) }
+.sf .support .sub-note{
+  margin-top:18px; font-size:13px; color:var(--ice-dim); line-height:1.9;
+  max-width:30em; margin-inline:auto;
+}
+.sf .support .fine{
+  margin-top:22px; font-size:12px; color:var(--ice-dim); line-height:1.9;
+  max-width:32em; margin-inline:auto;
+}
+.sf .facts a{ color:var(--coral) }
+@media (max-width:480px){
+  .sf .facts dl{ grid-template-columns:1fr }
+  .sf .facts dt{ border-bottom:none; padding-bottom:0 }
+  .sf .facts dd{ padding-top:2px }
+}
+
+/* ---------- SVG 色票 ---------- */
+.sf .f-paper{ fill:var(--paper) } .sf .f-ice{ fill:var(--ice) }
+.sf .f-coral{ fill:var(--coral) } .sf .f-coral-d{ fill:var(--coral-deep) }
+.sf .f-navy{ fill:var(--navy) } .sf .f-navy-d{ fill:var(--navy-deep) }
+.sf .f-lift{ fill:var(--navy-lift) }
+.sf .s-paper{ stroke:var(--paper) } .sf .s-ice{ stroke:var(--ice) }
+.sf .s-coral{ stroke:var(--coral) }
+.sf .s-navy{ stroke:var(--navy) }
+.sf .s-navy-d{ stroke:var(--navy-deep) }
+.sf .tx-serif{ font-family:var(--serif) }
+.sf .tx-sans{ font-family:var(--sans) }
+</style>
+<meta name="spec-version" content="core-v1.1/story-v1.1">
+</head>
+<body>
+<article class="sf">
+<div class="grain" aria-hidden="true"></div>
+<div class="stage">
+
+<nav class="langbar" aria-label="Language">
+  <a data-cta="lang_zh" href="https://story.knittinghiyori.com/drama/the-early-spring/" >中文</a>
+  <a data-cta="lang_ja" href="https://story.knittinghiyori.com/drama/the-early-spring/ja/" hreflang="ja">日本語</a>
+  <a data-cta="lang_en" href="https://story.knittinghiyori.com/drama/the-early-spring/en/" hreflang="en" aria-current="page">English</a>
+</nav>
+
+
+<!-- ══════════════ 序幕 ══════════════ -->
+<header class="prologue">
+  <div class="wrap">
+
+    <div class="window-art" aria-hidden="true">
+      <svg viewBox="0 0 300 400" role="presentation">
+        <path class="f-paper" d="M60 380V126c0-49 40-89 90-89s90 40 90 89v254z"/>
+        <g class="s-ice" fill="none" stroke-width="3.2" stroke-linecap="round">
+          <path d="M150 300C150 250 150 200 150 180"/>
+          <path d="M150 300C132 268 112 226 102 208"/>
+          <path d="M150 300C168 272 190 232 199 220"/>
+          <path d="M150 300C140 288 128 268 122 258"/>
+          <path d="M150 300C160 292 176 278 184 272"/>
+        </g>
+        <g class="f-ice">
+          <path d="M138 262c-16-5-27-17-30-32 16 4 27 16 30 32z"/>
+          <path d="M166 244c15-6 25-19 27-34-16 5-26 18-27 34z"/>
+        </g>
+        <!-- 綻放的花 -->
+        <g transform="translate(150 128) scale(0.95)">
+          <g class="pf" style="animation-duration:15s;animation-delay:-0s">
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(0)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(60)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(120)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(180)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(240)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(300)"/>
+            <circle class="f-ice" r="8.5"/>
+          </g>
+        </g>
+        <g transform="translate(99 176) scale(0.74)">
+          <g class="pf" style="animation-duration:13s;animation-delay:-3s">
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(0)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(60)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(120)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(180)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(240)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(300)"/>
+            <circle class="f-coral" r="8.5"/>
+          </g>
+        </g>
+        <g transform="translate(202 188) scale(0.72)">
+          <g class="pf" style="animation-duration:17s;animation-delay:-6s">
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(0)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(60)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(120)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(180)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(240)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(300)"/>
+            <circle class="f-ice" r="8.5"/>
+          </g>
+        </g>
+        <g transform="translate(120 232) scale(0.62)">
+          <g class="pf" style="animation-duration:12s;animation-delay:-9s">
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(0)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(60)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(120)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(180)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(240)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(300)"/>
+            <circle class="f-coral" r="8.5"/>
+          </g>
+        </g>
+        <g transform="translate(186 248) scale(0.58)">
+          <g class="pf" style="animation-duration:16s;animation-delay:-12s">
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(0)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(60)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(120)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(180)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(240)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(300)"/>
+            <circle class="f-ice" r="8.5"/>
+          </g>
+        </g>
+        <!-- 飄散的花瓣 -->
+        <g transform="translate(112 84) rotate(-38) scale(0.5)"><g class="pf" style="animation-duration:12.3s;animation-delay:-1.8s"><path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(210 96) rotate(26) scale(0.45)"><g class="pf" style="animation-duration:14.6s;animation-delay:-0.9s"><path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(50 150) rotate(-64) scale(0.42)"><g class="pf" style="animation-duration:13.8s;animation-delay:-4.4s"><path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(258 170) rotate(44) scale(0.44)"><g class="pf" style="animation-duration:10.4s;animation-delay:-6.1s"><path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(70 270) rotate(-30) scale(0.4)"><g class="pf" style="animation-duration:10.3s;animation-delay:-5.2s"><path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(248 264) rotate(50) scale(0.38)"><g class="pf" style="animation-duration:10.5s;animation-delay:-1.1s"><path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(152 58) rotate(10) scale(0.4)"><g class="pf" style="animation-duration:13.0s;animation-delay:-9.9s"><path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(32 212) rotate(-72) scale(0.34)"><g class="pf" style="animation-duration:10.9s;animation-delay:-2.7s"><path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <path class="f-ice" d="M102 304l94-14-38 84h-12z"/>
+        <path class="f-paper" d="M102 304l94-14-3 13-88 13z" opacity=".45"/>
+        <path class="f-paper" d="M150 298l-4 76h5l7-77z" opacity=".26"/>
+        <rect class="f-coral" x="110" y="309" width="76" height="12" rx="6"/>
+        <path class="f-coral" d="M148 321c-9 6-16 15-19 25 10-2 17-9 19-17 3 8 10 15 20 17-3-10-11-19-20-25z"/>
+      </svg>
+    </div>
+
+    <h1>The Early Spring</h1>
+    <p class="sub">THE EARLY SPRING</p>
+    <p class="script">You don&rsquo;t have to be perfect to be worthy of love</p>
+    <p class="script-cn">You don’t have to be perfect to be worthy of love</p>
+    <p class="kicker">A ten-year story — from one person looking up, to two people meeting at eye level.</p>
+
+    <p class="scroll-cue"><span>Read on</span><i></i></p>
+  </div>
+</header>
+
+<!-- ══════════════ 命題 ══════════════ -->
+<section class="thesis" data-sec="thesis">
+  <div class="wrap">
+    <i class="rule" aria-hidden="true"></i>
+    <blockquote class="rise">
+      This isn’t a story about love.<br>
+      It’s a story about how <em>looking up</em> becomes <em>looking across</em>.
+    </blockquote>
+  </div>
+</section>
+
+<!-- ══════════════ 第一幕 ══════════════ -->
+<section class="act" data-sec="act_1">
+  <div class="wrap act-grid">
+    <div class="act-art rise" aria-hidden="true">
+      <svg viewBox="0 0 420 230" role="presentation">
+        <rect class="f-paper" x="242" y="170" width="140" height="7" rx="3" opacity=".45"/>
+        <text class="f-ice tx-serif" x="312" y="170" font-size="118" font-weight="700" text-anchor="middle">L</text>
+        <g transform="translate(74 176) scale(.46)">
+          <path class="f-coral" d="M0-40C-12-58-42-56-52-32-62-8-58 24-34 42-20 51 20 51 34 42 58 24 62-8 52-32 42-56 12-58 0-40Z"/>
+          <path class="s-navy-d" fill="none" stroke-width="3.6" stroke-linecap="round" d="M1-38C-5-16-5 18 1 40"/>
+          <path class="f-ice" d="M10-52c14-16 35-21 52-12-11 16-32 22-52 12z"/>
+          <rect class="f-ice" x="-3" y="-64" width="6" height="27" rx="3"/>
+        </g>
+        <path class="s-coral" fill="none" stroke-width="1.6" stroke-dasharray="5 7" d="M98 142C148 108 214 96 268 106"/>
+        <rect class="f-paper" y="200" width="420" height="7" opacity=".45"/>
+      </svg>
+    </div>
+    <div class="act-text">
+      <div class="act-head">
+        <span class="vlabel">Act One · Beijing</span>
+        <div>
+          <span class="actno">EP 1—8</span>
+          <h2>On her first day, he told her to quit</h2>
+          <p class="lede rise">Shang Zhitao’s résumé was ordinary, yet she landed an offer at a top advertising agency. On her first day, creative director Luan Nian took one look at her and told her, plainly, not to bother.</p>
+          <p class="lede rise">That moment fixed their heights. One of them hands down the verdict; the other waits for it.</p>
+          <p class="act-meta">Most workplace romances use rank as a prop for tension. This one uses it as the foundation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 權力天秤 ══════════════ -->
+<section class="balance" data-sec="balance">
+  <div class="wrap">
+    <div class="bal-head">
+      <span class="actno">THE BALANCE ・ Interactive</span>
+      <h2>How the scale tipped over ten years</h2>
+      <p class="lede">On one side, a peach — táo, the last character of Shang Zhitao’s name. On the other, an L, for Luan Nian. On a scale the heavier side sinks: first the L, then the peach, and at last the two weigh the same. Drag the slider, or tap a stage.</p>
+    </div>
+
+    <div class="bal-stage" aria-hidden="true">
+      <svg viewBox="0 0 560 330" role="presentation">
+        <!-- 立柱與底座 -->
+        <path class="f-paper" d="M280 96l17 204h-34z" opacity=".9"/>
+        <rect class="f-paper" x="176" y="298" width="208" height="6" rx="3" opacity=".5"/>
+        <g id="beamGroup" class="beam" style="transform-origin:280px 100px">
+          <rect class="f-paper" x="72" y="97" width="416" height="6" rx="3"/>
+          <circle class="f-paper" cx="112" cy="100" r="5"/>
+          <circle class="f-paper" cx="448" cy="100" r="5"/>
+          <!-- 尚之桃：桃 -->
+          <g id="figA">
+            <g class="s-paper" fill="none" stroke-width="2.4" opacity=".8"><path d="M112 100L66 222"/><path d="M112 100L158 222"/></g>
+            <path class="f-paper" d="M62 222h100l-9 12H71z"/>
+            <g transform="translate(112 190) scale(.62)">
+  <path class="f-coral" d="M0-40C-12-58-42-56-52-32-62-8-58 24-34 42-20 51 20 51 34 42 58 24 62-8 52-32 42-56 12-58 0-40Z"/>
+  <path class="s-navy-d" fill="none" stroke-width="3.6" stroke-linecap="round" d="M1-38C-5-16-5 18 1 40"/>
+  <path class="f-ice" d="M10-52c14-16 35-21 52-12-11 16-32 22-52 12z"/>
+  <rect class="f-ice" x="-3" y="-64" width="6" height="27" rx="3"/>
+            </g>
+          </g>
+          <!-- 欒念：L -->
+          <g id="figB">
+            <g class="s-paper" fill="none" stroke-width="2.4" opacity=".8"><path d="M448 100L402 222"/><path d="M448 100L494 222"/></g>
+            <path class="f-paper" d="M398 222h100l-9 12H407z"/>
+            <text class="f-ice tx-serif" x="448" y="222" font-size="118" font-weight="700" text-anchor="middle">L</text>
+          </g>
+        </g>
+        <text class="f-coral tx-serif" x="112" y="34" font-size="13" text-anchor="middle" letter-spacing="3">Shang Zhitao</text>
+        <text class="f-ice tx-serif" x="448" y="34" font-size="13" text-anchor="middle" letter-spacing="3">Luan Nian</text>
+      </svg>
+    </div>
+
+    <div class="bal-caption">
+      <h3 id="balTitle">One sentence of his outweighs all of her</h3>
+      <p id="balText">On day one, a creative director’s “don’t bother” is enough to decide whether she stays. His side sinks all the way down.</p>
+    </div>
+
+    <div class="bal-track">
+      <label class="vlabel" for="balRange" style="position:absolute;left:-9999px;writing-mode:horizontal-tb">Story stage</label>
+      <input id="balRange" type="range" min="0" max="5" step="1" value="0" aria-describedby="balText">
+      <div class="bal-steps" id="balSteps">
+        <button type="button" data-i="0" aria-current="true">Meeting</button>
+        <button type="button" data-i="1" aria-current="false">Hidden</button>
+        <button type="button" data-i="2" aria-current="false">Alongside</button>
+        <button type="button" data-i="3" aria-current="false">Retreat</button>
+        <button type="button" data-i="4" aria-current="false">Reunion</button>
+        <button type="button" data-i="5" aria-current="false">Restart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 第二幕：六個證據 ══════════════ -->
+<section class="proof" data-sec="proof">
+  <div class="wrap">
+    <div class="act-head">
+      <span class="vlabel">Act Two · Six Years</span>
+      <div>
+        <span class="actno">EP 9—16</span>
+        <h2>Not one of the best moments is a confession</h2>
+        <p class="lede rise">This love story barely relies on dialogue. The evidence hides in actions, in schedules, in the sentences nobody says out loud. Open the seven below.</p>
+      </div>
+    </div>
+
+    <div class="proof-grid">
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><circle class="f-ice" cx="20" cy="22" r="14"/><path class="f-navy-d" d="M19 13h2v10h-2z"/><path class="f-navy-d" d="M20 21h8v2h-8z"/><path class="f-coral" d="M8 8l6-4 3 5zM32 8l-6-4-3 5z"/></svg></span>
+        <h3>The one who started waking early on weekends</h3>
+        <span class="body"><span>
+          <p>Luan Nian used to sleep until noon on weekends.</p>
+          <p>Then, on the weekends Shang Zhitao would come, he slowly became the one who woke first — getting up to make breakfast, and osmanthus milk.</p>
+          <p>He never said why he changed. But a routine doesn’t lie. Giving up your loosest hours to line up with someone else is a ranking, not a coincidence.</p>
+          <p>And it happened slowly. He didn’t decide one day to be good to her; the weekends she came kept accumulating until the habit itself was rewritten.</p>
+        </span></span>
+        <span class="more">Open</span>
+      </button>
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path class="f-coral" d="M20 6c4 4 4 9 0 13-4-4-4-9 0-13z"/><path class="f-coral" d="M8 16c5-2 10 0 12 5-5 2-10 0-12-5z"/><path class="f-coral" d="M32 16c-5-2-10 0-12 5 5 2 10 0 12-5z"/><rect class="f-ice" x="19" y="21" width="2" height="14"/></svg></span>
+        <h3>Flowers with no name on the card</h3>
+        <span class="body"><span>
+          <p>The flowers kept arriving. The card stayed blank.</p>
+          <p>Here the series and the novel diverge: on screen the sender is Luan Nian; in the book it is Sun Yuanzhu.</p>
+          <p>Same bouquet, different sender, different meaning — one is care that can’t be hidden, the other is a vigil that can’t be spoken. The reason for leaving it unsigned is the same either way: sign it, and the relationship has to step into the light.</p>
+        </span></span>
+        <span class="more">Open</span>
+      </button>
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path class="f-ice" d="M4 26h32v2H4z"/><circle class="f-coral" cx="20" cy="20" r="9"/><path class="f-ice" d="M20 4v5M8 9l3 4M32 9l-3 4"/><path class="f-ice" d="M4 32h10v2H4zM26 32h10v2H26z"/></svg></span>
+        <h3>Sunrise, and sunset too</h3>
+        <span class="body"><span>
+          <p>The sunrise scene moves from dark to light; the frame fills with it a little at a time.</p>
+          <p class="q">“I’m glad I got to watch the sunrise with you.”</p>
+          <p class="q">“Sometimes I wish I could watch the sunrise with you — and the sunset too.”</p>
+          <p>Sunrise is now. Sunset is later. What she actually wanted was a later — and she only dared to say it as a metaphor.</p>
+          <p>Shang Zhitao is brave. She carries so much love for Luan Nian that if she said none of it, it would spill over and drain away — and what a waste that would be.</p>
+          <p>Which is why there is that one thing she can’t say and can’t hide either: I think you’ve figured it out — I love you.</p>
+        </span></span>
+        <span class="more">Open</span>
+      </button>
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><rect class="f-paper" x="9" y="5" width="22" height="30" rx="1"/><g class="f-navy-d"><rect x="14" y="12" width="12" height="2"/><rect x="14" y="18" width="12" height="2"/><rect x="14" y="24" width="8" height="2"/></g><path class="f-coral" d="M22 27l3 3 7-8 2 2-9 10-5-5z"/></svg></span>
+        <h3>Ten things before thirty</h3>
+        <span class="body"><span>
+          <p>The point of the list isn’t to finish it. It’s to keep a coordinate that has nothing to do with him, at the moment the relationship is at its most undefined.</p>
+          <p class="src">Shang Zhitao — that is, me — my wish list before thirty:</p>
+          <ol>
+            <li>Take my parents travelling</li>
+            <li>Get good at English</li>
+            <li>Learn to drive</li>
+            <li>Get good at French</li>
+            <li>Go to Tibet</li>
+            <li>Go abroad</li>
+            <li>Read 200 books</li>
+            <li>Buy a car</li>
+            <li>Buy a small place in Beijing</li>
+            <li>Be with the person I love</li>
+          </ol>
+          <p>She can do the first nine alone. Only the tenth she can’t.</p>
+        </span></span>
+        <span class="more">Open</span>
+      </button>
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path class="f-paper" d="M14 8h12l2 26H12z"/><rect class="f-coral" x="12" y="20" width="16" height="14"/><rect class="f-ice" x="16" y="4" width="8" height="5" rx="1"/><g class="f-paper"><circle cx="17" cy="15" r="1.6"/><circle cx="23" cy="13" r="1.6"/></g></svg></span>
+        <h3>Osmanthus milk: favouritism is inherited</h3>
+        <span class="body"><span>
+          <p>A drink that is a nuisance to make, passed down through a family, made for the people they care about. He learned it, then made it for her.</p>
+          <p>Here, favouritism isn’t a declaration. It’s an inherited gesture.</p>
+        </span></span>
+        <span class="more">Open</span>
+      </button>
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path class="f-ice" d="M6 20h20v3H6z"/><path class="f-coral" d="M22 12l12 9.5L22 31z"/><circle class="f-paper" cx="8" cy="21.5" r="3"/></svg></span>
+        <h3>Favouritism has to be loud enough for her to receive it</h3>
+        <span class="body"><span>
+          <p class="q">“She really is a dull person. Only genuine favouritism registers with her. She can feel that Luan Nian loves her now, because the way he favours her has become too obvious to miss.”</p>
+          <p class="src">— from the novel</p>
+          <p>The question was never whether he favoured her. It was the volume. Care pitched so low that only he can hear it may as well not have happened, to the lighter side of the scale.</p>
+        </span></span>
+        <span class="more">Open</span>
+      </button>
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><rect class="f-paper" x="4" y="10" width="32" height="21" rx="1.5"/><rect class="f-coral" x="26" y="13" width="7" height="6" rx="1"/><g class="f-ice"><rect x="8" y="15" width="14" height="2"/><rect x="8" y="20" width="14" height="2"/><rect x="8" y="25" width="9" height="2"/></g><path class="f-coral" d="M26 24l2 2 5-5 1.6 1.6-6.6 6.6-3.6-3.6z"/></svg></span>
+        <h3>The postcard: always clear-skied, always sincere</h3>
+        <span class="body"><span>
+          <p>“Always clear-skied, always sincere” is what Luan Nian writes to Shang Zhitao on a postcard — an invention of the series; it isn’t in the novel.</p>
+          <p>In this episode the two of them keep catching each other’s eye and smiling. She reads the postcard and is plainly, wholly happy; he watches her browse the shops with a delight he can’t quite suppress. There is no dialogue — but the face of someone in love won’t stay hidden.</p>
+          <p>The line she writes for Sun Yuanzhu borrows from lyrics Albert Leung wrote for Faye Wong’s “Renjian” — the world is uncertain and far from perfect, yet because there is love and company, it is still worth holding on to.</p>
+          <!-- LYRIC-SLOT ▼ uncomment the two lines below and paste the line you want to quote
+          <p class="q">“(paste the line from “Renjian” here)”</p>
+          <p class="src">— lyrics by Albert Leung, from Faye Wong’s “Renjian”</p>
+          -->
+          <p>That change plants a seed for Sun Yuanzhu’s later story: tender now, devastating on a rewatch.</p>
+        </span></span>
+        <span class="more">Open</span>
+      </button>
+
+    <p class="proof-note">Except where marked as a quotation from the novel, the above paraphrases events from the book and the series. Please read the original through official channels.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 第三幕：撤退 ══════════════ -->
+<section class="mail" data-sec="mail">
+  <div class="wrap">
+    <span class="actno">EP 16 ・ Interactive</span>
+    <h2>A grand retreat</h2>
+    <p class="lede rise" style="margin:18px auto 0">“Retreat” is military language: planned, commanded, forces preserved. It is fleeing that is a rout. She gives her leaving a proper name first, and only then says goodbye.</p>
+
+    <div class="mail-art">
+      <svg viewBox="0 0 340 400" role="img" aria-label="A postbox and tickets from Beijing to Harbin">
+        <!-- 落下的票（循環） -->
+        <g id="dropLayer"></g>
+        <!-- 郵筒外框 -->
+        <path class="f-ice" d="M74 96h192v14H74z"/>
+        <path class="f-paper" d="M64 96l24-22h190l-22 22z"/>
+        <rect class="f-navy-d" x="120" y="82" width="108" height="7" rx="3"/>
+        <rect class="f-navy-d" x="90" y="110" width="160" height="248"/>
+        <rect class="f-ice" x="74" y="110" width="20" height="256"/>
+        <rect class="f-ice" x="246" y="110" width="20" height="256"/>
+        <rect class="f-ice" x="74" y="352" width="192" height="14"/>
+        <!-- 票（靜態，堆在框內） -->
+        <g>
+          <rect class="f-coral" x="106" y="158" width="112" height="66" rx="2" transform="rotate(-11 162 191)"/>
+          <rect class="f-paper" x="118" y="216" width="104" height="60" rx="2" transform="rotate(7 170 246)"/>
+          <rect class="f-coral-d" x="104" y="262" width="118" height="62" rx="2" transform="rotate(-6 163 293)"/>
+          <text class="f-paper tx-sans" x="163" y="300" font-size="15" text-anchor="middle" transform="rotate(-6 163 293)">Beijing → Harbin</text>
+        </g>
+        <!-- 雪地 -->
+        <path class="f-paper" d="M0 372c70-12 120 8 190 2s90-14 150-6v32H0z" opacity=".9"/>
+      </svg>
+    </div>
+
+    <button class="post-btn" type="button" id="postBtn">Post the letter</button>
+    <p class="post-out" id="postOut" aria-live="polite">She didn’t say goodbye. She just dropped the ticket in.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 再一次相遇：他往北飛 ══════════════ -->
+<section class="flights" data-sec="flights">
+  <div class="wrap">
+    <span class="actno">EP 17 ・ Interactive</span>
+    <h2>Meeting again, for the first time</h2>
+    <p class="lede rise" style="margin:18px auto 0">Back then she posted a one-way ticket. Now it’s his turn — flying north, trip after trip.</p>
+
+    <div class="fly-art">
+      <svg viewBox="0 0 460 268" role="img" aria-label="Flight paths from Beijing to Harbin, trip after trip">
+        <g id="arcLayer"></g>
+        <circle class="f-ice" cx="86" cy="206" r="7"/>
+        <text class="f-ice tx-serif" x="86" y="236" font-size="14" text-anchor="middle" letter-spacing="2">Beijing</text>
+        <circle class="f-coral" cx="382" cy="70" r="8"/>
+        <circle class="s-coral" cx="382" cy="70" r="17" fill="none" stroke-width="1.4" opacity=".45"/>
+        <text class="f-coral tx-serif" x="382" y="42" font-size="14" text-anchor="middle" letter-spacing="2">Harbin</text>
+      </svg>
+    </div>
+
+    <p class="fly-count" id="flyCount">Trip 0</p>
+    <button class="post-btn" type="button" id="flyBtn">Send him north</button>
+    <p class="post-out" id="flyOut">She never looked back. So this time, he takes the route.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 第四幕：重逢 ══════════════ -->
+<section class="act flip" data-sec="act_2">
+  <div class="wrap act-grid">
+    <div class="act-art rise" aria-hidden="true">
+      <svg viewBox="0 0 420 340" role="presentation">
+        <!-- 洋蔥頂 -->
+        <g class="f-paper">
+          <path d="M186 300V182h56v118z"/>
+          <path d="M214 118c19 19 30 39 30 55 0 18-13 29-30 29s-30-11-30-29c0-16 11-36 30-55z"/>
+          <rect x="211" y="96" width="6" height="24"/>
+        </g>
+        <g class="f-ice">
+          <path d="M116 300v-78h34v78z"/><path d="M133 186l20 36h-40z"/>
+          <path d="M290 300v-64h30v64z"/><path d="M305 208l17 28h-34z"/>
+        </g>
+        <!-- 她的店 -->
+        <rect class="f-coral" x="226" y="240" width="74" height="54" rx="1"/>
+        <path class="f-coral" d="M218 240l45-18 45 18z"/>
+        <rect class="f-paper" x="238" y="254" width="26" height="20" rx="1"/>
+        <rect class="f-paper" x="274" y="262" width="16" height="32" rx="1"/>
+        <!-- 門口的狗 -->
+        <g transform="translate(150 302) scale(.4)">
+  <path class="f-coral" d="M-32-46c-14-2-24-14-25-29 12 2 22 12 27 27z"/>
+  <path class="f-coral" d="M-2-86c-16 0-27 10-32 26l-10 36c-3 12 4 22 16 22h44c10 0 16-8 14-18l-8-42c-3-16-10-24-24-24z"/>
+  <path class="f-coral" d="M20-56c-9 0-15 6-15 15v33c0 5 3 8 8 8h14c5 0 8-3 8-8v-33c0-9-6-15-15-15z"/>
+  <circle class="f-coral" cx="16" cy="-108" r="25"/>
+  <path class="f-coral" d="M34-110c14 0 24 6 24 13s-10 13-24 13z"/>
+  <path class="f-coral" d="M-2-124c-12-2-20 6-20 20 0 14 6 26 14 30 5-16 8-36 6-50z"/>
+  <circle class="f-navy" cx="24" cy="-114" r="3.4"/>
+  <circle class="f-navy" cx="56" cy="-97" r="4.4"/>
+        </g>
+        <!-- 雪地 -->
+        <path class="f-paper" d="M0 296c80-14 130 10 200 4s130-16 220-6v46H0z"/>
+        <!-- 雪點 -->
+        <g class="f-paper" opacity=".7">
+          <circle cx="52" cy="70" r="3.4"/><circle cx="352" cy="52" r="3"/><circle cx="94" cy="140" r="2.4"/>
+          <circle cx="380" cy="150" r="2.6"/><circle cx="34" cy="200" r="2.2"/><circle cx="404" cy="234" r="2"/>
+        </g>
+      </svg>
+    </div>
+    <div class="act-text">
+      <div class="act-head">
+        <span class="vlabel">Act Four · Harbin</span>
+        <div>
+          <span class="actno">EP 17—24</span>
+          <h2>By the time he came looking, she no longer needed him</h2>
+          <p class="lede rise">Years later Luan Nian travels north. By then Shang Zhitao has long left the grind behind, has opened her own shop back home, and her days belong to her.</p>
+          <p class="lede rise">The order is what matters. She wasn’t waiting where he left her — <strong>she had finished rebuilding her life before he showed up</strong>. The grovelling-ex arc only works on that condition.</p>
+          <p class="act-meta">Former boss, former lover, face to face again — and the whole structure of power has turned over.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 三句金句 ══════════════ -->
+<section class="lines" data-sec="lines">
+  <div class="wrap">
+    <span class="actno">THREE LINES ・ From the novel</span>
+    <h2>Three lines, and exactly three turning points</h2>
+    <p class="lede rise" style="margin:16px 0 clamp(24px,4vw,34px)">The following are quoted from the novel, not spoken on screen. Open each for a reading and what to watch for.</p>
+
+    <details class="letter">
+      <summary>
+        <span class="no">Ⅰ</span>
+        <span>
+          <q>May your life be free of worry, and may you always have the courage to break a deadlock</q>
+          <span class="tag">A blessing ・ Opening</span>
+        </span>
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </summary>
+      <div class="unfold">
+        <p>The weight is in the second half. “A life free of worry” is the polite thing anyone says. “Courage to break a deadlock” isn’t a wish for smooth sailing — it assumes the deadlock is coming.</p>
+        <p>Deadlock is daily life in advertising: a pitch stalls, an idea is killed, the client won’t nod. Put it back on the romance and those six years are a deadlock too, one neither of them will break first. What the line wishes for isn’t that nothing happens — it’s that when something does, you can still move.</p>
+        <p class="watch">Watch for: if this becomes a generic well-wish on screen, the character’s whole undertone changes.</p>
+      </div>
+    </details>
+
+    <details class="letter">
+      <summary>
+        <span class="no">Ⅱ</span>
+        <span>
+          <q>This isn’t fleeing. This is a grand retreat. Goodbye, Beijing</q>
+          <span class="tag">Leaving without a word ・ Development</span>
+        </span>
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </summary>
+      <div class="unfold">
+        <p>“Retreat” is military language, not a loser’s word — planned, commanded, forces preserved. Fleeing is the rout. She gives her leaving a proper name first, and only then says goodbye.</p>
+        <p>The crucial word is “grand.” A departure with no one to see her off, one he doesn’t even know about — and she insists on giving it a scale. Not for anyone else to hear, but so she remembers: I chose this. I didn’t lose.</p>
+        <p class="watch">Watch for: a novel can write interior monologue; screen can’t. This feeling has to be carried by image or voiceover.</p>
+      </div>
+    </details>
+
+    <details class="letter">
+      <summary>
+        <span class="no">Ⅲ</span>
+        <span>
+          <q>Let’s meet each other again — starting from the first time we met</q>
+          <span class="tag">Reunion ・ Resolution</span>
+        </span>
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </summary>
+      <div class="unfold">
+        <p>He isn’t asking to get back together. He’s asking to start over. The difference matters: getting back together returns to the old relationship; starting over admits the old starting point was the problem.</p>
+        <p>Their first meeting was him, as creative director, telling her to give up the job. The heights were set in that instant. So “from the first time we met” isn’t a romantic flourish — it’s him finally realising that the only way to reach eye level is to void the starting point where she had to look up. The whole argument of the work lands in this line.</p>
+        <p class="watch">Watch for: keep this line, put it in the right place, and the adaptation is more than half won.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ══════════════ 尾聲 ══════════════ -->
+<section class="coda" data-sec="coda">
+  <div class="wrap">
+    <div class="harbin" aria-hidden="true">
+      <svg viewBox="0 0 340 210" role="presentation">
+        <circle class="f-coral" cx="172" cy="18" r="10" opacity=".8"/>
+        <g transform="translate(104 82) scale(.58)">
+  <path class="f-coral" d="M0-40C-12-58-42-56-52-32-62-8-58 24-34 42-20 51 20 51 34 42 58 24 62-8 52-32 42-56 12-58 0-40Z"/>
+  <path class="s-navy-d" fill="none" stroke-width="3.6" stroke-linecap="round" d="M1-38C-5-16-5 18 1 40"/>
+  <path class="f-ice" d="M10-52c14-16 35-21 52-12-11 16-32 22-52 12z"/>
+  <rect class="f-ice" x="-3" y="-64" width="6" height="27" rx="3"/>
+        </g>
+        <text class="f-ice tx-serif" x="236" y="112" font-size="106" font-weight="700" text-anchor="middle">L</text>
+        <path class="s-paper" stroke-width="1.4" stroke-dasharray="4 8" d="M22 112h296" opacity=".7"/>
+        <path class="f-paper" d="M0 166c66-13 104 8 164 3s112-13 176-4v45H0z"/>
+      </svg>
+    </div>
+    <span class="actno">CODA</span>
+    <h2>Early spring isn’t a season. It’s a temperature</h2>
+    <p class="lede" style="margin:18px auto 0">The snow is loosening, but there is still ice underfoot. The phrase holds Beijing’s winter, Harbin’s snow, and a relationship that stayed for years on the edge of thawing without ever fully melting. The title is the largest image in the whole work.</p>
+    <p class="script">Not spring yet &mdash; but no longer winter</p>
+    <a class="cta" data-cta="hub" href="https://story.knittinghiyori.com/">Browse all works</a>
+  </div>
+</section>
+
+<!-- ══════════════ 資料 ══════════════ -->
+<!-- ══════════════ 支持這篇 ══════════════ -->
+<!-- Google AdSense 手動廣告單元 -->
+<div class="kh-ad" aria-label="Advertisement">
+  <span class="kh-ad__label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2022028565680247" data-ad-slot="2285424505" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<section class="support" data-sec="support">
+  <div class="wrap rise">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 160 116" role="presentation">
+        <path class="s-paper" fill="none" stroke-width="1.6" stroke-dasharray="3 6" opacity=".7"
+              d="M26 86Q78 10 134 34"/>
+        <path class="s-paper" fill="none" stroke-width="1.6" stroke-dasharray="3 6" opacity=".35"
+              d="M26 86Q92 30 134 34"/>
+        <circle class="f-coral" cx="26" cy="86" r="7"/>
+        <circle class="f-ice" cx="134" cy="34" r="7"/>
+        <circle class="f-coral" cx="134" cy="14" r="4" opacity=".7"/>
+      </svg>
+    </div>
+    <span class="actno">SUPPORT ・ support this piece</span>
+    <h2>Beijing to Harbin</h2>
+    <p class="lede">One of them flew that route again and again. If you have a trip of your own coming up, opening Klook through the link below is enough to help keep pieces like this one going.</p>
+    <div class="acts">
+  <a class="cta" data-cta="klook" href="https://klook.tpk.ro/t2iFUlH8" target="_blank" rel="sponsored nofollow noopener">Plan your next trip on Klook</a>
+      <a class="cta cta--ghost" data-cta="newsletter" href="https://knittinghiyori.kit.com/2cf3d82ac1" target="_blank" rel="noopener">Subscribe to the newsletter</a>
+    </div>
+    <p class="sub-note">One letter, one work. I’ll send the next piece when it goes up. Unsubscribe any time.</p>
+    <p class="fine">This is an affiliate link. Booking through it<br>never costs you anything extra.</p>
+  </div>
+</section>
+
+<section class="facts" data-sec="facts">
+  <div class="wrap">
+    <h2>The Early Spring — key facts</h2>
+    <dl>
+      <dt>Title</dt><dd>早春晴朗 (The Early Spring)</dd>
+      <dt>Episodes</dt><dd>24 episodes, about 45 minutes each</dd>
+      <dt>Airing</dt><dd>Premiered 26 Aug 2026 on Youku and Kumiao TV, updating daily at 12:00; simulcast on Netflix in Taiwan</dd>
+      <dt>Crew</dt><dd>Directed by Jiang Jizheng ・ Written by Gao Xiaoxian</dd>
+      <dt>Cast</dt><dd>Jing Boran as Luan Nian ・ Sun Qian as Shang Zhitao</dd>
+      <dt>Source</dt><dd>The Early Spring by Guniang Biekun (JJWXC)</dd>
+      <dt>Theme song</dt><dd>“Luguo Qinglang” by Silence Wang, who wrote, composed and produced it</dd>
+      <dt>Locations</dt><dd>Beijing and Harbin</dd>
+    </dl>
+    <p class="fine">
+      This page is a reading of the story and the novel, and contains spoilers. For the release calendar, the daily update table and the finale estimate, see<a data-cta="article" href="https://knittinghiyori.com/the-early-spring-en/">The Early Spring release calendar</a>。<br>
+      Passages from the novel are paraphrased, not quoted verbatim.
+    </p>
+  </div>
+</section>
+
+</div>
+</article>
+<p class="kh-legal">This site uses cookies for analytics and ads. <a href="https://knittinghiyori.com/privacy-policy/">Privacy Policy</a></p>
+
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Article",
+      "headline":"The Early Spring's Ten Years: From Looking Up to Looking Across",
+      "description":"A reading of The Early Spring in three acts across ten years - how an unequal balance of power became the foundation of the romance, six years of favouritism without a single confession, a grand retreat, and the structure that turns over at the reunion.",
+      "inLanguage":"en",
+      "about":{"@id":"#series"},
+      "isAccessibleForFree":true
+    },
+    {
+      "@type":"TVSeries",
+      "@id":"#series",
+      "name":"早春晴朗",
+      "alternateName":"The Early Spring",
+      "inLanguage":"zh-Hans",
+      "numberOfEpisodes":24,
+      "genre":["都市","職場","情感"],
+      "startDate":"2026-08-26",
+      "director":{"@type":"Person","name":"蔣繼正"},
+      "author":{"@type":"Person","name":"高小嫻"},
+      "actor":[
+        {"@type":"Person","name":"井柏然"},
+        {"@type":"Person","name":"孫千"}
+      ],
+      "isBasedOn":{"@type":"Book","name":"早春晴朗","author":{"@type":"Person","name":"姑娘別哭"}},
+      "musicBy":{"@type":"Person","name":"汪蘇瀧"},
+      "description":"2026 年都市職場情感劇，全 24 集，改編自姑娘別哭同名小說，講述尚之桃與欒念橫跨十年的感情糾葛。"
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var $  = function(s,c){ return (c||document).querySelector(s); };
+  var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- 進場 ---------- */
+  var rises = $$(".sf .rise");
+  if ("IntersectionObserver" in window && !reduce){
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, {threshold:.15, rootMargin:"0px 0px -8% 0px"});
+    rises.forEach(function(el){ io.observe(el); });
+  } else {
+    rises.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* ---------- 權力天秤 ---------- */
+  var STAGES = [
+    {deg:15,  t:"One sentence of his outweighs all of her",
+     d:"On day one, a creative director\u2019s \u201Cdon\u2019t bother\u201D is enough to decide whether she stays. His side sinks all the way down."},
+    {deg:10,  t:"The side kept out of the light carries more",
+     d:"The relationship starts, but only after hours, only where no one can see. Almost all of the risk sits with her; the weight is still his."},
+    {deg:4,   t:"Rising together, still not equally weighted",
+     d:"Their careers move forward side by side, but the distance never closes. His favouritism hides inside actions, pitched too low for the lighter side to hear."},
+    {deg:-9,  t:"She moved first",
+     d:"In six years of deadlock, she is the first to decide. Leaving Beijing isn\u2019t losing \u2014 it is the first time she defines how this ends. The scale begins to tip her way."},
+    {deg:-14, t:"This time it\u2019s her side that sinks",
+     d:"She has her own shop and a whole life. Now he is the one travelling north, the one waiting, the one unsure."},
+    {deg:0,   t:"Both sides weigh the same",
+     d:"He isn\u2019t asking to get back together but to start over \u2014 to void the starting point where she had to look up. The real ending isn\u2019t a winner. It\u2019s level."}
+  ];
+  var beam = $("#beamGroup"), figA = $("#figA"), figB = $("#figB");
+  var elT = $("#balTitle"), elD = $("#balText");
+  var range = $("#balRange"), steps = $$("#balSteps button");
+
+  function render(i){
+    var s = STAGES[i];
+    if (!s) return;
+    if (beam) beam.style.transform = "rotate(" + s.deg + "deg)";
+    /* 人物反向補正，讓身體維持直立 */
+    if (figA) figA.style.transform = "rotate(" + (-s.deg) + "deg)";
+    if (figB) figB.style.transform = "rotate(" + (-s.deg) + "deg)";
+    if (elT)  elT.textContent  = s.t;
+    if (elD)  elD.textContent  = s.d;
+    steps.forEach(function(b,bi){ b.setAttribute("aria-current", bi === i ? "true" : "false"); });
+    if (range && range.value !== String(i)) range.value = i;
+  }
+  if (figA) figA.style.transformOrigin = "112px 100px";
+  if (figB) figB.style.transformOrigin = "448px 100px";
+  if (range) range.addEventListener("input", function(){ render(parseInt(range.value,10)); });
+  steps.forEach(function(b){
+    b.addEventListener("click", function(){ render(parseInt(b.getAttribute("data-i"),10)); });
+  });
+  render(0);
+
+  /* ---------- 六個證據 ---------- */
+  $$(".sf .card").forEach(function(c){
+    c.addEventListener("click", function(){
+      c.setAttribute("aria-expanded", c.getAttribute("aria-expanded") === "true" ? "false" : "true");
+    });
+  });
+
+  /* ---------- 郵筒投遞 ---------- */
+  var NS = "http://www.w3.org/2000/svg";
+  var layer = $("#dropLayer"), btn = $("#postBtn"), out = $("#postOut");
+  var lines = [
+    "Beijing \u2192 Harbin \u00b7 one one-way ticket",
+    "A departure with no one to see her off \u2014 she gave it a scale herself",
+    "This isn\u2019t fleeing. This is a grand retreat.",
+    "Goodbye, Beijing"
+  ];
+  var n = 0;
+  function ticket(){
+    if (!layer) return;
+    var g = document.createElementNS(NS,"g");
+    g.setAttribute("class","drop go");
+    var r = document.createElementNS(NS,"rect");
+    var coral = Math.random() > .5;
+    r.setAttribute("class", coral ? "f-coral" : "f-paper");
+    r.setAttribute("x", 96 + Math.random()*46);
+    r.setAttribute("y", 30);
+    r.setAttribute("width", 104);
+    r.setAttribute("height", 58);
+    r.setAttribute("rx", 2);
+    r.setAttribute("transform","rotate(" + (Math.random()*26-13) + " 160 60)");
+    g.appendChild(r);
+    layer.appendChild(g);
+    setTimeout(function(){ if (g.parentNode) g.parentNode.removeChild(g); }, 1700);
+  }
+  if (btn){
+    btn.addEventListener("click", function(){
+      if (!reduce) ticket();
+      if (out) out.textContent = lines[n % lines.length];
+      n++;
+      if (n >= lines.length && btn) btn.textContent = "Post another";
+    });
+  }
+  /* ---------- 再一次相遇：他往北飛 ---------- */
+  var arcLayer = $("#arcLayer"), flyBtn = $("#flyBtn"),
+      flyOut = $("#flyOut"), flyCount = $("#flyCount");
+  var FLY = [
+    "He starts flying north. She travelled this route alone once.",
+    "Beijing to Harbin. She made the trip once; he makes it many times.",
+    "In six years he chased no one. Now he comes back, and back.",
+    "The one who moves has changed. So has the one who waits.",
+    "She posted a one-way ticket. He is buying the return, one flight at a time.",
+    "How many more trips? He stops asking. He just keeps flying."
+  ];
+  var flyN = 0, arcs = [];
+  function sendFlight(){
+    if (!arcLayer) return;
+    var i = flyN;
+    var lift = 30 + (i % 6) * 36;
+    var d = "M86 206Q" + (196 + (i % 3) * 22) + " " + (200 - lift) + " 382 70";
+    var path = document.createElementNS(NS, "path");
+    path.setAttribute("d", d);
+    path.setAttribute("fill", "none");
+    path.setAttribute("class", i % 2 ? "s-ice" : "s-coral");
+    path.setAttribute("stroke-width", "1.6");
+    path.setAttribute("stroke-dasharray", "3 6");
+    path.setAttribute("opacity", ".45");
+    arcLayer.appendChild(path);
+    arcs.forEach(function(a){ a.setAttribute("opacity", ".2"); });
+    arcs.push(path);
+    if (arcs.length > 8){ var old = arcs.shift(); if (old.parentNode) old.parentNode.removeChild(old); }
+
+    if (!reduce){
+      var dot = document.createElementNS(NS, "circle");
+      dot.setAttribute("r", "5");
+      dot.setAttribute("class", "f-coral");
+      arcLayer.appendChild(dot);
+      var len = path.getTotalLength(), t0 = null, dur = 1500;
+      (function step(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var pt = path.getPointAtLength(len * k);
+        dot.setAttribute("cx", pt.x);
+        dot.setAttribute("cy", pt.y);
+        if (k < 1) requestAnimationFrame(step);
+        else if (dot.parentNode) dot.parentNode.removeChild(dot);
+      })(performance.now());
+    }
+
+    flyN++;
+    if (flyCount) flyCount.textContent = "Trip " + flyN;
+    if (flyOut) flyOut.textContent = FLY[Math.min(flyN - 1, FLY.length - 1)];
+    if (flyBtn && flyN === 1) flyBtn.textContent = "Send him again";
+  }
+  if (flyBtn) flyBtn.addEventListener("click", sendFlight);
+})();
+</script>
+
+<script>
+/* ── 本頁專屬事件對應（事件名與參數一律由 head 的共用追蹤提供）──
+     中／日／英三版貼的是完全一樣的這一段，不用改任何字 ── */
+(function(){
+  if (typeof window.hyEvent !== "function") return;
+  var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+
+  /* ── 章節到達 ＋ 讀完 ── */
+  if ("IntersectionObserver" in window){
+    var sio = new IntersectionObserver(function(en){
+      en.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var id = e.target.getAttribute("data-sec");
+        hySection(id, Number(e.target.getAttribute("data-seq")));
+        if (id === "coda") hyComplete();
+        sio.unobserve(e.target);
+      });
+    }, { rootMargin: "0px 0px -55% 0px", threshold: 0 });
+    $$("[data-sec]").forEach(function(el, i){
+      el.setAttribute("data-seq", i + 1);
+      sio.observe(el);
+    });
+  } else if (typeof hyCompleteAtScroll === "function") {
+    hyCompleteAtScroll(95);
+  }
+
+  /* ── 權力天秤：六個階段，各回報一次；六段都走過再回報一次 ── */
+  var stageSeen = {}, stageCount = 0;
+  function stage(v){
+    var i = parseInt(v, 10);
+    if (isNaN(i) || stageSeen[i]) return;
+    stageSeen[i] = 1; stageCount++;
+    hyInteract("toggle", "balance_" + (i + 1), i + 1);
+    if (stageCount === 6) hyInteract("act", "balance_all_stages");
+  }
+  var balRange = document.getElementById("balRange");
+  if (balRange) balRange.addEventListener("input", function(){ stage(balRange.value); });
+  $$("#balSteps button").forEach(function(b){
+    b.addEventListener("click", function(){ stage(b.getAttribute("data-i")); });
+  });
+
+  /* ── 七張證據卡：展開才算互動（收合不送） ── */
+  $$(".proof .card").forEach(function(c, i){
+    c.addEventListener("click", function(){
+      if (c.getAttribute("aria-expanded") === "true"){
+        hyInteract("reveal", "proof_" + (i + 1 < 10 ? "0" : "") + (i + 1), i + 1);
+      }
+    });
+  });
+
+  /* ── 郵筒投遞：第 1 / 4 / 10 封各回報一次 ── */
+  var posts = 0, postBtn = document.getElementById("postBtn");
+  if (postBtn) postBtn.addEventListener("click", function(){
+    posts = posts + 1;
+    if (posts === 1 || posts === 4 || posts === 10) hyInteract("act", "post_letter", posts);
+  });
+
+  /* ── 送他飛一趟：第 1 / 3 / 6 趟各回報一次 ── */
+  var flights = 0, flyBtn = document.getElementById("flyBtn");
+  if (flyBtn) flyBtn.addEventListener("click", function(){
+    flights = flights + 1;
+    if (flights === 1 || flights === 3 || flights === 6) hyInteract("play", "flight", flights);
+  });
+
+  /* ── 三封信 ── */
+  $$(".lines details.letter").forEach(function(d, i){
+    d.addEventListener("toggle", function(){
+      if (d.open) hyInteract("reveal", "letter_" + (i + 1), i + 1);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

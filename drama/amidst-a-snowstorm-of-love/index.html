@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Travelpayouts Drive（放在 head 最前面） -->
+<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.setAttribute("data-cmp-ab","2");
+      script.src = 'https://emrld.ltd/NTc4NjI0.js?t=578624';
+      document.head.appendChild(script);
+  })();
+</script>
+
+<!-- Google AdSense（Auto ads） -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" crossorigin="anonymous"></script>
+<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href]').forEach(function(a){a.setAttribute('data-google-vignette','false')})});</script>
+<style>
+.kh-ad{display:block;width:100%;max-width:728px;margin:48px auto;padding:0 16px;text-align:center;clear:both;box-sizing:border-box}
+.kh-lift{position:relative;z-index:6}
+.kh-ad__label{display:block;font-size:12px;letter-spacing:.08em;opacity:.6;margin-bottom:6px;line-height:1.4}
+</style>
+
+
+<title>在暴雪時分｜九顆球，一場雪</title>
+<meta name="description" content="和喜歡的人一起，等紅燈也不覺得漫長。他打司諾克，她打九球，兩張球檯唯一相同的是那顆白球。用九顆球拆《在暴雪時分》，附赫爾辛基取景地。">
+<link rel="canonical" href="https://story.knittinghiyori.com/drama/amidst-a-snowstorm-of-love/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在暴雪時分｜九顆球，一場雪">
+<meta property="og:description" content="和喜歡的人一起，等紅燈也不覺得漫長。">
+<meta property="og:url" content="https://story.knittinghiyori.com/drama/amidst-a-snowstorm-of-love/">
+<meta property="og:image" content="https://story.knittinghiyori.com/drama/amidst-a-snowstorm-of-love/og.jpg">
+<meta name="theme-color" content="#dce9f5">
+
+<link rel="icon" href="/icons/favicon.ico" sizes="any">
+<link rel="icon" href="/icons/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script>
+  var HY_STORY_ID    = 'amidst-a-snowstorm-of-love';
+  var HY_STORY_TITLE = '在暴雪時分｜九顆球，一場雪';
+  var HY_PAGE_LANG   = 'zh-Hant';
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZHTYTRMQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZQZHTYTRMQ', {
+    page_title: HY_STORY_TITLE,
+    cookie_domain: '.knittinghiyori.com'
+  });
+  gtag('set', {
+    story_id: HY_STORY_ID,
+    page_lang: HY_PAGE_LANG,
+    content_group: 'interactive-story'
+  });
+</script>
+
+<script>
+(function(){
+  var started = false;
+  var completed = false;
+  var interactions = 0;
+  var maxScroll = 0;
+  var seenSections = {};
+  var progressMarks = {25:false,50:false,75:false,100:false};
+
+  window.hyEvent = function(name, params){
+    var p = params || {};
+    p.story_id = HY_STORY_ID;
+    if (typeof gtag === 'function') { gtag('event', name, p); }
+  };
+
+  window.hyStart = function(entryPoint){
+    if (started) return;
+    started = true;
+    hyEvent('story_start', { entry_point: entryPoint || 'scroll' });
+  };
+
+  window.hyInteract = function(type, id, index){
+    hyStart('interaction');
+    interactions++;
+    hyEvent('interaction', {
+      interaction_type: type,
+      interaction_id: id,
+      interaction_index: (typeof index === 'number') ? index : interactions
+    });
+  };
+
+  window.hySection = function(sectionId, sectionIndex){
+    if (seenSections[sectionId]) return;
+    seenSections[sectionId] = true;
+    hyEvent('section_view', {
+      section_id: sectionId,
+      section_index: Number(sectionIndex) || 0
+    });
+  };
+
+  window.hyComplete = function(){
+    if (completed) return;
+    completed = true;
+    hyEvent('story_complete', {
+      interactions_count: interactions,
+      max_scroll: maxScroll
+    });
+  };
+
+  window.hyCount = function(){ return interactions; };
+
+  window.hyCompleteAtScroll = function(){
+    if (maxScroll >= 95) hyComplete();
+  };
+
+  function trackScroll(){
+    var doc = document.documentElement;
+    var h = doc.scrollHeight - window.innerHeight;
+    var pct = h > 0 ? Math.round((window.scrollY / h) * 100) : 100;
+    if (pct > maxScroll) maxScroll = Math.min(pct, 100);
+    if (maxScroll > 5) hyStart('scroll');
+    [25,50,75,100].forEach(function(m){
+      if (!progressMarks[m] && maxScroll >= m){
+        progressMarks[m] = true;
+        hyEvent('story_progress', { percent_scrolled: m });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', trackScroll, { passive: true });
+  window.addEventListener('load', trackScroll);
+
+  document.addEventListener('click', function(e){
+    var el = e.target.closest ? e.target.closest('[data-cta]') : null;
+    if (!el) return;
+    hyEvent('cta_click', {
+      cta_id: el.getAttribute('data-cta'),
+      cta_type: el.getAttribute('data-cta-type') || 'article',
+      link_url: el.getAttribute('href') || ''
+    });
+  }, true);
+
+  document.addEventListener('visibilitychange', function(){
+    if (document.visibilityState === 'hidden'){
+      hyEvent('story_exit', {
+        interactions_count: interactions,
+        max_scroll: maxScroll
+      });
+    }
+  });
+})();
+</script>
+
+<style>
+:root{
+  --ice:#f4f8fc;
+  --sky:#dce9f5;
+  --frost:#b9d0e4;
+  --line:#dde7f0;
+  --ink:#1e2f44;
+  --text:#33465c;
+  --muted:#6e849b;
+  --felt:#2d6b52;
+  --felt-dk:#24553f;
+  --felt-soft:#e6f0ea;
+  --heart:#e2474f;
+  --amber:#a8741f;
+  --white:#fff;
+  --b1:#f2c94c; --b2:#2f6fd0; --b3:#d94a3d; --b4:#7b4fa8; --b5:#e88c2f;
+  --b6:#2f9e5f; --b7:#8c3a3a; --b8:#141414; --b9:#f2c94c;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:linear-gradient(180deg,#cfe0f0 0px,#e6eff8 520px,var(--ice) 900px);
+  background-color:var(--ice);
+  color:var(--text);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  font-weight:400;
+  line-height:1.95;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:"Noto Serif TC","Songti TC",serif;color:var(--ink);font-weight:600;}
+a{color:var(--felt);}
+button,a{-webkit-tap-highlight-color:transparent;}
+:focus-visible{outline:2px solid var(--felt);outline-offset:3px;}
+
+.wrap{max-width:640px;margin:0 auto;padding:0 20px;}
+
+#snow{position:fixed;inset:0;pointer-events:none;z-index:1;transition:opacity 2.4s ease;}
+#snow.off{opacity:0;}
+#snow i{position:absolute;top:-8vh;display:block;border-radius:50%;background:#fff;box-shadow:0 0 3px rgba(120,160,200,.55);animation:fall linear infinite;}
+@keyframes fall{0%{transform:translate3d(0,-10vh,0);}100%{transform:translate3d(var(--dx,0px),110vh,0);}}
+
+.hero{position:relative;z-index:2;padding:54px 0 6px;text-align:center;}
+.kicker{font-size:13px;letter-spacing:.2em;color:#5d7894;margin:0 0 26px;}
+.heart{display:inline-grid;place-items:center;width:78px;height:78px;margin:0 0 22px;}
+.heart svg{width:62px;height:62px;overflow:visible;filter:drop-shadow(0 0 10px rgba(226,71,79,.55)) drop-shadow(0 0 22px rgba(226,71,79,.3));animation:beat 1.6s ease-in-out infinite;transform-origin:50% 55%;}
+.heart path{fill:var(--heart);}
+@keyframes beat{0%,100%{transform:scale(1);}14%{transform:scale(1.13);}28%{transform:scale(1);}42%{transform:scale(1.08);}56%{transform:scale(1);}}
+.heart.go svg{animation:bigbeat .7s ease-out 1, beat 2.4s ease-in-out .7s infinite;}
+@keyframes bigbeat{0%{transform:scale(1);}35%{transform:scale(1.32);filter:drop-shadow(0 0 24px rgba(226,71,79,.8));}100%{transform:scale(1);}}
+.hero h1{font-size:clamp(27px,7.2vw,40px);line-height:1.5;margin:0 0 14px;font-weight:700;letter-spacing:.02em;}
+.hero h1 span{display:block;}
+.srcnote{font-size:13px;color:var(--muted);letter-spacing:.12em;margin:0 0 24px;}
+.lead{font-family:"Noto Serif TC",serif;font-size:17px;line-height:2.1;color:#3c5570;margin:0 auto 30px;max-width:22em;}
+
+.breakbtn{
+  display:inline-block;padding:15px 50px;border:0;border-radius:999px;
+  background:var(--felt);color:#fff;
+  font-family:"Noto Serif TC",serif;font-size:18px;letter-spacing:.32em;text-indent:.32em;
+  box-shadow:0 6px 16px rgba(45,107,82,.3);cursor:pointer;
+  transition:background .2s ease,transform .12s ease,box-shadow .2s ease;
+}
+.breakbtn:hover{background:var(--felt-dk);}
+.breakbtn:active{transform:scale(.95);background:#1b4231;box-shadow:0 2px 6px rgba(45,107,82,.3);}
+
+.tablewrap{position:relative;z-index:2;margin:30px 0 6px;}
+.felt{
+  position:relative;margin:0 auto;max-width:520px;aspect-ratio:3/4;
+  background:radial-gradient(ellipse at 50% 38%,#3a7d61 0%,var(--felt) 58%,#22533f 100%);
+  border:12px solid #cdb391;border-radius:18px;
+  box-shadow:0 20px 44px rgba(40,70,100,.22),inset 0 0 0 2px #b89c78,inset 0 0 50px rgba(0,0,0,.28);
+  touch-action:none;
+}
+.pocket{position:absolute;width:26px;height:26px;border-radius:50%;background:#0c1712;box-shadow:inset 0 2px 5px rgba(0,0,0,.9);}
+.pk-tl{top:-7px;left:-7px;} .pk-tr{top:-7px;right:-7px;}
+.pk-bl{bottom:-7px;left:-7px;} .pk-br{bottom:-7px;right:-7px;}
+.pk-ml{top:50%;left:-9px;margin-top:-13px;width:22px;}
+.pk-mr{top:50%;right:-9px;margin-top:-13px;width:22px;}
+
+.ball{
+  position:absolute;width:12.5%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);
+  transition:left .85s cubic-bezier(.22,.9,.3,1),top .85s cubic-bezier(.22,.9,.3,1),opacity .4s ease,transform .4s ease;
+  box-shadow:0 4px 9px rgba(0,0,0,.45),inset -4px -6px 12px rgba(0,0,0,.4),inset 4px 5px 10px rgba(255,255,255,.3);
+  display:grid;place-items:center;font-family:"Noto Serif TC",serif;font-weight:700;
+  font-size:clamp(12px,3.2vw,17px);color:#1a1a1a;user-select:none;
+}
+.ball .num{position:relative;z-index:2;width:58%;aspect-ratio:1;border-radius:50%;background:#fbf8f2;display:grid;place-items:center;line-height:1;box-shadow:inset 0 1px 3px rgba(0,0,0,.18);}
+.ball.stripe{background:#fbf8f2 !important;overflow:hidden;}
+.ball.stripe::before{content:"";position:absolute;left:0;right:0;top:26%;height:48%;background:var(--b9);}
+.ball.next{animation:pulse 1.8s ease-in-out infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 4px 9px rgba(0,0,0,.45),inset -4px -6px 12px rgba(0,0,0,.4),inset 4px 5px 10px rgba(255,255,255,.3),0 0 0 0 rgba(255,255,255,.7);}50%{box-shadow:0 4px 9px rgba(0,0,0,.45),inset -4px -6px 12px rgba(0,0,0,.4),inset 4px 5px 10px rgba(255,255,255,.3),0 0 0 11px rgba(255,255,255,0);}}
+.ball.gone{opacity:0;transform:translate(-50%,-50%) scale(.35);pointer-events:none;}
+.ball.wrong{animation:shake .4s ease;}
+@keyframes shake{0%,100%{transform:translate(-50%,-50%);}25%{transform:translate(-58%,-50%);}75%{transform:translate(-42%,-50%);}}
+#cue{background:radial-gradient(circle at 36% 30%,#fff 0%,#f3f0e8 45%,#cfc9bd 100%);cursor:grab;z-index:5;}
+#cue.dragging{cursor:grabbing;transition:none;}
+#cue.shoot{transition:left .42s cubic-bezier(.3,0,.2,1),top .42s cubic-bezier(.3,0,.2,1);}
+#cue::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1.5px dashed rgba(255,255,255,.7);animation:breathe 2.6s ease-in-out infinite;}
+#cue.touched::after{display:none;}
+@keyframes breathe{0%,100%{opacity:.85;transform:scale(1);}50%{opacity:.3;transform:scale(1.14);}}
+#aim{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4;}
+#aim line{stroke:rgba(255,255,255,.6);stroke-width:2;stroke-dasharray:5 7;}
+
+.hint{position:relative;z-index:2;text-align:center;font-size:14.5px;color:var(--muted);min-height:2.6em;margin:16px auto 0;max-width:22em;line-height:1.75;}
+.hint b{color:var(--felt);font-weight:500;}
+
+.rack{position:relative;z-index:2;display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin:18px auto 0;}
+.pip{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--frost);display:grid;place-items:center;font-size:10px;color:var(--muted);font-family:"Noto Serif TC",serif;background:rgba(255,255,255,.6);}
+.pip.done{border-color:transparent;color:#1a1a1a;font-weight:700;}
+
+.skip{display:block;margin:26px auto 0;background:none;border:0;color:var(--muted);font-size:14px;text-decoration:underline;text-underline-offset:4px;cursor:pointer;font-family:inherit;padding:8px 12px;border-radius:6px;transition:color .2s ease,background .2s ease;}
+.skip:hover{color:var(--felt);}
+.skip:active{color:var(--felt);background:var(--felt-soft);}
+
+main{position:relative;z-index:2;}
+.seg{display:none;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:30px 22px 24px;margin-top:34px;box-shadow:0 8px 24px rgba(45,80,120,.07);}
+.seg.on{display:block;animation:rise .7s ease both;}
+@keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+.term{display:flex;align-items:center;gap:12px;}
+.term .no{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;font-family:"Noto Serif TC",serif;font-weight:700;font-size:15px;box-shadow:inset -3px -4px 8px rgba(0,0,0,.3),inset 3px 3px 6px rgba(255,255,255,.35);}
+.seg h2{font-size:25px;margin:0;line-height:1.4;}
+.en{font-family:"Noto Serif TC",serif;font-size:14px;color:var(--muted);letter-spacing:.06em;margin:4px 0 22px 46px;}
+.seg h3{font-size:19.5px;line-height:1.7;margin:0 0 20px;color:var(--felt-dk);font-weight:500;}
+.label{font-size:12.5px;color:var(--muted);letter-spacing:.14em;margin:26px 0 8px;}
+.seg p{margin:0 0 16px;font-size:16px;}
+.quote{border-left:3px solid var(--felt);padding:4px 0 4px 18px;margin:0 0 18px;font-family:"Noto Serif TC",serif;font-size:17.5px;line-height:2;color:var(--ink);}
+.quote span{display:block;}
+.quote span::before{content:attr(data-who);color:var(--muted);margin-right:.6em;font-size:14px;}
+.quote.novel{border-left-color:var(--frost);background:var(--ice);border-radius:0 10px 10px 0;padding:12px 16px 12px 18px;font-size:17px;}
+.note{font-size:14.5px;color:var(--muted);line-height:1.85;}
+.todo{display:inline-block;margin:0 0 16px;padding:6px 12px;border-radius:4px;background:#fdf4e3;border:1px solid #ecd3a4;color:var(--amber);font-size:13px;line-height:1.6;}
+.venue{margin:22px 0 0;padding:18px;border-radius:12px;background:var(--ice);font-size:14.5px;line-height:1.85;color:var(--muted);}
+.venue strong{display:block;color:var(--ink);font-weight:600;font-size:16px;margin-bottom:4px;font-family:"Noto Serif TC",serif;}
+a.golink{display:inline-block;margin-top:12px;padding:10px 20px;border:1.5px solid var(--felt);border-radius:999px;background:var(--white);color:var(--felt);text-decoration:none;font-size:14.5px;font-weight:500;line-height:1.4;transition:background .2s ease,color .2s ease,transform .12s ease;}
+a.golink:hover{background:var(--felt);color:#fff;}
+a.golink:active{transform:scale(.95);background:var(--felt-dk);border-color:var(--felt-dk);color:#fff;}
+.nextbtn{display:block;width:100%;margin:28px 0 0;padding:15px;background:var(--felt-soft);border:1.5px solid transparent;border-radius:999px;color:var(--felt-dk);font-family:"Noto Serif TC",serif;font-size:16px;font-weight:600;letter-spacing:.08em;cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .12s ease;}
+.nextbtn:hover{border-color:var(--felt);}
+.nextbtn:active{transform:scale(.97);background:#d3e6da;border-color:var(--felt);}
+
+#whiteout{position:fixed;inset:0;background:#fff;z-index:60;opacity:0;pointer-events:none;transition:opacity 1.1s ease;}
+#whiteout.on{opacity:1;}
+#whiteout.fade{opacity:0;transition:opacity 2s ease;}
+
+#finale{text-align:center;}
+.close{font-family:"Noto Serif TC",serif;font-size:clamp(20px,5.4vw,25px);line-height:2.2;color:var(--ink);margin:10px 0 34px;}
+.close span{display:block;}
+.close .heartline{color:var(--heart);}
+.support{border-top:1px solid var(--line);padding-top:30px;}
+.support h2{font-size:21px;margin:0 0 10px;}
+.support p{font-size:15px;color:var(--muted);margin:0 auto 22px;max-width:24em;}
+.btns{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+a.btn{display:block;padding:15px;border-radius:999px;text-decoration:none;font-size:15.5px;font-family:"Noto Serif TC",serif;font-weight:600;letter-spacing:.03em;transition:background .2s ease,color .2s ease,transform .12s ease,box-shadow .2s ease;}
+a.btn-solid{background:var(--felt);color:#fff;box-shadow:0 5px 14px rgba(45,107,82,.28);}
+a.btn-solid:hover{background:var(--felt-dk);color:#fff;}
+a.btn-solid:active{transform:scale(.96);background:#1b4231;box-shadow:0 1px 4px rgba(45,107,82,.3);}
+a.btn-ghost{background:var(--white);color:var(--felt);border:1.5px solid var(--felt);}
+a.btn-ghost:hover{background:var(--felt-soft);color:var(--felt-dk);}
+a.btn-ghost:active{transform:scale(.96);background:#d3e6da;}
+.disc{font-size:12.5px;color:var(--muted);line-height:1.8;margin:24px auto 0;max-width:26em;}
+footer{text-align:center;padding:40px 0 56px;font-size:13px;color:var(--muted);position:relative;z-index:2;}
+footer a{color:var(--muted);}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important;}
+  #snow{display:none;}
+}
+</style>
+<meta name="spec-version" content="core-v1.1/story-v1.1">
+</head>
+<body>
+
+<div id="snow" aria-hidden="true"></div>
+<div id="whiteout" aria-hidden="true"></div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="kicker">在暴雪時分 · 九顆球，一場雪</p>
+    <div class="heart" id="heart" aria-hidden="true">
+      <svg viewBox="0 0 24 22"><path d="M12 21.2l-1.5-1.36C5.1 14.94 1.5 11.68 1.5 7.62 1.5 4.36 4.06 1.8 7.32 1.8c1.84 0 3.61.86 4.68 2.21 1.07-1.35 2.84-2.21 4.68-2.21 3.26 0 5.82 2.56 5.82 5.82 0 4.06-3.6 7.32-9 12.23z"/></svg>
+    </div>
+    <h1><span>和喜歡的人一起，</span><span>等紅燈也不覺得漫長</span></h1>
+    <p class="srcnote">出自原著</p>
+    <p class="lead">
+      暴雪讓所有航班停飛，整座城市都在等。<br>
+      有人等雪停，有人等一顆球落袋。
+    </p>
+    <button class="breakbtn" id="breakBtn" type="button">開 球</button>
+  </header>
+
+  <div class="tablewrap">
+    <div class="felt" id="felt">
+      <span class="pocket pk-tl"></span><span class="pocket pk-tr"></span>
+      <span class="pocket pk-ml"></span><span class="pocket pk-mr"></span>
+      <span class="pocket pk-bl"></span><span class="pocket pk-br"></span>
+      <svg id="aim" aria-hidden="true"><line id="aimline" x1="0" y1="0" x2="0" y2="0" style="display:none"></line></svg>
+    </div>
+  </div>
+
+  <p class="hint" id="hint"></p>
+  <div class="rack" id="rack" aria-hidden="true"></div>
+  <button class="skip" id="skipBtn" type="button">不玩了，直接讀九段文字</button>
+
+  <main id="segs"></main>
+
+</div>
+
+<!-- Google AdSense 手動廣告單元 -->
+<div class="kh-ad kh-lift" aria-label="贊助內容">
+  <span class="kh-ad__label">贊助內容</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2022028565680247" data-ad-slot="2285424505" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<div class="wrap"><footer>編織日和 · <a href="https://knittinghiyori.com/">knittinghiyori.com</a></footer></div>
+<script>
+(function(){
+  var TERMS = [
+    {n:1, zh:'開球',   en:'Break',         color:'var(--b1)', fg:'#1a1a1a'},
+    {n:2, zh:'母球',   en:'Cue ball',      color:'var(--b2)', fg:'#fff'},
+    {n:3, zh:'定桿',   en:'Stop shot',     color:'var(--b3)', fg:'#fff'},
+    {n:4, zh:'安全球', en:'Safety',        color:'var(--b4)', fg:'#fff'},
+    {n:5, zh:'拉桿',   en:'Draw shot',     color:'var(--b5)', fg:'#1a1a1a'},
+    {n:6, zh:'走位',   en:'Position play', color:'var(--b6)', fg:'#fff'},
+    {n:7, zh:'加塞',   en:'Side spin',     color:'var(--b7)', fg:'#fff'},
+    {n:8, zh:'決勝局', en:'Decider',       color:'var(--b8)', fg:'#fff'},
+    {n:9, zh:'清檯',   en:'Run out',       color:'var(--b9)', fg:'#1a1a1a', stripe:true}
+  ];
+  var SEC_IDS = ['break','cue_ball','stop_shot','safety','draw_shot','position','side_spin','decider','run_out'];
+  var RACK = [{n:1,x:50,y:16},{n:2,x:42,y:28},{n:3,x:58,y:28},{n:4,x:34,y:40},{n:9,x:50,y:40},{n:5,x:66,y:40},{n:6,x:42,y:52},{n:7,x:58,y:52},{n:8,x:50,y:64}];
+  var SCATTER = {1:{x:20,y:20},2:{x:50,y:13},3:{x:80,y:24},4:{x:15,y:45},5:{x:41,y:38},6:{x:70,y:47},7:{x:87,y:64},8:{x:29,y:68},9:{x:62,y:72}};
+  var CUE_START = {x:50, y:88};
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var felt = document.getElementById('felt');
+  var hint = document.getElementById('hint');
+  var rackEl = document.getElementById('rack');
+  var breakBtn = document.getElementById('breakBtn');
+  var skipBtn = document.getElementById('skipBtn');
+  var aimline = document.getElementById('aimline');
+
+  var balls = {}, cue, broken = false, next = 1, pocketed = {};
+
+  function mkBall(t, pos){
+    var el = document.createElement('div');
+    el.className = 'ball' + (t.stripe ? ' stripe' : '');
+    el.style.background = t.color;
+    el.style.left = pos.x + '%';
+    el.style.top = pos.y + '%';
+    el.setAttribute('role','img');
+    el.setAttribute('aria-label', t.n + ' 號球｜' + t.zh);
+    var num = document.createElement('span');
+    num.className = 'num';
+    num.textContent = t.n;
+    el.appendChild(num);
+    felt.appendChild(el);
+    return el;
+  }
+  TERMS.forEach(function(t){
+    var p = RACK.filter(function(r){ return r.n === t.n; })[0];
+    balls[t.n] = mkBall(t, p);
+    var pip = document.createElement('span');
+    pip.className = 'pip'; pip.id = 'pip' + t.n; pip.textContent = t.n;
+    rackEl.appendChild(pip);
+  });
+
+  cue = document.createElement('div');
+  cue.id = 'cue'; cue.className = 'ball';
+  cue.style.left = CUE_START.x + '%'; cue.style.top = CUE_START.y + '%';
+  cue.setAttribute('tabindex','0'); cue.setAttribute('role','button');
+  cue.setAttribute('aria-label','母球，拖曳並瞄準下一顆號碼球，或按 Enter 擊球');
+  cue.style.display = 'none';
+  felt.appendChild(cue);
+
+  function say(html){ hint.innerHTML = html; }
+
+  (function snow(){
+    if (reduce) return;
+    var box = document.getElementById('snow');
+    var n = window.innerWidth < 640 ? 34 : 56;
+    for (var i=0;i<n;i++){
+      var f = document.createElement('i');
+      var s = 2 + Math.random()*4;
+      f.style.width = s+'px'; f.style.height = s+'px';
+      f.style.left = (Math.random()*100)+'vw';
+      f.style.setProperty('--dx', (Math.random()*90-45)+'px');
+      f.style.animationDuration = (9 + Math.random()*13)+'s';
+      f.style.animationDelay = (-Math.random()*20)+'s';
+      f.style.opacity = (0.55 + Math.random()*0.45);
+      box.appendChild(f);
+    }
+  })();
+
+  breakBtn.addEventListener('click', function(){
+    if (broken) return;
+    broken = true;
+    hyStart('break_button');
+    hyInteract('act', 'break', 0);
+    document.getElementById('heart').classList.add('go');
+    breakBtn.style.display = 'none';
+    TERMS.forEach(function(t){
+      balls[t.n].style.left = SCATTER[t.n].x + '%';
+      balls[t.n].style.top = SCATTER[t.n].y + '%';
+    });
+    cue.style.display = '';
+    setTimeout(function(){
+      markNext();
+      say('把<b>母球</b>拖向 <b>1 號</b>，放開。<br>九球的規則：只能從最小號打起。');
+    }, 700);
+    setTimeout(function(){
+      felt.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'});
+    }, 250);
+  });
+
+  function markNext(){
+    Object.keys(balls).forEach(function(k){ balls[k].classList.remove('next'); });
+    if (next <= 9 && balls[next]) balls[next].classList.add('next');
+  }
+
+  var dragging = false, rect = null;
+  function pct(e){
+    var pt = (e.touches && e.touches[0]) ? e.touches[0] : e;
+    return { x: ((pt.clientX - rect.left) / rect.width) * 100, y: ((pt.clientY - rect.top) / rect.height) * 100 };
+  }
+  function startDrag(e){
+    if (!broken || next > 9) return;
+    dragging = true;
+    rect = felt.getBoundingClientRect();
+    cue.classList.add('dragging','touched');
+    cue.classList.remove('shoot');
+    e.preventDefault();
+  }
+  function moveDrag(e){
+    if (!dragging) return;
+    var p = pct(e);
+    p.x = Math.max(4, Math.min(96, p.x));
+    p.y = Math.max(4, Math.min(96, p.y));
+    cue.style.left = p.x + '%'; cue.style.top = p.y + '%';
+    var target = balls[next];
+    if (target){
+      aimline.style.display = '';
+      aimline.setAttribute('x1', (p.x/100)*rect.width);
+      aimline.setAttribute('y1', (p.y/100)*rect.height);
+      aimline.setAttribute('x2', (parseFloat(target.style.left)/100)*rect.width);
+      aimline.setAttribute('y2', (parseFloat(target.style.top)/100)*rect.height);
+    }
+    e.preventDefault();
+  }
+  function endDrag(){
+    if (!dragging) return;
+    dragging = false;
+    cue.classList.remove('dragging');
+    aimline.style.display = 'none';
+    resolveShot();
+  }
+  function dist(ax,ay,bx,by){ var dx = ax-bx, dy = (ay-by)*0.75; return Math.sqrt(dx*dx + dy*dy); }
+
+  function resolveShot(){
+    var cx = parseFloat(cue.style.left), cy = parseFloat(cue.style.top);
+    var best = null, bestD = 999;
+    TERMS.forEach(function(t){
+      if (pocketed[t.n]) return;
+      var b = balls[t.n];
+      var d = dist(cx, cy, parseFloat(b.style.left), parseFloat(b.style.top));
+      if (d < bestD){ bestD = d; best = t.n; }
+    });
+    if (!best || bestD > 20){
+      say('母球停在空檯上。<br>把它拖到 <b>' + next + ' 號</b>旁邊再放開。');
+      return;
+    }
+    if (best !== next){
+      balls[best].classList.add('wrong');
+      setTimeout(function(){ balls[best].classList.remove('wrong'); }, 420);
+      hyInteract('act', 'foul_' + best, best);
+      say('犯規。九球一定要先碰<b>最小號</b>，現在檯上最小的是 <b>' + next + ' 號</b>。');
+      return;
+    }
+    pocket(next);
+  }
+
+  cue.addEventListener('mousedown', startDrag);
+  cue.addEventListener('touchstart', startDrag, {passive:false});
+  window.addEventListener('mousemove', moveDrag);
+  window.addEventListener('touchmove', moveDrag, {passive:false});
+  window.addEventListener('mouseup', endDrag);
+  window.addEventListener('touchend', endDrag);
+  cue.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); if (broken && next <= 9) pocket(next); }
+  });
+
+  function colorPip(n){
+    var t = TERMS[n-1], pip = document.getElementById('pip'+n);
+    pip.classList.add('done');
+    if (t.stripe){ pip.style.background = '#fbf8f2'; pip.style.boxShadow = 'inset 0 0 0 5px ' + t.color; }
+    else { pip.style.background = t.color; pip.style.color = t.fg; }
+  }
+
+  function pocket(n){
+    if (pocketed[n]) return;
+    pocketed[n] = true;
+    var t = TERMS[n-1], b = balls[n];
+    if (n < 9){
+      b.style.left = (n % 2 ? '2%' : '98%');
+      b.style.top = (n <= 4 ? '2%' : '98%');
+      setTimeout(function(){ b.classList.add('gone'); }, 420);
+      cue.classList.add('shoot');
+      cue.style.left = (parseFloat(b.style.left) > 50 ? 72 : 28) + '%';
+      cue.style.top = (48 + Math.random()*22) + '%';
+    } else {
+      b.style.left = '96%'; b.style.top = '4%';
+    }
+    colorPip(n);
+    hyInteract('act', 'ball_' + n, n);
+    hyEvent('ball_pocket', { ball_number: n, term: t.en.toLowerCase().replace(/ /g,'_') });
+    next = n + 1;
+    markNext();
+    reveal(n);
+    if (n === 9){ cue.style.opacity = '0'; say('9 號停在袋口。'); finish(); }
+    else { say('<b>' + n + ' 號</b>落袋。往下讀。'); }
+  }
+
+  function reveal(n){
+    var el = document.getElementById('seg'+n);
+    if (!el) return;
+    el.classList.add('on');
+    hySection(SEC_IDS[n-1], n);
+    setTimeout(function(){ el.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'}); }, 260);
+  }
+
+  function finish(){
+    var w = document.getElementById('whiteout');
+    setTimeout(function(){
+      w.classList.add('on');
+      setTimeout(function(){
+        document.getElementById('snow').classList.add('off');
+        w.classList.add('fade');
+        var f = document.getElementById('finale');
+        if (f) f.classList.add('on');
+        hyComplete();
+        setTimeout(function(){ if (f) f.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'}); }, 500);
+      }, 1300);
+    }, 700);
+  }
+
+  skipBtn.addEventListener('click', function(){
+    hyInteract('act', 'skip_to_text', 0);
+    for (var i=1;i<=9;i++){
+      var el = document.getElementById('seg'+i);
+      if (el && !el.classList.contains('on')){ el.classList.add('on'); hySection(SEC_IDS[i-1], i); }
+      if (!pocketed[i]){ pocketed[i] = true; colorPip(i); }
+    }
+    next = 10; markNext();
+    var fin = document.getElementById('finale');
+    if (fin) fin.classList.add('on');
+    hyComplete();
+    skipBtn.style.display = 'none';
+    say('九段都攤開了。');
+    document.getElementById('seg1').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+  });
+
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('.nextbtn') : null;
+    if (!b) return;
+    felt.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'});
+    say('輪到 <b>' + next + ' 號</b>。把母球拖過去。');
+  });
+
+  window.hyBuildSegments = function(html){ document.getElementById('segs').innerHTML = html; };
+})();
+</script>
+<script>
+(function(){
+  var C = [];
+  var BALL = {1:['var(--b1)','#1a1a1a'],2:['var(--b2)','#fff'],3:['var(--b3)','#fff'],4:['var(--b4)','#fff'],5:['var(--b5)','#1a1a1a'],6:['var(--b6)','#fff'],7:['var(--b7)','#fff'],8:['var(--b8)','#fff'],9:['#fbf8f2','#1a1a1a']};
+
+  function venue(name, body, href, ctaId, ctaText){
+    var link = href ? '<br><a class="golink" href="' + href + '" target="_blank" rel="sponsored nofollow noopener" data-cta="' + ctaId + '" data-cta-type="travel">' + ctaText + '</a>' : '';
+    return '<div class="venue"><strong>取景地｜' + name + '</strong>' + body + link + '</div>';
+  }
+
+  function seg(n, zh, en, interp, body, extra, last){
+    var c = BALL[n];
+    var ring = n === 9 ? ';box-shadow:inset 0 0 0 5px var(--b9)' : '';
+    return '<section class="seg" id="seg' + n + '" data-sec="' + n + '">' +
+      '<div class="term"><span class="no" style="background:' + c[0] + ';color:' + c[1] + ring + '">' + n + '</span><h2>' + zh + '</h2></div>' +
+      '<p class="en">' + en + '</p>' +
+      '<p class="label">解讀</p>' +
+      '<h3>' + interp + '</h3>' +
+      body + (extra || '') +
+      (last ? '' : '<button class="nextbtn" type="button">回球檯，打下一顆</button>') +
+      '</section>';
+  }
+
+  C.push(seg(1,'開球','Break',
+    '開球那一桿不需要準頭，只需要力氣。你把整齊的東西打散，才知道下一步能打哪一顆。',
+    '<p class="label">劇中場景｜第 1 集</p>' +
+    '<p>十年難遇的暴雪，所有航班停飛。殷果第一次到赫新，準備打人生第一場國際九球公開賽。深夜的酒吧「Red Fish」，她和林亦揚第一次遇見。</p>' +
+    '<p class="label">原著</p><div class="quote novel"><span>沒有非去不可的地方，沒有真心想要的東西，更沒有非要在一起的人，直到——在暴雪時分，遇到你。</span></div>',
+    venue('Storyville','劇中的 Red Fish 真實存在，本名 Storyville，1993 年開業的爵士俱樂部（Museokatu 8）。下雪時坐靠窗的位置，就是那顆鏡頭的視角。注意：週一到週三公休。',
+      'https://trip.tpk.ro/ED54YLom','travel_helsinki_stay','查赫爾辛基機票與住宿')
+  ));
+
+  C.push(seg(2,'母球','Cue ball',
+    '母球自己不進袋，它只負責把別的球送進去。',
+    '<p class="label">劇中場景｜第 2 集</p>' +
+    '<p>球房裡再遇。林亦揚，賀老的關門弟子，十三歲奪冠的司諾克天才。殷果，被表哥孟曉東帶大的職業九球選手，人稱「情緒大師」，一上檯就是沒有情緒的贏球機器。</p>' +
+    '<p>他打司諾克，她打九球。司諾克檯上有二十二顆球，九球檯上只有十顆。兩張球檯唯一相同的，是那顆白球。</p>' +
+    '<p class="label">解讀</p>' +
+    '<p>儘管兩張球檯的規則不同，兩個人的性格也不同，他把母球推向她。在她心裡，這才是他們認識的開始。</p>' +
+    '<p class="label">原著</p><div class="quote novel"><span>一個女孩，讓他第一眼就想認識，二十七年來，僅此一個。</span></div>',
+    venue('三家球室','劇組在赫爾辛基借了三家不同的球室：Groovetown Jack 是日常練球的地方，Chaplin 是一桿清檯那場，Hotel Finn 是林老闆球社的門口。一般劇組一間拍到底，這部沒有。','','','')
+  ));
+
+  C.push(seg(3,'定桿','Stop shot',
+    '定桿是母球打完就停在原地不動。看起來是最乾淨的一桿，其實是最用力的一桿：你要花很大的勁，才能讓自己不往前、也不往後。',
+    '<p class="label">劇中背景</p>' +
+    '<p>他在一場比賽裡對裁判判罰有異議，爭執中衝撞了裁判，被禁賽。年少氣盛，他直接宣布退役，離開東新城。後來在赫新大學主修傳播，努力證明自己放下球桿也能過得很好，但他每天還是練球，只是跨不出自尊心那一步。</p>' +
+    '<p class="note">綽號「頓挫」出自「抑揚頓挫」，與「亦揚」諧音。一個名字裡同時藏著揚起來，和停下來。</p>' +
+    '<p class="label">原著</p><div class="quote novel"><span>消極情緒無法支撐一個人扛過所有苦難，只有熱愛，才能讓人咽下所有苦難，走到最後。</span></div>' +
+    '<p class="label">解讀</p><p>他沒有放下球桿，只是停在原地。撐著他每天回到球檯前的，不是不甘心，是還沒熄掉的那份熱愛。</p>',
+    ''
+  ));
+
+  C.push(seg(4,'安全球','Safety',
+    '打不進的時候，你不硬打，而是把母球停在對方難處理的位置。看起來是退讓，其實是把難題交給對方。所有沒說出口的話，都是安全球。',
+    '<p class="label">劇中場景｜第 5 集</p>' +
+    '<p>他請她喝了一杯昂貴的年份甜酒。</p>' +
+    '<p class="label">劇中台詞</p>' +
+    '<div class="quote"><span data-who="她">忘了問年份。</span><span data-who="他">你出生那年。</span></div>' +
+    '<p class="label">解讀</p>' +
+    '<p>他沒有說「我查過你」，他只說了一個年份。難題被推回她那一邊：要不要聽懂，是她決定的。</p>' +
+    '<p class="note">附帶一提：林亦揚是水瓶座；殷果的確切生日與星座，原著並未明確提及。</p>' +
+    '<p class="label">原著</p><div class="quote novel"><span>越在乎，越怕失去，在這一點上，其實沒有性別之分。</span></div>',
+    venue('Ravintola Messenius','1937 年開業的老派餐廳，白桌布、菜單很短（Messeniuksenkatu 7）。週日公休，價位偏高，建議訂位。','','','')
+  ));
+
+  C.push(seg(5,'拉桿','Draw shot',
+    '拉桿是球往前打進去了，母球卻退回原點。像一個人終於說出口，然後立刻後退一步，等對方決定要不要走過來。',
+    '<p class="label">劇中場景｜第 6 集</p>' +
+    '<p>林亦揚在洗衣房裡用手機向她告白。殷果出門透氣，走進一間糖果店，買了一顆愛心糖果回應他。</p>' +
+    '<p class="label">解讀</p>' +
+    '<p>他往前打了一桿，然後把球交給她。她的回答沒有用說的，是一顆心。</p>' +
+    '<p class="label">原著</p><div class="quote novel"><span>不是你的話，不會有主動靠近，不會有牽腸掛肚，更不會有方寸全亂。</span></div>',
+    venue('Roobertin Herkku','奶油色外牆配綠色招牌的復古糖果店（Fredrikinkatu 19）。同款糖不一定買得到，但紅白條紋的紙袋是同一款，走進去就認得出來。',
+      'https://getyourguide.tpk.ro/mvwJh6XA','travel_helsinki_tour','找赫爾辛基市區行程')
+  ));
+
+  C.push(seg(6,'走位','Position play',
+    '高手打的從來不是眼前這一顆，是打完之後母球停在哪裡。這一桿，是為了下一桿。',
+    '<p class="label">劇中場景｜第 7、9、14 集</p>' +
+    '<p>第 7 集，球室門口的一支打火機，和第一次牽手。第 9 集，天台上的第一個吻。第 14 集，他帶她開車兜風，上雪山、下海灘。</p>' +
+    '<p class="label">原著</p><div class="quote novel"><span>一段感情的開始階段是最美妙的，我不了解你，你不了解我，我渴望認識所有的、全部的你，而你也是。</span></div>',
+    venue('Ateljee Bar・法國安納西','天台吻在 Solo Sokos Hotel Torni 頂樓的 Ateljee Bar（Yrjönkatu 26），要先搭電梯再爬一段很窄的樓梯。第 14 集的雪山不在芬蘭，拍攝地是法國安納西（Annecy），阿爾卑斯山腳下。',
+      'https://trip.tpk.ro/HigOqGtA','travel_annecy','查安納西的機票與住宿')
+  ));
+
+  C.push(seg(7,'加塞','Side spin',
+    '加塞是給母球加上側旋，讓它撞到庫邊之後偏出你要的角度。旁人的力道會讓球偏移，但偏移不等於失誤，有時候那是唯一能繞過障礙的路。',
+    '<p class="label">劇中場景</p>' +
+    '<p>中央車站，一次又一次的送別。兩個人的隊在不同的地方，一個要回去比賽，一個留在原地。</p>' +
+    '<p class="label">原著</p><div class="quote novel"><span>最好的對手，就是最好的搭檔。</span></div>' +
+    '<p class="label">解讀</p><p>距離是那股側旋。兩個人都在往前打，只是球走的不是直線。</p>',
+    venue('赫爾辛基中央車站','Eliel Saarinen 設計、1919 年啟用，主入口兩側是 Emil Wikström 的「提燈人」（Kaivokatu 1）。要復刻兩人依依不捨的那顆鏡頭，找的是車站旁那座小亭子，不是正門。',
+      'https://trip.tpk.ro/KWsbBkUA','travel_station','查車站周邊住宿')
+  ));
+
+  C.push(seg(8,'決勝局','Decider',
+    '九球打到最後一局，比分咬平，誰先進 9 號誰贏。這一局不看你之前打得多好，只看你敢不敢再站上去一次。',
+    '<p class="label">劇中場景｜第 16 集</p>' +
+    '<p>師兄江楊遠赴歐洲，請他復出帶隊。第 16 集，他重新站上賽場。</p>' +
+    '<p class="label">原著</p><div class="quote novel"><span>我給你十分，你還我十分，我不留餘地，你也不要有退路。</span></div>' +
+    '<p class="label">解讀</p><p>讓他跨過自尊那道坎的，不是勸，是她站在那裡。她不留退路給他，因為她自己就是那條退路。</p>',
+    ''
+  ));
+
+  C.push(seg(9,'清檯','Run out',
+    '九球的規則很殘忍，也很溫柔：不管中間打得多漂亮，只有 9 號落袋才算贏；但也只要 9 號落袋，前面所有的失誤都不用再算。',
+    '<p>9 號球滾向袋口。</p>' +
+    '<p class="label">原著</p><div class="quote novel"><span>我願這愛情，沒有暴雪只有晴。</span></div>',
+    '', true
+  ));
+
+  var finale =
+    '<section class="seg" id="finale" data-sec="finale">' +
+      '<p class="close"><span>雪會停。</span><span>球會落袋。</span><span class="heartline">紅燈會轉綠。</span><span>至於是誰先走過去的……</span></p>' +
+      '<div class="support">' +
+        '<h2>九球打完了，故事還沒完</h2>' +
+        '<p>九顆球只是切面。完整的解析在長文裡：規則怎麼變成他們的關係結構，劇版與原著改了什麼。取景地則整理成了一條兩天一夜的路線。</p>' +
+        '<div class="btns">' +
+          // 待補網址後再打開：
+          // '<a class="btn btn-solid" href="#" data-cta="article" data-cta-type="article">讀完整解析</a>' +
+          // '<a class="btn btn-ghost" href="#" data-cta="article_travel" data-cta-type="article">赫爾辛基取景地全攻略</a>' +
+          '<a class="btn btn-ghost" href="https://knittinghiyori.kit.com/2cf3d82ac1" target="_blank" rel="noopener" data-cta="newsletter" data-cta-type="newsletter">訂閱編織日和電子報</a>' +
+          '<a class="btn btn-ghost" href="https://story.knittinghiyori.com/" data-cta="hub" data-cta-type="hub">回故事主頁</a>' +
+        '</div>' +
+        // '<p class="todo" style="margin-top:20px">待補：長文網址、取景地文章網址、蝦皮原著連結</p>' +
+        '<p class="disc">本頁部分連結為聯盟行銷連結，透過連結完成預訂，編織日和可獲得少許回饋，不影響你的價格。</p>' +
+      '</div>' +
+    '</section>';
+
+  window.hyBuildSegments(C.join('') + finale);
+})();
+</script>
+
+</body>
+</html>

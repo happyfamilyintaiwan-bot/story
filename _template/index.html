@@ -14,8 +14,10 @@
   })();
 </script>
 
-<!-- Google AdSense（Auto ads） -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2022028565680247" crossorigin="anonymous"></script>
+<!-- Google AdSense（只有手動廣告：不帶 ?client=，不跑自動廣告；上線後到 AdSense 後台把網址加入「網頁排除」） -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" crossorigin="anonymous"></script>
+<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href]').forEach(function(a){a.setAttribute('data-google-vignette','false')})});</script>
+<meta name="spec-version" content="core-v1.1/story-v1.1">
 
 <!-- GA4（故事站標準追蹤，不要刪） -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZHTYTRMQ"></script>

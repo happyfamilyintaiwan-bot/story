@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Travelpayouts Drive（放在 head 最前面） -->
+<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.setAttribute("data-cmp-ab","2");
+      script.src = 'https://emrld.ltd/NTc4NjI0.js?t=578624';
+      document.head.appendChild(script);
+  })();
+</script>
+<!-- Google AdSense（Auto ads＋手動單元） -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" crossorigin="anonymous"></script>
+<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href]').forEach(function(a){a.setAttribute('data-google-vignette','false')})});</script>
+<style>
+.kh-ad{display:block;width:100%;max-width:728px;margin:48px auto;padding:0 16px;text-align:center;clear:both;box-sizing:border-box}
+.kh-ad--game{margin-top:150px}
+.kh-lift{position:relative;z-index:6}
+.kh-ad__label{display:block;font-size:12px;letter-spacing:.08em;opacity:.6;margin-bottom:6px;line-height:1.4}
+.kh-legal{display:block;max-width:640px;font-size:12px;line-height:1.8;opacity:.7;text-align:center;margin:16px auto 24px;padding:0 16px;box-sizing:border-box}
+.kh-legal a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+</style>
+<title>早春晴朗劇情解析｜十年三幕、原著金句與權力翻轉</title>
+<meta name="description" content="《早春晴朗》十年三幕的故事解讀——權力不對等如何成為感情的地基、六年裡沒有一句告白的偏愛、一場盛大的撤退，以及重逢時翻過來的關係結構。">
+<meta name="theme-color" content="#0F2C52">
+<link rel="canonical" href="https://story.knittinghiyori.com/drama/the-early-spring/">
+<link rel="alternate" hreflang="zh-Hant" href="https://story.knittinghiyori.com/drama/the-early-spring/">
+<link rel="alternate" hreflang="ja" href="https://story.knittinghiyori.com/drama/the-early-spring/ja/">
+<link rel="alternate" hreflang="en" href="https://story.knittinghiyori.com/drama/the-early-spring/en/">
+<link rel="alternate" hreflang="x-default" href="https://story.knittinghiyori.com/drama/the-early-spring/">
+<link rel="icon" href="/icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- ===== GA4：編織日和 統一追蹤 v1 ===== -->
+<script>
+  /* 本頁身分：整份追蹤碼中「唯一」需要逐頁修改的三行 */
+  window.HY_STORY_ID    = 'the-early-spring';
+  window.HY_STORY_TITLE = '互動頁｜早春晴朗 The Early Spring（中文）';
+  window.HY_PAGE_LANG   = 'zh-Hant';
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZHTYTRMQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  /* set 的參數會自動附加到「所有」事件，包含 GA4 自動蒐集的 page_view 與外連 click */
+  gtag('set', {
+    story_id:      window.HY_STORY_ID,
+    page_lang:     window.HY_PAGE_LANG || document.documentElement.lang || 'zh-Hant',
+    content_group: 'interactive-story'
+  });
+  gtag('config', 'G-ZQZHTYTRMQ', {
+    page_title: window.HY_STORY_TITLE,
+    cookie_domain: '.knittinghiyori.com'
+  });
+</script>
+<script>
+/* ── 編織日和・互動頁共用追蹤 v1 ──────────────────────────────
+   四支互動頁貼一模一樣的這段，不要逐頁修改。
+   對外提供：hyEvent / hyStart / hyInteract / hySection / hyComplete / hyCount
+   ───────────────────────────────────────────────────────── */
+(function () {
+  var STORY = window.HY_STORY_ID || 'unknown';
+  var started = false, completed = false, exited = false;
+  var actCount = 0, actSeen = {}, progSeen = {}, secSeen = {}, maxScroll = 0;
+
+  function send(name, params) {
+    if (typeof window.gtag !== 'function') return;
+    params = params || {};
+    params.story_id = STORY;
+    window.gtag('event', name, params);
+  }
+  window.hyEvent = send;
+
+  /* 1. story_start：第一次捲動或第一次互動，只送一次 */
+  function start(entry) {
+    if (started) return;
+    started = true;
+    send('story_start', { entry_point: entry || 'scroll' });
+  }
+  window.hyStart = start;
+
+  /* 2. interaction：所有頁內互動都走這裡 */
+  window.hyInteract = function (type, id, index) {
+    start(String(id));
+    var key = type + '|' + id;
+    if (!actSeen[key]) { actSeen[key] = 1; actCount++; }
+    var p = { interaction_type: type, interaction_id: String(id) };
+    if (index !== undefined && index !== null && index !== '') p.interaction_index = Number(index);
+    send('interaction', p);
+  };
+  window.hyCount = function () { return actCount; };
+
+  /* 3. section_view：章節到達，同一段只送一次 */
+  window.hySection = function (id, index) {
+    if (secSeen[id]) return;
+    secSeen[id] = 1;
+    var p = { section_id: String(id) };
+    if (index !== undefined && index !== null) p.section_index = Number(index);
+    send('section_view', p);
+  };
+
+  /* 4. story_complete：讀到結尾，只送一次 */
+  window.hyComplete = function () {
+    if (completed) return;
+    completed = true;
+    send('story_complete', { interactions_count: actCount, max_scroll: maxScroll });
+  };
+
+  /* 5. story_progress：捲動 25 / 50 / 75 / 100 各一次 */
+  var MARKS = [25, 50, 75, 100], ticking = false, fallbackAt = 0;
+  /* 頁面若因 prefers-reduced-motion 而不跑 IntersectionObserver，用捲動百分比當備援 */
+  window.hyCompleteAtScroll = function (pct) { fallbackAt = Number(pct) || 95; };
+  function measure() {
+    ticking = false;
+    var d = document.documentElement;
+    var max = Math.max(d.scrollHeight, document.body ? document.body.scrollHeight : 0) - window.innerHeight;
+    if (max < 1) return;
+    var pct = Math.min(100, Math.max(0, Math.round(window.scrollY / max * 100)));
+    if (pct > maxScroll) maxScroll = pct;
+    if (pct >= 5) start('scroll');
+    if (fallbackAt && pct >= fallbackAt) window.hyComplete();
+    for (var i = 0; i < MARKS.length; i++) {
+      if (pct >= MARKS[i] && !progSeen[MARKS[i]]) {
+        progSeen[MARKS[i]] = 1;
+        send('story_progress', { percent_scrolled: MARKS[i] });
+      }
+    }
+  }
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(measure);
+  }, { passive: true });
+  window.addEventListener('resize', measure);
+
+  /* 6. cta_click：任何帶 data-cta 的元素，四頁共用同一組值 */
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+    var a = t.closest('[data-cta]');
+    if (!a) return;
+    var id = a.getAttribute('data-cta') || '';
+    send('cta_click', {
+      cta_id: id,
+      cta_type: id.split('_')[0],
+      link_url: a.href || ''
+    });
+  }, true);
+
+  /* 7. story_exit：離開頁面時的總結，只送一次 */
+  function exit() {
+    if (exited || !started) return;
+    exited = true;
+    send('story_exit', { interactions_count: actCount, max_scroll: maxScroll });
+  }
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') exit();
+  });
+  window.addEventListener('pagehide', exit);
+})();
+</script>
+<!-- ===== GA4 統一追蹤結束 ===== -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="編織日和 Story">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="早春晴朗的十年：從仰望到平視">
+<meta property="og:description" content="《早春晴朗》十年三幕的故事解讀——權力不對等如何成為感情的地基、六年裡沒有一句告白的偏愛、一場盛大的撤退，以及重逢時翻過來的關係結構。">
+<meta property="og:url" content="https://story.knittinghiyori.com/drama/the-early-spring/">
+<meta property="og:image" content="https://story.knittinghiyori.com/drama/the-early-spring/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>html,body{margin:0;padding:0;background:#0F2C52;color-scheme:dark}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;700;900&family=Pinyon+Script&display=swap">
+
+<style>
+/* ============================================================
+   《早春晴朗》故事頁 — 片頭美術語言
+   深藍底 ・ 珊瑚紅／冰藍／白剪紙平塗 ・ 直排中文 ・ 手寫英文
+   單一視覺世界：兩種主題都維持深藍，所有顏色明確指定
+   ============================================================ */
+
+.sf{
+  --navy-deep:#081B36;
+  --navy:#0F2C52;
+  --navy-lift:#16406F;
+  --navy-line:rgba(183,202,221,.22);
+  --coral:#EE6E68;
+  --coral-deep:#D2534E;
+  --ice:#B7CADD;
+  --ice-dim:rgba(183,202,221,.62);
+  --paper:#F1F6FA;
+  --serif:"Noto Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --script:"Pinyon Script","Snell Roundhand",cursive;
+
+  display:block;
+  position:relative;
+  background:var(--navy);
+  color:var(--paper);
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:16px;
+  line-height:2;
+  overflow:hidden;
+  -webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;
+}
+.sf *,.sf *::before,.sf *::after{ box-sizing:border-box }
+
+/* 底噪：片頭那層顆粒 */
+.sf .grain{
+  position:absolute; inset:0; z-index:3; pointer-events:none; opacity:.5;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='.16'/></svg>");
+  mix-blend-mode:soft-light;
+}
+.sf .stage{ position:relative; z-index:1 }
+.sf .langbar{
+  position:absolute; top:16px; right:20px; z-index:4;
+  display:flex; gap:14px; font-family:var(--serif); font-size:12px; letter-spacing:.14em;
+}
+.sf .langbar a{ color:var(--ice-dim); text-decoration:none; transition:color .3s }
+.sf .langbar a:hover{ color:var(--paper) }
+.sf .langbar a[aria-current="page"]{ color:var(--coral) }
+@media (max-width:480px){ .sf .langbar{ top:12px; right:14px; gap:11px; font-size:11px } }
+
+.sf .wrap{ width:min(100% - 44px, 760px); margin-inline:auto }
+@media (max-width:560px){ .sf .wrap{ width:min(100% - 34px, 760px) } }
+
+.sf section{ padding-block:clamp(64px,13vw,120px); position:relative }
+
+/* ---------- 字級 ---------- */
+.sf h1,.sf h2,.sf h3{ font-family:var(--serif); margin:0; text-wrap:balance; line-height:1.45; color:var(--paper) }
+.sf h2{ font-size:clamp(24px,5.6vw,38px); font-weight:700 }
+.sf h3{ font-size:clamp(18px,3.8vw,22px); font-weight:700 }
+.sf p{ margin:0; color:var(--ice) }
+.sf .lede{ font-size:clamp(16px,3.6vw,18px); max-width:34em }
+.sf strong{ color:var(--paper); font-weight:500 }
+.sf em{ color:var(--coral); font-style:normal }
+
+.sf .script{
+  font-family:var(--script); font-weight:400; color:var(--ice);
+  font-size:clamp(21px,5vw,32px); line-height:1.5; letter-spacing:.04em;
+}
+
+/* 直排中文標 —— 片頭的字幕語言 */
+.sf .vlabel{
+  writing-mode:vertical-rl; text-orientation:upright;
+  font-family:var(--serif); font-size:12.5px; letter-spacing:.5em;
+  color:var(--ice-dim); white-space:nowrap; user-select:none;
+}
+.sf .actno{
+  font-family:var(--serif); font-size:11px; letter-spacing:.42em;
+  color:var(--coral); text-transform:uppercase; display:block; margin-bottom:16px;
+}
+
+.sf :where(button,summary,a,input):focus-visible{
+  outline:1.5px solid var(--coral); outline-offset:4px; border-radius:4px;
+}
+
+/* 進場 */
+.sf .rise{ opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s cubic-bezier(.19,1,.22,1) }
+.sf .rise.in{ opacity:1; transform:none }
+@media (prefers-reduced-motion:reduce){
+  .sf .rise{ opacity:1; transform:none; transition:none }
+  .sf *{ animation:none !important }
+}
+
+/* ============================================================
+   序幕
+   ============================================================ */
+.sf .prologue{
+  min-height:min(96vh,860px);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding-block:clamp(56px,10vw,90px);
+  background:radial-gradient(120% 78% at 50% 34%, var(--navy-lift) 0%, var(--navy) 52%, var(--navy-deep) 100%);
+}
+.sf .window-art{ width:min(74%,300px); margin-bottom:clamp(26px,5vw,38px) }
+.sf .window-art svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .drift-a{ animation:driftA 13s ease-in-out infinite }
+.sf .drift-b{ animation:driftB 17s ease-in-out infinite }
+@keyframes driftA{ 0%,100%{transform:translate(0,0) rotate(0)} 50%{transform:translate(-7px,-11px) rotate(-4deg)} }
+@keyframes driftB{ 0%,100%{transform:translate(0,0) rotate(0)} 50%{transform:translate(9px,7px) rotate(3deg)} }
+.sf .pf{ animation-name:petalFloat; animation-timing-function:ease-in-out; animation-iteration-count:infinite }
+@keyframes petalFloat{
+  0%,100%{ transform:translate(0,0) rotate(0deg) }
+  25%    { transform:translate(4px,-8px) rotate(7deg) }
+  50%    { transform:translate(-5px,-14px) rotate(-6deg) }
+  75%    { transform:translate(6px,-6px) rotate(5deg) }
+}
+
+.sf .prologue h1{
+  font-size:clamp(34px,9vw,64px); font-weight:900; letter-spacing:.16em;
+  text-indent:.16em;
+}
+.sf .prologue .sub{
+  margin-top:18px; font-size:12px; letter-spacing:.4em; color:var(--ice-dim); text-indent:.4em;
+}
+.sf .prologue .script{ margin-top:clamp(26px,5vw,34px) }
+.sf .script-cn{
+  margin-top:12px; font-family:var(--serif); font-size:clamp(15px,3.4vw,18px);
+  letter-spacing:.34em; text-indent:.34em; color:var(--ice-dim);
+}
+.sf .prologue .kicker{
+  margin-top:30px; font-size:14.5px; color:var(--ice); max-width:26em;
+}
+.sf .scroll-cue{
+  margin-top:clamp(34px,6vw,52px); display:flex; flex-direction:column; align-items:center; gap:10px;
+  font-family:var(--serif); font-size:11px; letter-spacing:.36em; color:var(--ice-dim); text-indent:.36em;
+}
+.sf .scroll-cue i{
+  width:1px; height:44px; background:linear-gradient(var(--ice-dim),transparent); display:block;
+  animation:cue 2.6s ease-in-out infinite;
+}
+@keyframes cue{ 0%,100%{opacity:.3;transform:scaleY(.6)} 50%{opacity:1;transform:scaleY(1)} }
+
+/* ============================================================
+   命題
+   ============================================================ */
+.sf .thesis{ text-align:center; border-top:1px solid var(--navy-line) }
+.sf .thesis blockquote{
+  margin:0; font-family:var(--serif); font-weight:400;
+  font-size:clamp(21px,5vw,30px); line-height:1.9; color:var(--paper);
+}
+.sf .thesis blockquote em{ color:var(--coral) }
+.sf .rule{
+  display:block; width:1px; height:clamp(40px,8vw,66px); background:var(--coral); margin:0 auto clamp(26px,5vw,36px);
+}
+
+/* ============================================================
+   幕
+   ============================================================ */
+.sf .act{ border-top:1px solid var(--navy-line) }
+.sf .act-grid{ display:grid; gap:clamp(26px,5vw,44px) }
+@media (min-width:820px){
+  .sf .act-grid{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center }
+  .sf .act.flip .act-art{ order:2 }
+  .sf .act.noart .act-grid{ grid-template-columns:1fr }
+}
+.sf .act.noart .lede{ font-size:clamp(17px,3.8vw,19.5px); max-width:38em }
+.sf .act.noart .act-text h2{ font-size:clamp(26px,6vw,42px) }
+.sf .act-art svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .act-text h2{ margin-bottom:16px }
+.sf .act-text p + p{ margin-top:14px }
+.sf .act-meta{
+  margin-top:22px; font-family:var(--serif); font-size:11.5px; letter-spacing:.3em;
+  color:var(--ice-dim); border-top:1px solid var(--navy-line); padding-top:14px; text-indent:.3em;
+}
+.sf .act-head{ display:flex; gap:clamp(18px,4vw,28px); align-items:flex-start }
+.sf .act-head .vlabel{ margin-top:4px; flex:none }
+
+/* ============================================================
+   權力天秤
+   ============================================================ */
+.sf .balance{ background:var(--navy-deep); border-top:1px solid var(--navy-line) }
+.sf .bal-head{ text-align:center; margin-bottom:clamp(24px,4vw,34px) }
+.sf .bal-head p{ margin-top:14px; margin-inline:auto }
+.sf .bal-stage svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .beam,.sf .fig-a,.sf .fig-b{ transition:transform .85s cubic-bezier(.22,1,.28,1) }
+.sf .bal-caption{
+  min-height:132px; text-align:center; margin-top:6px;
+  display:flex; flex-direction:column; justify-content:flex-start; gap:10px;
+}
+.sf .bal-caption h3{ font-size:clamp(19px,4.4vw,24px) }
+.sf .bal-caption .ep{
+  font-family:var(--serif); font-size:11.5px; letter-spacing:.32em; color:var(--coral); text-indent:.32em;
+}
+.sf .bal-caption p{ font-size:15px; max-width:32em; margin-inline:auto }
+
+.sf .bal-track{ margin-top:26px; position:relative; padding:0 4px }
+.sf .bal-track input[type=range]{
+  -webkit-appearance:none; appearance:none; width:100%; height:34px;
+  background:transparent; cursor:pointer; display:block; margin:0;
+}
+.sf .bal-track input[type=range]::-webkit-slider-runnable-track{
+  height:1px; background:var(--navy-line);
+}
+.sf .bal-track input[type=range]::-moz-range-track{ height:1px; background:var(--navy-line) }
+.sf .bal-track input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none; width:17px; height:17px; border-radius:50%;
+  background:var(--coral); border:3px solid var(--navy-deep); margin-top:-8px;
+  box-shadow:0 0 0 4px rgba(238,110,104,.22);
+}
+.sf .bal-track input[type=range]::-moz-range-thumb{
+  width:17px; height:17px; border-radius:50%; background:var(--coral);
+  border:3px solid var(--navy-deep); box-shadow:0 0 0 4px rgba(238,110,104,.22);
+}
+.sf .bal-steps{
+  display:grid; grid-template-columns:repeat(6,1fr); gap:4px; margin-top:2px;
+}
+.sf .bal-steps button{
+  font:inherit; font-family:var(--serif); font-size:11px; letter-spacing:.14em;
+  background:none; border:none; color:var(--ice-dim); padding:8px 2px; cursor:pointer;
+  transition:color .3s;
+}
+.sf .bal-steps button[aria-current="true"]{ color:var(--coral) }
+@media (max-width:480px){ .sf .bal-steps button{ font-size:10px; letter-spacing:.04em } }
+
+/* ============================================================
+   六個證據
+   ============================================================ */
+.sf .proof{ border-top:1px solid var(--navy-line) }
+.sf .proof-grid{
+  display:grid; gap:12px; align-items:start;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); margin-top:clamp(24px,4vw,34px);
+}
+.sf .card{
+  position:relative; text-align:left; font:inherit; cursor:pointer; line-height:1.6;
+  background:var(--navy-lift); border:1px solid var(--navy-line); border-radius:2px;
+  padding:22px 20px 20px; color:var(--paper); overflow:hidden;
+  transition:background .35s, border-color .35s, transform .35s;
+}
+.sf .card:hover{ transform:translateY(-3px); border-color:var(--coral) }
+.sf .card .ic{ display:block; margin-bottom:14px }
+.sf .card .ic svg{ width:38px; height:38px; display:block; overflow:visible }
+.sf .card h3{ font-size:16.5px; font-weight:700 }
+.sf .card .body{
+  display:grid; grid-template-rows:0fr;
+  transition:grid-template-rows .45s ease, opacity .35s;
+  opacity:0;
+}
+.sf .card[aria-expanded="true"] .body{ grid-template-rows:1fr; opacity:1 }
+.sf .card .body > span{ overflow:hidden; display:block; min-height:0 }
+.sf .card .body p{ font-size:14px; line-height:1.85; padding-top:10px }
+.sf .card .body p + p{ padding-top:8px }
+.sf .card .body .q{ color:var(--paper); font-family:var(--serif); font-size:14.5px }
+.sf .card .body .src{ color:var(--ice-dim); font-size:12px; letter-spacing:.1em }
+.sf .card .body ol{ margin:10px 0 0; padding-left:1.5em; color:var(--ice) }
+.sf .card .body li{ font-size:13.5px; line-height:1.9 }
+.sf .card .body li::marker{ color:var(--coral) }
+.sf .card .body li:last-child{ color:var(--paper) }
+.sf .card .more{
+  margin-top:12px; font-family:var(--serif); font-size:11px; letter-spacing:.26em; color:var(--coral);
+  display:block; text-indent:.26em;
+}
+.sf .card[aria-expanded="true"]{ background:var(--navy-deep); border-color:var(--coral) }
+.sf .card[aria-expanded="true"] .more{ color:var(--ice-dim) }
+.sf .proof-note{ margin-top:22px; font-size:13px; color:var(--ice-dim) }
+
+/* ============================================================
+   郵筒
+   ============================================================ */
+.sf .mail{ background:var(--navy-deep); border-top:1px solid var(--navy-line); text-align:center }
+.sf .mail-art{ width:min(84%,340px); margin:clamp(24px,5vw,36px) auto 0; position:relative }
+.sf .mail-art svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .drop{ transform-box:fill-box; transform-origin:center }
+.sf .drop.go{ animation:drop 1.5s cubic-bezier(.4,.05,.6,1) forwards }
+@keyframes drop{
+  0%{ transform:translateY(-120px) rotate(-16deg); opacity:0 }
+  16%{ opacity:1 }
+  100%{ transform:translateY(150px) rotate(22deg); opacity:0 }
+}
+.sf .post-btn{
+  margin-top:clamp(24px,4vw,32px); font:inherit; font-family:var(--serif);
+  font-size:13px; letter-spacing:.3em; text-indent:.3em; cursor:pointer;
+  background:none; color:var(--paper); border:1px solid var(--ice-dim);
+  padding:14px 30px; border-radius:1px; transition:background .3s, color .3s, border-color .3s;
+}
+.sf .post-btn:hover{ background:var(--coral); border-color:var(--coral); color:var(--navy-deep) }
+.sf .post-out{ margin-top:20px; font-size:14.5px; color:var(--ice); min-height:32px }
+
+/* ============================================================
+   航線
+   ============================================================ */
+.sf .flights{ border-top:1px solid var(--navy-line); text-align:center }
+.sf .fly-art{ width:min(96%,520px); margin:clamp(22px,4vw,32px) auto 0 }
+.sf .fly-art svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .fly-count{
+  margin-top:16px; font-family:var(--serif); font-size:12px; letter-spacing:.34em;
+  color:var(--coral); text-indent:.34em;
+}
+.sf .flights .post-btn{ margin-top:16px }
+
+/* ============================================================
+   金句
+   ============================================================ */
+.sf .lines{ border-top:1px solid var(--navy-line) }
+.sf .letter{
+  border-top:1px solid var(--navy-line); padding:clamp(22px,4vw,30px) 0;
+}
+.sf .letter:last-of-type{ border-bottom:1px solid var(--navy-line) }
+.sf .letter > summary{
+  list-style:none; cursor:pointer; display:grid; grid-template-columns:auto 1fr auto;
+  gap:18px; align-items:start;
+}
+.sf .letter > summary::-webkit-details-marker{ display:none }
+.sf .letter .no{
+  font-family:var(--serif); font-size:12px; letter-spacing:.2em; color:var(--coral); padding-top:8px;
+}
+.sf .letter q{
+  font-family:var(--serif); font-weight:700; font-size:clamp(18px,4.4vw,25px);
+  line-height:1.8; color:var(--paper); quotes:"「" "」"; display:block;
+}
+.sf .letter .tag{
+  font-family:var(--serif); font-size:11px; letter-spacing:.24em; color:var(--ice-dim);
+  display:block; margin-top:10px; text-indent:.24em;
+}
+.sf .letter .mark{
+  flex:none; width:26px; height:26px; margin-top:6px; color:var(--ice-dim);
+  transition:transform .4s ease, color .3s;
+}
+.sf .letter[open] .mark{ transform:rotate(45deg); color:var(--coral) }
+.sf .letter .unfold{ padding-top:18px; padding-left:calc(12px + 18px); }
+.sf .letter .unfold p{ font-size:15px; max-width:36em }
+.sf .letter .unfold p + p{ margin-top:12px }
+.sf .letter .unfold .watch{ color:var(--coral); font-size:13.5px; letter-spacing:.02em }
+@media (max-width:520px){ .sf .letter .unfold{ padding-left:0 } }
+
+/* ============================================================
+   尾聲
+   ============================================================ */
+.sf .coda{
+  text-align:center; border-top:1px solid var(--navy-line);
+  background:radial-gradient(110% 76% at 50% 62%, var(--navy-lift) 0%, var(--navy) 58%, var(--navy-deep) 100%);
+}
+.sf .coda .harbin{ width:min(76%,330px); margin:0 auto clamp(26px,5vw,36px) }
+.sf .coda .harbin svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .coda h2{ font-size:clamp(22px,5.2vw,32px) }
+.sf .coda .script{ margin-top:clamp(24px,4vw,32px) }
+.sf .cta{
+  display:inline-block; margin-top:clamp(28px,5vw,38px); font-family:var(--serif);
+  font-size:13px; letter-spacing:.3em; text-indent:.3em; text-decoration:none;
+  color:var(--navy-deep); background:var(--paper); padding:15px 32px; border-radius:1px;
+  transition:background .3s, transform .3s;
+}
+.sf .cta:hover{ background:var(--coral); transform:translateY(-2px) }
+
+/* ============================================================
+   資料條
+   ============================================================ */
+.sf .facts{ border-top:1px solid var(--navy-line); background:var(--navy-deep) }
+.sf .facts h2{ font-size:clamp(17px,3.6vw,20px); margin-bottom:20px }
+.sf .facts dl{
+  display:grid; grid-template-columns:auto 1fr; gap:0; margin:0;
+  border-top:1px solid var(--navy-line);
+}
+.sf .facts dt{
+  font-family:var(--serif); font-size:12px; letter-spacing:.2em; color:var(--ice-dim);
+  padding:10px 22px 10px 0; border-bottom:1px solid var(--navy-line); white-space:nowrap;
+}
+.sf .facts dd{
+  margin:0; padding:10px 0; border-bottom:1px solid var(--navy-line);
+  font-size:14.5px; color:var(--ice); line-height:1.75;
+}
+.sf .facts .fine{ margin-top:22px; font-size:12px; color:var(--ice-dim); line-height:1.9 }
+
+/* ============================================================
+   支持這篇 —— 聯盟連結區
+   ============================================================ */
+.sf .support{
+  text-align:center; border-top:1px solid var(--navy-line); background:var(--navy-deep);
+}
+.sf .support .mark{ width:min(34%,124px); margin:0 auto clamp(20px,4vw,28px) }
+.sf .support .mark svg{ width:100%; height:auto; display:block; overflow:visible }
+.sf .support h2{ font-size:clamp(20px,4.6vw,27px) }
+.sf .support .lede{ margin:16px auto 0 }
+.sf .support .acts{
+  display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+  margin-top:clamp(24px,4vw,32px);
+}
+.sf .support .acts .cta{ margin-top:0 }
+.sf .cta--ghost{
+  background:transparent; color:var(--paper);
+  border:1px solid rgba(183,202,221,.45);
+  padding:14px 31px;
+}
+.sf .cta--ghost:hover{ background:transparent; border-color:var(--coral); color:var(--coral) }
+.sf .support .sub-note{
+  margin-top:18px; font-size:13px; color:var(--ice-dim); line-height:1.9;
+  max-width:30em; margin-inline:auto;
+}
+.sf .support .fine{
+  margin-top:22px; font-size:12px; color:var(--ice-dim); line-height:1.9;
+  max-width:32em; margin-inline:auto;
+}
+.sf .facts a{ color:var(--coral) }
+@media (max-width:480px){
+  .sf .facts dl{ grid-template-columns:1fr }
+  .sf .facts dt{ border-bottom:none; padding-bottom:0 }
+  .sf .facts dd{ padding-top:2px }
+}
+
+/* ---------- SVG 色票 ---------- */
+.sf .f-paper{ fill:var(--paper) } .sf .f-ice{ fill:var(--ice) }
+.sf .f-coral{ fill:var(--coral) } .sf .f-coral-d{ fill:var(--coral-deep) }
+.sf .f-navy{ fill:var(--navy) } .sf .f-navy-d{ fill:var(--navy-deep) }
+.sf .f-lift{ fill:var(--navy-lift) }
+.sf .s-paper{ stroke:var(--paper) } .sf .s-ice{ stroke:var(--ice) }
+.sf .s-coral{ stroke:var(--coral) }
+.sf .s-navy{ stroke:var(--navy) }
+.sf .s-navy-d{ stroke:var(--navy-deep) }
+.sf .tx-serif{ font-family:var(--serif) }
+.sf .tx-sans{ font-family:var(--sans) }
+</style>
+<meta name="spec-version" content="core-v1.1/story-v1.1">
+</head>
+<body>
+<article class="sf">
+<div class="grain" aria-hidden="true"></div>
+<div class="stage">
+
+<nav class="langbar" aria-label="Language">
+  <a data-cta="lang_zh" href="https://story.knittinghiyori.com/drama/the-early-spring/" aria-current="page">中文</a>
+  <a data-cta="lang_ja" href="https://story.knittinghiyori.com/drama/the-early-spring/ja/" hreflang="ja">日本語</a>
+  <a data-cta="lang_en" href="https://story.knittinghiyori.com/drama/the-early-spring/en/" hreflang="en">English</a>
+</nav>
+
+
+<!-- ══════════════ 序幕 ══════════════ -->
+<header class="prologue">
+  <div class="wrap">
+
+    <div class="window-art" aria-hidden="true">
+      <svg viewBox="0 0 300 400" role="presentation">
+        <path class="f-paper" d="M60 380V126c0-49 40-89 90-89s90 40 90 89v254z"/>
+        <g class="s-ice" fill="none" stroke-width="3.2" stroke-linecap="round">
+          <path d="M150 300C150 250 150 200 150 180"/>
+          <path d="M150 300C132 268 112 226 102 208"/>
+          <path d="M150 300C168 272 190 232 199 220"/>
+          <path d="M150 300C140 288 128 268 122 258"/>
+          <path d="M150 300C160 292 176 278 184 272"/>
+        </g>
+        <g class="f-ice">
+          <path d="M138 262c-16-5-27-17-30-32 16 4 27 16 30 32z"/>
+          <path d="M166 244c15-6 25-19 27-34-16 5-26 18-27 34z"/>
+        </g>
+        <!-- 綻放的花 -->
+        <g transform="translate(150 128) scale(0.95)">
+          <g class="pf" style="animation-duration:15s;animation-delay:-0s">
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(0)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(60)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(120)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(180)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(240)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(300)"/>
+            <circle class="f-ice" r="8.5"/>
+          </g>
+        </g>
+        <g transform="translate(99 176) scale(0.74)">
+          <g class="pf" style="animation-duration:13s;animation-delay:-3s">
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(0)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(60)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(120)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(180)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(240)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(300)"/>
+            <circle class="f-coral" r="8.5"/>
+          </g>
+        </g>
+        <g transform="translate(202 188) scale(0.72)">
+          <g class="pf" style="animation-duration:17s;animation-delay:-6s">
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(0)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(60)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(120)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(180)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(240)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(300)"/>
+            <circle class="f-ice" r="8.5"/>
+          </g>
+        </g>
+        <g transform="translate(120 232) scale(0.62)">
+          <g class="pf" style="animation-duration:12s;animation-delay:-9s">
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(0)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(60)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(120)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(180)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(240)"/>
+            <path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(300)"/>
+            <circle class="f-coral" r="8.5"/>
+          </g>
+        </g>
+        <g transform="translate(186 248) scale(0.58)">
+          <g class="pf" style="animation-duration:16s;animation-delay:-12s">
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(0)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(60)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(120)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(180)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(240)"/>
+            <path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z" transform="rotate(300)"/>
+            <circle class="f-ice" r="8.5"/>
+          </g>
+        </g>
+        <!-- 飄散的花瓣 -->
+        <g transform="translate(112 84) rotate(-38) scale(0.5)"><g class="pf" style="animation-duration:12.3s;animation-delay:-1.8s"><path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(210 96) rotate(26) scale(0.45)"><g class="pf" style="animation-duration:14.6s;animation-delay:-0.9s"><path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(50 150) rotate(-64) scale(0.42)"><g class="pf" style="animation-duration:13.8s;animation-delay:-4.4s"><path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(258 170) rotate(44) scale(0.44)"><g class="pf" style="animation-duration:10.4s;animation-delay:-6.1s"><path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(70 270) rotate(-30) scale(0.4)"><g class="pf" style="animation-duration:10.3s;animation-delay:-5.2s"><path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(248 264) rotate(50) scale(0.38)"><g class="pf" style="animation-duration:10.5s;animation-delay:-1.1s"><path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(152 58) rotate(10) scale(0.4)"><g class="pf" style="animation-duration:13.0s;animation-delay:-9.9s"><path class="f-ice" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <g transform="translate(32 212) rotate(-72) scale(0.34)"><g class="pf" style="animation-duration:10.9s;animation-delay:-2.7s"><path class="f-coral" d="M0 0C-11-16-9-38 0-52 9-38 11-16 0 0Z"/></g></g>
+        <path class="f-ice" d="M102 304l94-14-38 84h-12z"/>
+        <path class="f-paper" d="M102 304l94-14-3 13-88 13z" opacity=".45"/>
+        <path class="f-paper" d="M150 298l-4 76h5l7-77z" opacity=".26"/>
+        <rect class="f-coral" x="110" y="309" width="76" height="12" rx="6"/>
+        <path class="f-coral" d="M148 321c-9 6-16 15-19 25 10-2 17-9 19-17 3 8 10 15 20 17-3-10-11-19-20-25z"/>
+      </svg>
+    </div>
+
+    <h1>早春晴朗</h1>
+    <p class="sub">THE EARLY SPRING</p>
+    <p class="script">You don&rsquo;t have to be perfect to be worthy of love</p>
+    <p class="script-cn">無需完美，方得摯愛</p>
+    <p class="kicker">一段十年的故事。從一個人抬頭，到兩個人平視。</p>
+
+    <p class="scroll-cue"><span>往下讀</span><i></i></p>
+  </div>
+</header>
+
+<!-- ══════════════ 命題 ══════════════ -->
+<section class="thesis" data-sec="thesis">
+  <div class="wrap">
+    <i class="rule" aria-hidden="true"></i>
+    <blockquote class="rise">
+      這不是一個關於愛情的故事。<br>
+      這是一個關於<em>仰望</em>，怎麼變成<em>平視</em>的故事。
+    </blockquote>
+  </div>
+</section>
+
+<!-- ══════════════ 第一幕 ══════════════ -->
+<section class="act" data-sec="act_1">
+  <div class="wrap act-grid">
+    <div class="act-art rise" aria-hidden="true">
+      <svg viewBox="0 0 420 230" role="presentation">
+        <rect class="f-paper" x="242" y="170" width="140" height="7" rx="3" opacity=".45"/>
+        <text class="f-ice tx-serif" x="312" y="170" font-size="118" font-weight="700" text-anchor="middle">L</text>
+        <g transform="translate(74 176) scale(.46)">
+          <path class="f-coral" d="M0-40C-12-58-42-56-52-32-62-8-58 24-34 42-20 51 20 51 34 42 58 24 62-8 52-32 42-56 12-58 0-40Z"/>
+          <path class="s-navy-d" fill="none" stroke-width="3.6" stroke-linecap="round" d="M1-38C-5-16-5 18 1 40"/>
+          <path class="f-ice" d="M10-52c14-16 35-21 52-12-11 16-32 22-52 12z"/>
+          <rect class="f-ice" x="-3" y="-64" width="6" height="27" rx="3"/>
+        </g>
+        <path class="s-coral" fill="none" stroke-width="1.6" stroke-dasharray="5 7" d="M98 142C148 108 214 96 268 106"/>
+        <rect class="f-paper" y="200" width="420" height="7" opacity=".45"/>
+      </svg>
+    </div>
+    <div class="act-text">
+      <div class="act-head">
+        <span class="vlabel">第一幕・北京</span>
+        <div>
+          <span class="actno">EP 1—8</span>
+          <h2>報到第一天，他勸她放棄</h2>
+          <p class="lede rise">尚之桃學歷普通，卻拿到頂級廣告公司的 offer。第一天走進公司，創意總監欒念看了她一眼，直接建議她別做了。</p>
+          <p class="lede rise">那一刻兩個人的高度就定下來了：一個給評價，一個等評價。</p>
+          <p class="act-meta">多數職場言情把上下級當曖昧的道具。這部戲把它當地基。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 權力天秤 ══════════════ -->
+<section class="balance" data-sec="balance">
+  <div class="wrap">
+    <div class="bal-head">
+      <span class="actno">THE BALANCE ・ 互動</span>
+      <h2>十年裡，天秤怎麼倒過來</h2>
+      <p class="lede">一端是桃——尚之桃的「桃」；一端是 L——欒念的 L。天秤上重的那一邊會沉下去：一開始沉的是 L，後來沉的是桃，最後兩邊一樣重。拖動下面的軸，或點階段名稱。</p>
+    </div>
+
+    <div class="bal-stage" aria-hidden="true">
+      <svg viewBox="0 0 560 330" role="presentation">
+        <!-- 立柱與底座 -->
+        <path class="f-paper" d="M280 96l17 204h-34z" opacity=".9"/>
+        <rect class="f-paper" x="176" y="298" width="208" height="6" rx="3" opacity=".5"/>
+        <g id="beamGroup" class="beam" style="transform-origin:280px 100px">
+          <rect class="f-paper" x="72" y="97" width="416" height="6" rx="3"/>
+          <circle class="f-paper" cx="112" cy="100" r="5"/>
+          <circle class="f-paper" cx="448" cy="100" r="5"/>
+          <!-- 尚之桃：桃 -->
+          <g id="figA">
+            <g class="s-paper" fill="none" stroke-width="2.4" opacity=".8"><path d="M112 100L66 222"/><path d="M112 100L158 222"/></g>
+            <path class="f-paper" d="M62 222h100l-9 12H71z"/>
+            <g transform="translate(112 190) scale(.62)">
+  <path class="f-coral" d="M0-40C-12-58-42-56-52-32-62-8-58 24-34 42-20 51 20 51 34 42 58 24 62-8 52-32 42-56 12-58 0-40Z"/>
+  <path class="s-navy-d" fill="none" stroke-width="3.6" stroke-linecap="round" d="M1-38C-5-16-5 18 1 40"/>
+  <path class="f-ice" d="M10-52c14-16 35-21 52-12-11 16-32 22-52 12z"/>
+  <rect class="f-ice" x="-3" y="-64" width="6" height="27" rx="3"/>
+            </g>
+          </g>
+          <!-- 欒念：L -->
+          <g id="figB">
+            <g class="s-paper" fill="none" stroke-width="2.4" opacity=".8"><path d="M448 100L402 222"/><path d="M448 100L494 222"/></g>
+            <path class="f-paper" d="M398 222h100l-9 12H407z"/>
+            <text class="f-ice tx-serif" x="448" y="222" font-size="118" font-weight="700" text-anchor="middle">L</text>
+          </g>
+        </g>
+        <text class="f-coral tx-serif" x="112" y="34" font-size="13" text-anchor="middle" letter-spacing="3">尚之桃</text>
+        <text class="f-ice tx-serif" x="448" y="34" font-size="13" text-anchor="middle" letter-spacing="3">欒念</text>
+      </svg>
+    </div>
+
+    <div class="bal-caption">
+      <h3 id="balTitle">他的一句話，比她整個人重</h3>
+      <p id="balText">入職第一天，創意總監一句「別做了」就能決定她留不留。那一刻，他這一邊沉到底。</p>
+    </div>
+
+    <div class="bal-track">
+      <label class="vlabel" for="balRange" style="position:absolute;left:-9999px;writing-mode:horizontal-tb">故事階段</label>
+      <input id="balRange" type="range" min="0" max="5" step="1" value="0" aria-describedby="balText">
+      <div class="bal-steps" id="balSteps">
+        <button type="button" data-i="0" aria-current="true">相遇</button>
+        <button type="button" data-i="1" aria-current="false">地下</button>
+        <button type="button" data-i="2" aria-current="false">並肩</button>
+        <button type="button" data-i="3" aria-current="false">撤退</button>
+        <button type="button" data-i="4" aria-current="false">重逢</button>
+        <button type="button" data-i="5" aria-current="false">重來</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 第二幕：六個證據 ══════════════ -->
+<section class="proof" data-sec="proof">
+  <div class="wrap">
+    <div class="act-head">
+      <span class="vlabel">第二幕・六年</span>
+      <div>
+        <span class="actno">EP 9—16</span>
+        <h2>最好的那幾段，沒有一段是告白</h2>
+        <p class="lede rise">這段感情幾乎不靠對白。證據都藏在行為、時間表，和沒說出口的句子裡。點開看七個。</p>
+      </div>
+    </div>
+
+    <div class="proof-grid">
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><circle class="f-ice" cx="20" cy="22" r="14"/><path class="f-navy-d" d="M19 13h2v10h-2z"/><path class="f-navy-d" d="M20 21h8v2h-8z"/><path class="f-coral" d="M8 8l6-4 3 5zM32 8l-6-4-3 5z"/></svg></span>
+        <h3>週末早起的那個人</h3>
+        <span class="body"><span>
+          <p>欒念本來週末是會睡到中午的。</p>
+          <p>後來，只要是尚之桃會來的週末，他慢慢變成先醒的那一個——起來做早餐，做桂花牛奶。</p>
+          <p>他沒有說過為什麼改。但作息不會說謊：一個人願意把最鬆的那個時段讓出來、對齊另一個人，那是排序，不是巧合。</p>
+          <p>而且是「慢慢地」。不是某天決定要對她好，是先有了她會來的那些週末，作息才一點一點被改寫。</p>
+        </span></span>
+        <span class="more">點開</span>
+      </button>
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path class="f-coral" d="M20 6c4 4 4 9 0 13-4-4-4-9 0-13z"/><path class="f-coral" d="M8 16c5-2 10 0 12 5-5 2-10 0-12-5z"/><path class="f-coral" d="M32 16c-5-2-10 0-12 5 5 2 10 0 12-5z"/><rect class="f-ice" x="19" y="21" width="2" height="14"/></svg></span>
+        <h3>沒有署名的花</h3>
+        <span class="body"><span>
+          <p>花一直來，卡片一直空白。</p>
+          <p>這裡劇版和原著分了岔：劇版送花的是欒念，小說裡送花的是孫遠翥。</p>
+          <p>同一束花換一個人送，要說的事就不一樣了——一個是藏不住的在意，一個是說不出口的守候。不署名都是同一個理由：一旦署名，就得攤在光下。</p>
+        </span></span>
+        <span class="more">點開</span>
+      </button>
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path class="f-ice" d="M4 26h32v2H4z"/><circle class="f-coral" cx="20" cy="20" r="9"/><path class="f-ice" d="M20 4v5M8 9l3 4M32 9l-3 4"/><path class="f-ice" d="M4 32h10v2H4zM26 32h10v2H26z"/></svg></span>
+        <h3>日出，還有日落</h3>
+        <span class="body"><span>
+          <p>日出那場戲是從暗轉亮的，畫面一點一點被光填滿。</p>
+          <p class="q">「很開心能跟你一起看日出。」</p>
+          <p class="q">「我有時會希望，能跟你一起看日出，也能一起看日落。」</p>
+          <p>日出是當下，日落是往後。她真正想要的是「還有以後」，但只敢用比喻說。</p>
+          <p>尚之桃是勇敢的。她心裡裝著那麼多對欒念的愛，如果一句都不說，那些愛會漾出去、流失掉——那多可惜。</p>
+          <p>所以才有那句不敢說出口、卻又藏不住的心事：我猜你看出來了，我愛你。</p>
+        </span></span>
+        <span class="more">點開</span>
+      </button>
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><rect class="f-paper" x="9" y="5" width="22" height="30" rx="1"/><g class="f-navy-d"><rect x="14" y="12" width="12" height="2"/><rect x="14" y="18" width="12" height="2"/><rect x="14" y="24" width="8" height="2"/></g><path class="f-coral" d="M22 27l3 3 7-8 2 2-9 10-5-5z"/></svg></span>
+        <h3>三十歲之前的十件事</h3>
+        <span class="body"><span>
+          <p>清單的作用不是完成，是在關係最模糊的時候，替自己保留一個與對方無關的座標。</p>
+          <p class="src">尚之桃，也就是我，三十歲之前的願望清單：</p>
+          <ol>
+            <li>帶父母旅行</li>
+            <li>學好英語</li>
+            <li>學車</li>
+            <li>學好法語</li>
+            <li>去西藏</li>
+            <li>出國</li>
+            <li>讀 200 本書</li>
+            <li>買一輛車</li>
+            <li>在北京買一個小房子</li>
+            <li>跟愛的人在一起</li>
+          </ol>
+          <p>前面九件她一個人就能做到。只有第十件不行。</p>
+        </span></span>
+        <span class="more">點開</span>
+      </button>
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path class="f-paper" d="M14 8h12l2 26H12z"/><rect class="f-coral" x="12" y="20" width="16" height="14"/><rect class="f-ice" x="16" y="4" width="8" height="5" rx="1"/><g class="f-paper"><circle cx="17" cy="15" r="1.6"/><circle cx="23" cy="13" r="1.6"/></g></svg></span>
+        <h3>桂花牛奶：偏愛是家傳的</h3>
+        <span class="body"><span>
+          <p>一杯做法很麻煩的飲料，家裡人一代一代做給在意的人喝。他學會了，然後做給她。</p>
+          <p>偏愛在這裡不是宣告，是一個被繼承下來的動作。</p>
+        </span></span>
+        <span class="more">點開</span>
+      </button>
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path class="f-ice" d="M6 20h20v3H6z"/><path class="f-coral" d="M22 12l12 9.5L22 31z"/><circle class="f-paper" cx="8" cy="21.5" r="3"/></svg></span>
+        <h3>偏愛要夠明顯，她才收得到</h3>
+        <span class="body"><span>
+          <p class="q">「她真的是很鈍感的人，要是真的偏愛她才能感覺得到。現在的她能夠感受到欒念愛她，因為他對她的偏愛太明顯了。」</p>
+          <p class="src">—— 原著小說</p>
+          <p>問題從來不是他有沒有偏愛，是偏愛的音量。低到只有自己聽得見的在意，對輕的那一邊來說等於沒有發生。</p>
+        </span></span>
+        <span class="more">點開</span>
+      </button>
+
+      <button class="card" type="button" aria-expanded="false">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><rect class="f-paper" x="4" y="10" width="32" height="21" rx="1.5"/><rect class="f-coral" x="26" y="13" width="7" height="6" rx="1"/><g class="f-ice"><rect x="8" y="15" width="14" height="2"/><rect x="8" y="20" width="14" height="2"/><rect x="8" y="25" width="9" height="2"/></g><path class="f-coral" d="M26 24l2 2 5-5 1.6 1.6-6.6 6.6-3.6-3.6z"/></svg></span>
+        <h3>明信片：永遠晴朗真摯</h3>
+        <span class="body"><span>
+          <p>「永遠晴朗真摯」是欒念寫在明信片上給尚之桃的祝福，也是劇版的改編——小說裡沒有這段。</p>
+          <p>這一集他們總望著對方微笑。她看著那張明信片，是打從心底的開心；他看她逛街的時候，那點藏不住的竊喜。沒有台詞，但愛一個人的表情，想藏也藏不住。</p>
+          <p>她寫給孫遠翥的那句祝福，化用了林夕為王菲〈人間〉寫的詞——世事無常、人間並非完美，但因為有愛與陪伴，一切依然值得珍惜。</p>
+          <!-- LYRIC-SLOT ▼ 把下面兩行從註解裡拿出來（刪掉本行結尾的 -- > 與最後一行），填入那句詞即可顯示
+          <p class="q">「（此處貼上〈人間〉的那句歌詞）」</p>
+          <p class="src">—— 林夕 詞 ・ 王菲〈人間〉</p>
+          -->
+          <p>這個改編替孫遠翥後來的故事埋了伏筆：現在看只是溫柔，之後回頭看會是洋蔥。</p>
+        </span></span>
+        <span class="more">點開</span>
+      </button>
+
+    <p class="proof-note">除標明為原著引文者外，以上依原著與劇版情節重述。想讀原文請支持正版。</p>
+  </div>
+</section>
+
+<!-- ══════════════ 第三幕：撤退 ══════════════ -->
+<section class="mail" data-sec="mail">
+  <div class="wrap">
+    <span class="actno">EP 16 ・ 互動</span>
+    <h2>一場盛大的撤退</h2>
+    <p class="lede rise" style="margin:18px auto 0">「撤退」是軍事語言：有計畫、有指揮、保存實力。逃離才是潰散。她先替自己的離開正名，再說再見。</p>
+
+    <div class="mail-art">
+      <svg viewBox="0 0 340 400" role="img" aria-label="郵筒與北京往哈爾濱的車票">
+        <!-- 落下的票（循環） -->
+        <g id="dropLayer"></g>
+        <!-- 郵筒外框 -->
+        <path class="f-ice" d="M74 96h192v14H74z"/>
+        <path class="f-paper" d="M64 96l24-22h190l-22 22z"/>
+        <rect class="f-navy-d" x="120" y="82" width="108" height="7" rx="3"/>
+        <rect class="f-navy-d" x="90" y="110" width="160" height="248"/>
+        <rect class="f-ice" x="74" y="110" width="20" height="256"/>
+        <rect class="f-ice" x="246" y="110" width="20" height="256"/>
+        <rect class="f-ice" x="74" y="352" width="192" height="14"/>
+        <!-- 票（靜態，堆在框內） -->
+        <g>
+          <rect class="f-coral" x="106" y="158" width="112" height="66" rx="2" transform="rotate(-11 162 191)"/>
+          <rect class="f-paper" x="118" y="216" width="104" height="60" rx="2" transform="rotate(7 170 246)"/>
+          <rect class="f-coral-d" x="104" y="262" width="118" height="62" rx="2" transform="rotate(-6 163 293)"/>
+          <text class="f-paper tx-sans" x="163" y="300" font-size="15" text-anchor="middle" transform="rotate(-6 163 293)">北京 → 哈爾濱</text>
+        </g>
+        <!-- 雪地 -->
+        <path class="f-paper" d="M0 372c70-12 120 8 190 2s90-14 150-6v32H0z" opacity=".9"/>
+      </svg>
+    </div>
+
+    <button class="post-btn" type="button" id="postBtn">投遞這封信</button>
+    <p class="post-out" id="postOut" aria-live="polite">她沒有告別，只是把票投進去。</p>
+  </div>
+</section>
+
+<!-- ══════════════ 再一次相遇：他往北飛 ══════════════ -->
+<section class="flights" data-sec="flights">
+  <div class="wrap">
+    <span class="actno">EP 17 ・ 互動</span>
+    <h2>再一次相遇</h2>
+    <p class="lede rise" style="margin:18px auto 0">當年是她投出一張單程票。現在換他，一趟一趟往北飛。</p>
+
+    <div class="fly-art">
+      <svg viewBox="0 0 460 268" role="img" aria-label="北京往哈爾濱，一趟又一趟的航線">
+        <g id="arcLayer"></g>
+        <circle class="f-ice" cx="86" cy="206" r="7"/>
+        <text class="f-ice tx-serif" x="86" y="236" font-size="14" text-anchor="middle" letter-spacing="2">北京</text>
+        <circle class="f-coral" cx="382" cy="70" r="8"/>
+        <circle class="s-coral" cx="382" cy="70" r="17" fill="none" stroke-width="1.4" opacity=".45"/>
+        <text class="f-coral tx-serif" x="382" y="42" font-size="14" text-anchor="middle" letter-spacing="2">哈爾濱</text>
+      </svg>
+    </div>
+
+    <p class="fly-count" id="flyCount">第 0 趟</p>
+    <button class="post-btn" type="button" id="flyBtn">送他飛一趟</button>
+    <p class="post-out" id="flyOut">她沒有回頭。所以這一次，換他走這條路。</p>
+  </div>
+</section>
+
+<!-- ══════════════ 第四幕：重逢 ══════════════ -->
+<section class="act flip" data-sec="act_2">
+  <div class="wrap act-grid">
+    <div class="act-art rise" aria-hidden="true">
+      <svg viewBox="0 0 420 340" role="presentation">
+        <!-- 洋蔥頂 -->
+        <g class="f-paper">
+          <path d="M186 300V182h56v118z"/>
+          <path d="M214 118c19 19 30 39 30 55 0 18-13 29-30 29s-30-11-30-29c0-16 11-36 30-55z"/>
+          <rect x="211" y="96" width="6" height="24"/>
+        </g>
+        <g class="f-ice">
+          <path d="M116 300v-78h34v78z"/><path d="M133 186l20 36h-40z"/>
+          <path d="M290 300v-64h30v64z"/><path d="M305 208l17 28h-34z"/>
+        </g>
+        <!-- 她的店 -->
+        <rect class="f-coral" x="226" y="240" width="74" height="54" rx="1"/>
+        <path class="f-coral" d="M218 240l45-18 45 18z"/>
+        <rect class="f-paper" x="238" y="254" width="26" height="20" rx="1"/>
+        <rect class="f-paper" x="274" y="262" width="16" height="32" rx="1"/>
+        <!-- 門口的狗 -->
+        <g transform="translate(150 302) scale(.4)">
+  <path class="f-coral" d="M-32-46c-14-2-24-14-25-29 12 2 22 12 27 27z"/>
+  <path class="f-coral" d="M-2-86c-16 0-27 10-32 26l-10 36c-3 12 4 22 16 22h44c10 0 16-8 14-18l-8-42c-3-16-10-24-24-24z"/>
+  <path class="f-coral" d="M20-56c-9 0-15 6-15 15v33c0 5 3 8 8 8h14c5 0 8-3 8-8v-33c0-9-6-15-15-15z"/>
+  <circle class="f-coral" cx="16" cy="-108" r="25"/>
+  <path class="f-coral" d="M34-110c14 0 24 6 24 13s-10 13-24 13z"/>
+  <path class="f-coral" d="M-2-124c-12-2-20 6-20 20 0 14 6 26 14 30 5-16 8-36 6-50z"/>
+  <circle class="f-navy" cx="24" cy="-114" r="3.4"/>
+  <circle class="f-navy" cx="56" cy="-97" r="4.4"/>
+        </g>
+        <!-- 雪地 -->
+        <path class="f-paper" d="M0 296c80-14 130 10 200 4s130-16 220-6v46H0z"/>
+        <!-- 雪點 -->
+        <g class="f-paper" opacity=".7">
+          <circle cx="52" cy="70" r="3.4"/><circle cx="352" cy="52" r="3"/><circle cx="94" cy="140" r="2.4"/>
+          <circle cx="380" cy="150" r="2.6"/><circle cx="34" cy="200" r="2.2"/><circle cx="404" cy="234" r="2"/>
+        </g>
+      </svg>
+    </div>
+    <div class="act-text">
+      <div class="act-head">
+        <span class="vlabel">第四幕・哈爾濱</span>
+        <div>
+          <span class="actno">EP 17—24</span>
+          <h2>他來找她的時候，她已經不需要他了</h2>
+          <p class="lede rise">多年後欒念北上。此時的尚之桃早就脫離職場內耗，在老家開了自己的店，日子是自己的。</p>
+          <p class="lede rise">順序很關鍵：她不是在原地等人，是<strong>已經把生活重建完了，對方才出現</strong>。追妻火葬場只有在這個前提下才成立。</p>
+          <p class="act-meta">舊上司、舊情人再次面對面，權力結構整個翻過來。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 三句金句 ══════════════ -->
+<section class="lines" data-sec="lines">
+  <div class="wrap">
+    <span class="actno">THREE LINES ・ 原著</span>
+    <h2>三句話，剛好是三個轉折</h2>
+    <p class="lede rise" style="margin:16px 0 clamp(24px,4vw,34px)">以下引自原著小說，並非劇中台詞。點開看解讀與追劇時的觀察點。</p>
+
+    <details class="letter">
+      <summary>
+        <span class="no">Ⅰ</span>
+        <span>
+          <q>願你一生無憂，願你永遠有打破僵局的勇氣</q>
+          <span class="tag">祝福 ・ 起</span>
+        </span>
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </summary>
+      <div class="unfold">
+        <p>重量在後半。「一生無憂」是所有人都會說的客套；「有打破僵局的勇氣」卻不是祝人順遂，而是預設了僵局一定會來。</p>
+        <p>僵局在廣告業是日常：比稿卡住、提案被斃、客戶不點頭。放回感情線，兩人那六年也是一場沒有人願意先動的僵局。這句話祝的不是無事發生，是有事發生的時候你還敢動。</p>
+        <p class="watch">觀察點：這句若被改成一般的順遂祝福，角色底色會整個不一樣。</p>
+      </div>
+    </details>
+
+    <details class="letter">
+      <summary>
+        <span class="no">Ⅱ</span>
+        <span>
+          <q>這不是逃離，這是一場盛大的撤退，再見北京</q>
+          <span class="tag">不告而別 ・ 承</span>
+        </span>
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </summary>
+      <div class="unfold">
+        <p>「撤退」是軍事語言，不是失敗者的用詞——撤退有計畫、有指揮、保存實力，逃離才是潰散。她先替自己的離開正名，再說再見。</p>
+        <p>更關鍵的是「盛大」。一場沒有人送行、連對方都不知道的離開，她硬是要給它一個規格。這不是說給別人聽的，是說給自己記住的：這是我選的，不是我輸了。</p>
+        <p class="watch">觀察點：小說能寫內心獨白，影視不行。這段情緒要靠畫面或旁白處理。</p>
+      </div>
+    </details>
+
+    <details class="letter">
+      <summary>
+        <span class="no">Ⅲ</span>
+        <span>
+          <q>讓我們重新認識一次吧？就從第一次相見開始</q>
+          <span class="tag">重逢 ・ 合</span>
+        </span>
+        <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </summary>
+      <div class="unfold">
+        <p>他要的不是複合，是重來。差別很大——複合是回到原本的關係，重來是承認原本的起點就有問題。</p>
+        <p>他們的第一次相見，是他以創意總監的身分勸她放棄這份工作。那一刻的高低已經定了。所以「從第一次相見開始」不是浪漫的修辭，是他終於意識到：要走到平視，只能把那個仰望的起點作廢。整部作品的論點在這一句收束。</p>
+        <p class="watch">觀察點：這句若被保留且放在對的位置，改編就成立了一大半。</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ══════════════ 尾聲 ══════════════ -->
+<section class="coda" data-sec="coda">
+  <div class="wrap">
+    <div class="harbin" aria-hidden="true">
+      <svg viewBox="0 0 340 210" role="presentation">
+        <circle class="f-coral" cx="172" cy="18" r="10" opacity=".8"/>
+        <g transform="translate(104 82) scale(.58)">
+  <path class="f-coral" d="M0-40C-12-58-42-56-52-32-62-8-58 24-34 42-20 51 20 51 34 42 58 24 62-8 52-32 42-56 12-58 0-40Z"/>
+  <path class="s-navy-d" fill="none" stroke-width="3.6" stroke-linecap="round" d="M1-38C-5-16-5 18 1 40"/>
+  <path class="f-ice" d="M10-52c14-16 35-21 52-12-11 16-32 22-52 12z"/>
+  <rect class="f-ice" x="-3" y="-64" width="6" height="27" rx="3"/>
+        </g>
+        <text class="f-ice tx-serif" x="236" y="112" font-size="106" font-weight="700" text-anchor="middle">L</text>
+        <path class="s-paper" stroke-width="1.4" stroke-dasharray="4 8" d="M22 112h296" opacity=".7"/>
+        <path class="f-paper" d="M0 166c66-13 104 8 164 3s112-13 176-4v45H0z"/>
+      </svg>
+    </div>
+    <span class="actno">CODA</span>
+    <h2>早春不是季節，是溫度</h2>
+    <p class="lede" style="margin:18px auto 0">雪開始鬆動，但腳下仍然是冰。這個詞同時對應北京的冬、哈爾濱的雪，以及一段長年停在解凍邊緣、始終沒有徹底融化的關係。片名本身就是全劇最大的意象。</p>
+    <p class="script">Not spring yet &mdash; but no longer winter</p>
+    <a class="cta" data-cta="hub" href="https://story.knittinghiyori.com/">走進作品目錄</a>
+  </div>
+</section>
+
+<!-- ══════════════ 資料 ══════════════ -->
+<!-- ══════════════ 支持這篇 ══════════════ -->
+<!-- Google AdSense 手動廣告單元 -->
+<div class="kh-ad" aria-label="贊助內容">
+  <span class="kh-ad__label">贊助內容</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2022028565680247" data-ad-slot="2285424505" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<section class="support" data-sec="support">
+  <div class="wrap rise">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 160 116" role="presentation">
+        <path class="f-paper" d="M80 34C64 23 42 20 22 23v64c20-3 42 0 58 11z"/>
+        <path class="f-paper" d="M80 34c16-11 38-14 58-11v64c-20-3-42 0-58 11z"/>
+        <path class="s-coral" fill="none" stroke-width="3.4" stroke-linecap="round" d="M80 34v64"/>
+        <path class="s-ice" fill="none" stroke-width="2.2" stroke-linecap="round" opacity=".75"
+              d="M36 46c11-1 22 0 31 4M36 60c11-1 22 0 31 4M124 46c-11-1-22 0-31 4M124 60c-11-1-22 0-31 4"/>
+        <circle class="f-coral" cx="80" cy="14" r="6" opacity=".85"/>
+      </svg>
+    </div>
+    <span class="actno">SUPPORT ・ 支持這篇</span>
+    <h2>劇看完了，故事還沒完</h2>
+    <p class="lede">這一頁拆的是劇版的十年三幕。姑娘別哭的原著把六年僵局裡那些沒有台詞的部分寫得更細——同一段關係，換一個視角再走一遍。</p>
+    <div class="acts">
+  <a class="cta" data-cta="shopee" href="https://s.shopee.tw/1LfOxor4gi" target="_blank" rel="sponsored nofollow noopener">到蝦皮找原著小說</a>
+      <a class="cta cta--ghost" data-cta="newsletter" href="https://knittinghiyori.kit.com/2cf3d82ac1" target="_blank" rel="noopener">訂閱電子報</a>
+    </div>
+    <p class="sub-note">下一部戲，我先幫你讀完。一封信講一部作品，新的一篇上線時我寄給你，隨時可以退訂。</p>
+    <p class="fine">本連結為蝦皮聯盟行銷連結。透過它下單，我會獲得一小筆分潤，<br>你的售價不會因此增加。</p>
+  </div>
+</section>
+
+<section class="facts" data-sec="facts">
+  <div class="wrap">
+    <h2>《早春晴朗》基本資料</h2>
+    <dl>
+      <dt>劇名</dt><dd>早春晴朗（The Early Spring）</dd>
+      <dt>集數</dt><dd>24 集，單集約 45 分鐘</dd>
+      <dt>播出</dt><dd>2026 年 8 月 26 日開播，優酷、酷喵 TV 每天中午 12:00 更新；台灣 Netflix 同步上架</dd>
+      <dt>主創</dt><dd>導演 蔣繼正 ・ 編劇 高小嫻</dd>
+      <dt>主演</dt><dd>井柏然（飾 欒念）・ 孫千（飾 尚之桃）</dd>
+      <dt>原著</dt><dd>姑娘別哭《早春晴朗》（晉江文學城）</dd>
+      <dt>主題曲</dt><dd>汪蘇瀧《路過晴朗》，詞曲、製作一人包辦</dd>
+      <dt>拍攝地</dt><dd>北京、哈爾濱</dd>
+    </dl>
+    <p class="fine">
+      本頁為劇情與原著解讀，含劇透。追劇日曆、每日更新表與大結局推算另見<a data-cta="article" href="https://knittinghiyori.com/the-early-spring/">《早春晴朗》追劇日曆</a>。<br>
+      原著段落依情節重述，非逐字引用。
+    </p>
+  </div>
+</section>
+
+</div>
+</article>
+<p class="kh-legal">本站使用 Cookie 以進行流量分析與顯示廣告。<a href="https://knittinghiyori.com/privacy-policy/">隱私權政策</a></p>
+
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Article",
+      "headline":"早春晴朗的十年：從仰望到平視",
+      "description":"《早春晴朗》十年三幕的故事解讀——權力不對等如何成為感情的地基，六年裡沒有一句告白的偏愛，一場盛大的撤退，以及重逢時翻過來的關係結構。",
+      "inLanguage":"zh-Hant",
+      "about":{"@id":"#series"},
+      "isAccessibleForFree":true
+    },
+    {
+      "@type":"TVSeries",
+      "@id":"#series",
+      "name":"早春晴朗",
+      "alternateName":"The Early Spring",
+      "inLanguage":"zh-Hans",
+      "numberOfEpisodes":24,
+      "genre":["都市","職場","情感"],
+      "startDate":"2026-08-26",
+      "director":{"@type":"Person","name":"蔣繼正"},
+      "author":{"@type":"Person","name":"高小嫻"},
+      "actor":[
+        {"@type":"Person","name":"井柏然"},
+        {"@type":"Person","name":"孫千"}
+      ],
+      "isBasedOn":{"@type":"Book","name":"早春晴朗","author":{"@type":"Person","name":"姑娘別哭"}},
+      "musicBy":{"@type":"Person","name":"汪蘇瀧"},
+      "description":"2026 年都市職場情感劇，全 24 集，改編自姑娘別哭同名小說，講述尚之桃與欒念橫跨十年的感情糾葛。"
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var $  = function(s,c){ return (c||document).querySelector(s); };
+  var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- 進場 ---------- */
+  var rises = $$(".sf .rise");
+  if ("IntersectionObserver" in window && !reduce){
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, {threshold:.15, rootMargin:"0px 0px -8% 0px"});
+    rises.forEach(function(el){ io.observe(el); });
+  } else {
+    rises.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* ---------- 權力天秤 ---------- */
+  var STAGES = [
+    {deg:15,  t:"他的一句話，比她整個人重",
+     d:"入職第一天，創意總監一句「別做了」就能決定她留不留。那一刻，他這一邊沉到底。"},
+    {deg:10,  t:"見不得光的那一邊，承擔比較多",
+     d:"關係開始了，卻只能在下班後、在沒有人的地方。風險幾乎全押在她身上，分量還是他的。"},
+    {deg:4,   t:"一起往上走，重量還是不對等",
+     d:"事業並肩前進，距離卻沒有縮短。他的偏愛藏在行為裡，音量小到站在輕的那一邊收不到。"},
+    {deg:-9,  t:"她先動了",
+     d:"六年僵局裡，第一個做決定的是她。離開北京不是輸掉，是第一次由她定義這段關係怎麼結束——天秤開始往她那邊倒。"},
+    {deg:-14, t:"這次沉下去的，是她這一邊",
+     d:"她開了自己的店，日子完整。換他北上、換他等待、換他不確定。"},
+    {deg:0,   t:"兩邊一樣重",
+     d:"他要的不是複合，是重來——把那個仰望的起點作廢。故事真正的結局不是誰贏，是平的。"}
+  ];
+  var beam = $("#beamGroup"), figA = $("#figA"), figB = $("#figB");
+  var elT = $("#balTitle"), elD = $("#balText");
+  var range = $("#balRange"), steps = $$("#balSteps button");
+
+  function render(i){
+    var s = STAGES[i];
+    if (!s) return;
+    if (beam) beam.style.transform = "rotate(" + s.deg + "deg)";
+    /* 人物反向補正，讓身體維持直立 */
+    if (figA) figA.style.transform = "rotate(" + (-s.deg) + "deg)";
+    if (figB) figB.style.transform = "rotate(" + (-s.deg) + "deg)";
+    if (elT)  elT.textContent  = s.t;
+    if (elD)  elD.textContent  = s.d;
+    steps.forEach(function(b,bi){ b.setAttribute("aria-current", bi === i ? "true" : "false"); });
+    if (range && range.value !== String(i)) range.value = i;
+  }
+  if (figA) figA.style.transformOrigin = "112px 100px";
+  if (figB) figB.style.transformOrigin = "448px 100px";
+  if (range) range.addEventListener("input", function(){ render(parseInt(range.value,10)); });
+  steps.forEach(function(b){
+    b.addEventListener("click", function(){ render(parseInt(b.getAttribute("data-i"),10)); });
+  });
+  render(0);
+
+  /* ---------- 六個證據 ---------- */
+  $$(".sf .card").forEach(function(c){
+    c.addEventListener("click", function(){
+      c.setAttribute("aria-expanded", c.getAttribute("aria-expanded") === "true" ? "false" : "true");
+    });
+  });
+
+  /* ---------- 郵筒投遞 ---------- */
+  var NS = "http://www.w3.org/2000/svg";
+  var layer = $("#dropLayer"), btn = $("#postBtn"), out = $("#postOut");
+  var lines = [
+    "北京 → 哈爾濱 ・ 一張單程票",
+    "沒有人送行的離開，她自己給了它規格",
+    "這不是逃離，這是一場盛大的撤退",
+    "再見北京"
+  ];
+  var n = 0;
+  function ticket(){
+    if (!layer) return;
+    var g = document.createElementNS(NS,"g");
+    g.setAttribute("class","drop go");
+    var r = document.createElementNS(NS,"rect");
+    var coral = Math.random() > .5;
+    r.setAttribute("class", coral ? "f-coral" : "f-paper");
+    r.setAttribute("x", 96 + Math.random()*46);
+    r.setAttribute("y", 30);
+    r.setAttribute("width", 104);
+    r.setAttribute("height", 58);
+    r.setAttribute("rx", 2);
+    r.setAttribute("transform","rotate(" + (Math.random()*26-13) + " 160 60)");
+    g.appendChild(r);
+    layer.appendChild(g);
+    setTimeout(function(){ if (g.parentNode) g.parentNode.removeChild(g); }, 1700);
+  }
+  if (btn){
+    btn.addEventListener("click", function(){
+      if (!reduce) ticket();
+      if (out) out.textContent = lines[n % lines.length];
+      n++;
+      if (n >= lines.length && btn) btn.textContent = "再投一封";
+    });
+  }
+  /* ---------- 再一次相遇：他往北飛 ---------- */
+  var arcLayer = $("#arcLayer"), flyBtn = $("#flyBtn"),
+      flyOut = $("#flyOut"), flyCount = $("#flyCount");
+  var FLY = [
+    "他開始往北飛。這條路，當年是她一個人走的。",
+    "北京到哈爾濱，她走過一次；他要走很多次。",
+    "六年裡他沒有追過任何人。現在他一次一次來。",
+    "主動的人換了，等待的人也換了。",
+    "當年是她投出一張單程票，現在是他一張一張買回程。",
+    "還要飛幾趟？他不問了，就是繼續飛。"
+  ];
+  var flyN = 0, arcs = [];
+  function sendFlight(){
+    if (!arcLayer) return;
+    var i = flyN;
+    var lift = 30 + (i % 6) * 36;
+    var d = "M86 206Q" + (196 + (i % 3) * 22) + " " + (200 - lift) + " 382 70";
+    var path = document.createElementNS(NS, "path");
+    path.setAttribute("d", d);
+    path.setAttribute("fill", "none");
+    path.setAttribute("class", i % 2 ? "s-ice" : "s-coral");
+    path.setAttribute("stroke-width", "1.6");
+    path.setAttribute("stroke-dasharray", "3 6");
+    path.setAttribute("opacity", ".45");
+    arcLayer.appendChild(path);
+    arcs.forEach(function(a){ a.setAttribute("opacity", ".2"); });
+    arcs.push(path);
+    if (arcs.length > 8){ var old = arcs.shift(); if (old.parentNode) old.parentNode.removeChild(old); }
+
+    if (!reduce){
+      var dot = document.createElementNS(NS, "circle");
+      dot.setAttribute("r", "5");
+      dot.setAttribute("class", "f-coral");
+      arcLayer.appendChild(dot);
+      var len = path.getTotalLength(), t0 = null, dur = 1500;
+      (function step(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var pt = path.getPointAtLength(len * k);
+        dot.setAttribute("cx", pt.x);
+        dot.setAttribute("cy", pt.y);
+        if (k < 1) requestAnimationFrame(step);
+        else if (dot.parentNode) dot.parentNode.removeChild(dot);
+      })(performance.now());
+    }
+
+    flyN++;
+    if (flyCount) flyCount.textContent = "第 " + flyN + " 趟";
+    if (flyOut) flyOut.textContent = FLY[Math.min(flyN - 1, FLY.length - 1)];
+    if (flyBtn && flyN === 1) flyBtn.textContent = "再飛一趟";
+  }
+  if (flyBtn) flyBtn.addEventListener("click", sendFlight);
+})();
+</script>
+
+<script>
+/* ── 本頁專屬事件對應（事件名與參數一律由 head 的共用追蹤提供）──
+     中／日／英三版貼的是完全一樣的這一段，不用改任何字 ── */
+(function(){
+  if (typeof window.hyEvent !== "function") return;
+  var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+
+  /* ── 章節到達 ＋ 讀完 ── */
+  if ("IntersectionObserver" in window){
+    var sio = new IntersectionObserver(function(en){
+      en.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var id = e.target.getAttribute("data-sec");
+        hySection(id, Number(e.target.getAttribute("data-seq")));
+        if (id === "coda") hyComplete();
+        sio.unobserve(e.target);
+      });
+    }, { rootMargin: "0px 0px -55% 0px", threshold: 0 });
+    $$("[data-sec]").forEach(function(el, i){
+      el.setAttribute("data-seq", i + 1);
+      sio.observe(el);
+    });
+  } else if (typeof hyCompleteAtScroll === "function") {
+    hyCompleteAtScroll(95);
+  }
+
+  /* ── 權力天秤：六個階段，各回報一次；六段都走過再回報一次 ── */
+  var stageSeen = {}, stageCount = 0;
+  function stage(v){
+    var i = parseInt(v, 10);
+    if (isNaN(i) || stageSeen[i]) return;
+    stageSeen[i] = 1; stageCount++;
+    hyInteract("toggle", "balance_" + (i + 1), i + 1);
+    if (stageCount === 6) hyInteract("act", "balance_all_stages");
+  }
+  var balRange = document.getElementById("balRange");
+  if (balRange) balRange.addEventListener("input", function(){ stage(balRange.value); });
+  $$("#balSteps button").forEach(function(b){
+    b.addEventListener("click", function(){ stage(b.getAttribute("data-i")); });
+  });
+
+  /* ── 七張證據卡：展開才算互動（收合不送） ── */
+  $$(".proof .card").forEach(function(c, i){
+    c.addEventListener("click", function(){
+      if (c.getAttribute("aria-expanded") === "true"){
+        hyInteract("reveal", "proof_" + (i + 1 < 10 ? "0" : "") + (i + 1), i + 1);
+      }
+    });
+  });
+
+  /* ── 郵筒投遞：第 1 / 4 / 10 封各回報一次 ── */
+  var posts = 0, postBtn = document.getElementById("postBtn");
+  if (postBtn) postBtn.addEventListener("click", function(){
+    posts = posts + 1;
+    if (posts === 1 || posts === 4 || posts === 10) hyInteract("act", "post_letter", posts);
+  });
+
+  /* ── 送他飛一趟：第 1 / 3 / 6 趟各回報一次 ── */
+  var flights = 0, flyBtn = document.getElementById("flyBtn");
+  if (flyBtn) flyBtn.addEventListener("click", function(){
+    flights = flights + 1;
+    if (flights === 1 || flights === 3 || flights === 6) hyInteract("play", "flight", flights);
+  });
+
+  /* ── 三封信 ── */
+  $$(".lines details.letter").forEach(function(d, i){
+    d.addEventListener("toggle", function(){
+      if (d.open) hyInteract("reveal", "letter_" + (i + 1), i + 1);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
