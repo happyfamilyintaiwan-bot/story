@@ -44,12 +44,19 @@
 <link rel="manifest" href="/site.webmanifest">
 
 <style>
+/* 頁首品牌（core §7）：每頁最上方放編織日和 logo＋名字 */
+.kh-brand{max-width:720px;margin:0 auto;padding:12px 16px 0;box-sizing:border-box}
+.kh-brand a,.kh-brand a:link,.kh-brand a:visited{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:#1c1a1b;text-decoration:none;font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:17px;font-weight:600;letter-spacing:.08em}
+.kh-brand img{width:28px;height:28px;border-radius:6px;flex:none}
+.kh-brand small{font-size:13px;font-weight:400;color:#5b5458;letter-spacing:.04em}
+
 .kh-ad{display:block;width:100%;max-width:728px;margin:48px auto;padding:0 16px;text-align:center;clear:both;box-sizing:border-box}
 .kh-lift{position:relative;z-index:6}
 .kh-ad__label{display:block;font-size:12px;letter-spacing:.08em;opacity:.6;margin-bottom:6px;line-height:1.4}
 </style>
 </head>
 <body>
+<header class="kh-brand"><a data-google-vignette="false" href="https://knittinghiyori.com/" data-cta="header_brand" data-cta-type="other"><img src="/icons/favicon-96.png" width="28" height="28" alt="">編織日和<small>· 故事</small></a></header>
 
 <!-- 內容：段落用 <section data-sec="英文代號">，會自動送 section_view；對外連結加 data-cta="代號" -->
 
