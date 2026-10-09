@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Travelpayouts Drive（放在 head 最前面，core §5：所有頁面含 404） -->
+<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.setAttribute("data-cmp-ab","2");
+      script.src = 'https://emrld.ltd/NTc4NjI0.js?t=578624';
+      document.head.appendChild(script);
+  })();
+</script>
+<meta name="spec-version" content="core-v1.3/story-v1.2">
+
+<!-- GA4：404 只送 page_view 和 cta_click，不載 hy-story.js（它會把錯的網址當成作品 id） -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZHTYTRMQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-ZQZHTYTRMQ', { cookie_domain: '.knittinghiyori.com' });
+</script>
+
+<title>404 找不到這一頁｜編織日和 · 故事</title>
+<meta name="description" content="這個網址找不到頁面。回到編織日和・故事首頁，看劇集、小說與漫畫的深度分析。">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#e4c995">
+
+<style>
+:root{
+  --paper:#f2ede4; --paper-2:#fbf9f5; --paper-3:#e8e1d5;
+  --ink:#3e3a34; --ink-2:#6f6a61; --ink-3:#8f8a80;
+  --m-rose:#c9a49c; --m-clay:#be9a8c; --m-wheat:#cdb78a; --m-sage:#a7b29b;
+  --m-mist:#9cadb8; --m-lilac:#b0a6b4; --m-jade:#96aea4;
+  --rule:rgba(62,58,52,.14); --rule-strong:rgba(62,58,52,.27);
+  --shadow:0 10px 30px rgba(62,58,52,.09);
+  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --latin:"Jost","Noto Sans TC",sans-serif;
+  --pad:clamp(20px,5vw,72px); --max:1120px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; color:var(--ink); background-color:var(--paper);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(62,58,52,.030) 0 1px, transparent 1px 8px),
+    repeating-linear-gradient(90deg, rgba(62,58,52,.030) 0 1px, transparent 1px 8px);
+  font-family:var(--sans); font-size:16.5px; line-height:2.05; letter-spacing:.035em;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink); outline-offset:3px; border-radius:2px}
+.wrap{max-width:var(--max); margin:0 auto; padding-inline:var(--pad)}
+
+/* 頁首品牌列（core §7） */
+.kh-brand-row{display:flex;align-items:center;gap:12px;max-width:var(--max);margin:0 auto;padding:10px var(--pad) 8px;border-bottom:1px solid var(--rule)}
+.kh-brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;color:var(--ink);text-decoration:none;font-family:var(--sans);font-size:14.4px;font-weight:700;letter-spacing:.04em;line-height:1.2;white-space:nowrap}
+.kh-brand img{width:40px;height:40px;border-radius:8px;flex:none}
+.kh-brand:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* 首屏 */
+.lost{padding-block:clamp(48px,9vw,96px) clamp(36px,6vw,64px)}
+.selvedge{
+  display:inline-flex; align-items:center; gap:.6em; margin:0 0 18px;
+  font-family:var(--latin); font-size:12px; letter-spacing:.26em; color:var(--ink-2);
+}
+.selvedge::before{content:""; width:26px; height:1px; background:var(--m-rose)}
+.selvedge b{font-weight:400; color:var(--ink-2); letter-spacing:.1em; font-family:var(--sans)}
+h1,h2,h3{font-family:var(--serif); font-weight:500; line-height:1.5; letter-spacing:.04em; margin:0}
+.lost h1{font-size:clamp(28px,7vw,52px); margin:0 0 20px; max-width:14em}
+.lede{font-size:clamp(15px,3.4vw,17px); font-weight:300; line-height:2.1; color:var(--ink-2); max-width:28em; margin:0 0 32px}
+
+/* 斷掉的線：一條線織到一半就鬆開 */
+.yarn{display:block; width:min(280px,70%); height:auto; margin:0 0 30px; overflow:visible}
+.yarn path{fill:none; stroke:var(--m-rose); stroke-width:2; stroke-linecap:round}
+.yarn .loose{stroke-dasharray:4 7; opacity:.75}
+
+.cta-row{display:flex; flex-wrap:wrap; gap:12px}
+.btn{
+  display:inline-flex; align-items:center; gap:.5em; min-height:50px; padding:0 26px; border-radius:999px;
+  font-size:15px; letter-spacing:.08em; text-decoration:none; border:1px solid var(--rule-strong);
+  transition:transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn--solid{background:var(--ink); color:var(--paper-2); border-color:var(--ink)}
+.btn--solid:hover{box-shadow:var(--shadow)}
+.btn--ghost{border-color:var(--rule); background:transparent}
+.btn--ghost:hover{border-color:var(--ink-3); background:var(--paper-2)}
+
+/* 推薦作品（卡片從首頁抓，樣式和首頁一致） */
+.picks{padding-block:clamp(40px,7vw,80px) clamp(56px,9vw,104px); border-top:1px solid var(--rule)}
+.picks[hidden]{display:none}
+.picks h2{font-size:clamp(22px,5vw,30px); margin:0 0 24px}
+.grid{list-style:none; margin:0; padding:0; display:grid; gap:18px; grid-template-columns:repeat(auto-fill,minmax(min(288px,100%),1fr))}
+.work{--thread:var(--m-mist)}
+.card{
+  display:flex; flex-direction:column; height:100%; padding:28px 26px 24px 28px; text-decoration:none;
+  background:var(--paper-2); border:1px solid var(--rule); border-left:3px solid var(--thread);
+  transition:transform .24s ease, box-shadow .24s ease, border-left-width .24s ease;
+}
+a.card:hover{transform:translateY(-4px); box-shadow:var(--shadow); border-left-width:8px}
+.badge{
+  align-self:flex-start; display:inline-flex; align-items:center; gap:.55em; margin-bottom:16px;
+  font-size:11.5px; letter-spacing:.16em; color:var(--ink-2); border:1px solid var(--rule); border-radius:999px; padding:4px 13px;
+}
+.badge::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--thread); flex:0 0 auto}
+.card h3{font-size:22px; font-weight:600; letter-spacing:.06em; margin:0 0 8px}
+.card .meta{font-size:13px; letter-spacing:.06em; font-weight:300; color:var(--ink-2); margin:0 0 14px}
+.card .note{font-size:14.5px; font-weight:300; line-height:2.05; color:var(--ink-2); margin:0 0 18px; flex:1}
+.tags{list-style:none; display:flex; flex-wrap:wrap; gap:6px; margin:0 0 16px; padding:0}
+.tags li{font-size:12.5px; font-weight:300; color:var(--ink-2); background:var(--paper); border-radius:999px; padding:3px 12px}
+.go{font-size:14.5px; color:var(--ink); letter-spacing:.08em}
+.go::after{content:" →"}
+
+/* 頁尾 */
+footer{border-top:1px solid var(--rule); padding-block:28px 40px; font-size:13px; color:var(--ink-2); line-height:1.9}
+footer p{margin:0 0 6px}
+footer a{text-underline-offset:3px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="kh-brand-row"><a class="kh-brand" href="https://story.knittinghiyori.com/" data-cta="brand_hub" data-cta-type="story"><img src="/icons/logo-knitting-120.webp" srcset="/icons/logo-knitting-120.webp 1x, /icons/logo-knitting-240.webp 2x" width="40" height="40" alt="">編織日和・故事</a></div>
+
+<main>
+<section class="lost">
+  <div class="wrap">
+    <p class="selvedge">404 <b>找不到這一頁</b></p>
+    <svg class="yarn" viewBox="0 0 280 40" aria-hidden="true" focusable="false">
+      <path d="M2 20 C 22 4, 42 36, 62 20 S 102 4, 122 20 S 162 36, 172 24"/>
+      <path class="loose" d="M172 24 C 190 10, 212 40, 236 22 S 270 30, 278 36"/>
+    </svg>
+    <h1 id="lost-title">這一頁的線頭，找不到了</h1>
+    <p class="lede" id="lost-lede">可能是網址少打了一個字，或是這篇已經搬家了。下面幾部作品都可以接著讀。</p>
+    <div class="cta-row">
+      <a class="btn btn--solid" id="lost-hub" href="https://story.knittinghiyori.com/#works" data-cta="notfound_hub" data-cta-type="story">回故事首頁，看全部作品</a>
+      <a class="btn btn--ghost" href="https://knittinghiyori.com/" data-cta="notfound_main" data-cta-type="article">到編織日和主站</a>
+    </div>
+  </div>
+</section>
+
+<section class="picks" id="picks" hidden aria-labelledby="picks-title">
+  <div class="wrap">
+    <h2 id="picks-title">從這幾部開始讀</h2>
+    <ul class="grid" id="picks-grid"></ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>編織日和 · 故事｜<a href="https://story.knittinghiyori.com/">story.knittinghiyori.com</a></p>
+    <p class="kh-legal">本站使用 Cookie 進行流量分析（Google Analytics）與顯示廣告（Google AdSense），部分連結為聯盟連結。<a href="https://knittinghiyori.com/privacy-policy/">隱私權政策</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // 1. 看讀者原本要去哪一區（/books/ 小說、/drama/ 追劇、/comics/ 漫畫）
+  var seg = location.pathname.split('/').filter(Boolean)[0] || '';
+  var AREAS = {
+    books:  { type: 'novel', title: '換一本小說讀讀', lede: '這本小說的頁面找不到了，可能是網址少打了一個字，或是還在整理中。' },
+    drama:  { type: 'drama', title: '換一部劇看看',   lede: '這部劇的頁面找不到了，可能是網址少打了一個字，或是這篇已經搬家了。' },
+    comics: { type: 'comic', title: '換一部漫畫看看', lede: '這部漫畫的頁面找不到了，可能是網址少打了一個字，或是還在整理中。' }
+  };
+  var area = AREAS[seg];
+  if (area) {
+    document.getElementById('picks-title').textContent = area.title;
+    document.getElementById('lost-lede').textContent = area.lede;
+  }
+
+  // 2. 點擊追蹤（不載 hy-story.js，這裡只送 cta_click）
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest) return;
+    var el = e.target.closest('[data-cta]');
+    if (!el || typeof gtag !== 'function') return;
+    gtag('event', 'cta_click', {
+      cta_id: el.getAttribute('data-cta'),
+      cta_type: el.getAttribute('data-cta-type') || 'story',
+      link_url: el.getAttribute('href') || ''
+    });
+  }, true);
+
+  // 3. 從首頁抓「可閱讀」的作品卡片，同一區優先，最多 3 張；抓不到就只留按鈕
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+  if (!window.fetch || !window.DOMParser) return;
+  fetch('/', { credentials: 'same-origin' })
+    .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+    .then(function (html) {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      var ready = Array.prototype.slice.call(doc.querySelectorAll('#grid > li.work[data-state="ready"]'));
+      var same = shuffle(ready.filter(function (li) { return area ? li.dataset.type === area.type : false; }));
+      var rest = shuffle(ready.filter(function (li) { return same.indexOf(li) < 0; }));
+      var picks = same.concat(rest).slice(0, 3);
+      if (!picks.length) return;
+      // 同一區的作品不夠 3 部、混到別區時，標題改回通用說法
+      if (area ? same.length < picks.length : false) {
+        document.getElementById('picks-title').textContent = '從這幾部開始讀';
+      }
+      var grid = document.getElementById('picks-grid');
+      picks.forEach(function (li) {
+        var card = li.querySelector('a.card');
+        if (!card) return;
+        var item = document.createElement('li');
+        item.className = 'work';
+        item.setAttribute('style', li.getAttribute('style') || '');
+        var a = document.importNode(card, true);
+        a.setAttribute('data-cta', 'notfound_card');
+        a.setAttribute('data-cta-type', 'story');
+        item.appendChild(a);
+        grid.appendChild(item);
+      });
+      if (grid.children.length) document.getElementById('picks').hidden = false;
+    })
+    .catch(function () {});
+})();
+</script>
+</body>
+</html>
