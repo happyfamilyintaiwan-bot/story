@@ -68,9 +68,10 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){ dataLayer.push(arguments); }
 gtag('js', new Date());
 gtag('set', {
+  work: window.HY_STORY_ID,
   story_id: window.HY_STORY_ID,
   page_lang: window.HY_PAGE_LANG,
-  content_group: 'interactive-story'
+  content_group: 'story'
 });
 gtag('config', 'G-ZQZHTYTRMQ', {
   cookie_domain: '.knittinghiyori.com',
