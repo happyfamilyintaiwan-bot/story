@@ -21,15 +21,23 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); }
   gtag('js', new Date());
+  /* 語言：網址含 /ja/、/en/ 優先，其次看瀏覽器語言；中文以外沒有對應時用英文（同 games 404） */
+  var HY_404_LANG = (function () {
+    var m = location.pathname.match(/\/(en|ja)(\/|$)/);
+    if (m) return m[1];
+    var nl = (navigator.language || '').toLowerCase();
+    return nl.indexOf('zh') === 0 ? 'zh' : nl.indexOf('ja') === 0 ? 'ja' : 'en';
+  })();
+  gtag('set', { content_group: 'story', page_lang: { zh: 'zh-Hant', en: 'en', ja: 'ja' }[HY_404_LANG], page_title: '故事|404|找不到頁面' });
   gtag('config', 'G-ZQZHTYTRMQ', { cookie_domain: '.knittinghiyori.com' });
 </script>
 
 <title>404 找不到這一頁｜編織日和 · 故事</title>
 <meta name="description" content="這個網址找不到頁面。回到編織日和・故事首頁，看劇集、小說與漫畫的深度分析。">
 <meta name="robots" content="noindex, follow">
-<link rel="icon" href="/icons/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="icon" href="/icons/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png?v=2">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png?v=2">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#e4c995">
 
@@ -136,7 +144,7 @@ footer a{text-underline-offset:3px}
 <main>
 <section class="lost">
   <div class="wrap">
-    <p class="selvedge">404 <b>找不到這一頁</b></p>
+    <p class="selvedge">404 <b id="lost-tag">找不到這一頁</b></p>
     <svg class="yarn" viewBox="0 0 280 40" aria-hidden="true" focusable="false">
       <path d="M2 20 C 22 4, 42 36, 62 20 S 102 4, 122 20 S 162 36, 172 24"/>
       <path class="loose" d="M172 24 C 190 10, 212 40, 236 22 S 270 30, 278 36"/>
@@ -145,7 +153,7 @@ footer a{text-underline-offset:3px}
     <p class="lede" id="lost-lede">可能是網址少打了一個字，或是這篇已經搬家了。下面幾部作品都可以接著讀。</p>
     <div class="cta-row">
       <a class="btn btn--solid" id="lost-hub" href="https://story.knittinghiyori.com/#works" data-cta="notfound_hub" data-cta-type="story">回故事首頁，看全部作品</a>
-      <a class="btn btn--ghost" href="https://knittinghiyori.com/" data-cta="notfound_main" data-cta-type="article">到編織日和主站</a>
+      <a class="btn btn--ghost" href="https://knittinghiyori.com/" id="lost-main" data-cta="notfound_main" data-cta-type="article">到編織日和主站</a>
     </div>
   </div>
 </section>
@@ -175,9 +183,38 @@ footer a{text-underline-offset:3px}
     comics: { type: 'comic', title: '換一部漫畫看看', lede: '這部漫畫的頁面找不到了，可能是網址少打了一個字，或是還在整理中。' }
   };
   var area = AREAS[seg];
+  var LANG = window.HY_404_LANG || 'zh';
+  var T = {
+    en: {
+      doc: '404 Page not found | Knitting Hiyori Stories', html: 'en', tag: 'Page not found',
+      h1: 'This page can\u2019t be found',
+      lede: 'The address may have a typo, or the page has moved. You can start with one of the stories below. Most pages here are in Chinese.',
+      hub: 'Back to Story home', main: 'Visit Knitting Hiyori', picks: 'Start with one of these',
+      novel: ['Try another novel', 'This novel page can\u2019t be found. The address may have a typo, or the page is still being prepared.'],
+      drama: ['Try another drama', 'This drama page can\u2019t be found. The address may have a typo, or the page has moved.'],
+      comic: ['Try another comic', 'This comic page can\u2019t be found. The address may have a typo, or the page is still being prepared.']
+    },
+    ja: {
+      doc: '404 ページが見つかりません｜編織日和 · 物語', html: 'ja', tag: 'ページが見つかりません',
+      h1: 'このページは見つかりませんでした',
+      lede: 'URLが間違っているか、ページが移動した可能性があります。下の作品からどうぞ。作品ページの多くは中国語です。',
+      hub: 'ストーリーのトップへ', main: '編織日和のサイトへ', picks: 'こちらの作品からどうぞ',
+      novel: ['ほかの小説を読む', 'この小説のページが見つかりません。URLが間違っているか、まだ準備中かもしれません。'],
+      drama: ['ほかのドラマを見る', 'このドラマのページが見つかりません。URLが間違っているか、ページが移動した可能性があります。'],
+      comic: ['ほかの漫画を読む', 'この漫画のページが見つかりません。URLが間違っているか、まだ準備中かもしれません。']
+    }
+  }[LANG];
+  var GENERIC_PICKS = T ? T.picks : '從這幾部開始讀';
+  function setText(id, text) { var el = document.getElementById(id); if (el) el.textContent = text; }
+  if (T) {
+    document.documentElement.lang = T.html;
+    document.title = T.doc;
+    setText('lost-tag', T.tag); setText('lost-title', T.h1); setText('lost-lede', T.lede);
+    setText('lost-hub', T.hub); setText('lost-main', T.main); setText('picks-title', T.picks);
+  }
   if (area) {
-    document.getElementById('picks-title').textContent = area.title;
-    document.getElementById('lost-lede').textContent = area.lede;
+    setText('picks-title', T ? T[area.type][0] : area.title);
+    setText('lost-lede', T ? T[area.type][1] : area.lede);
   }
 
   // 2. 點擊追蹤（不載 hy-story.js，這裡只送 cta_click）
@@ -211,7 +248,7 @@ footer a{text-underline-offset:3px}
       if (!picks.length) return;
       // 同一區的作品不夠 3 部、混到別區時，標題改回通用說法
       if (area ? same.length < picks.length : false) {
-        document.getElementById('picks-title').textContent = '從這幾部開始讀';
+        setText('picks-title', GENERIC_PICKS);
       }
       var grid = document.getElementById('picks-grid');
       picks.forEach(function (li) {
