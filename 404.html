@@ -13,7 +13,7 @@
       document.head.appendChild(script);
   })();
 </script>
-<meta name="spec-version" content="core-v1.4/story-v1.3">
+<meta name="spec-version" content="core-v1.5/story-v1.3.1">
 
 <!-- GA4：404 只送 page_view 和 cta_click，不載 hy-story.js（它會把錯的網址當成作品 id） -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZHTYTRMQ"></script>
@@ -135,6 +135,9 @@ footer p{margin:0 0 6px}
 footer a{text-underline-offset:3px}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* 跨站連結一行（core §7，cta_id notfound_site） */
+.nf-sites{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin:8px 0 40px;font-size:.95rem;color:var(--ink-3)}
+.nf-sites a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);text-underline-offset:4px}
 </style>
 </head>
 <body>
@@ -164,6 +167,11 @@ footer a{text-underline-offset:3px}
     <ul class="grid" id="picks-grid"></ul>
   </div>
 </section>
+
+<!-- 跨站連結一行：到編織日和其他網站（cta_id notfound_site，cta_type 填目的地類型） -->
+<div class="wrap">
+  <nav class="nf-sites" aria-label="編織日和其他網站"><span id="nf-sites-label">也可以逛逛：</span><a href="https://games.knittinghiyori.com/" data-cta="notfound_site" data-cta-type="game" data-k="game">小遊戲</a><a href="https://poem.knittinghiyori.com/" data-cta="notfound_site" data-cta-type="poem" data-k="poem">詩</a><a href="https://tools.knittinghiyori.com/" data-cta="notfound_site" data-cta-type="tool" data-k="tool">小工具</a><a href="https://study.knittinghiyori.com/" data-cta="notfound_site" data-cta-type="study" data-k="study">學習筆記</a></nav>
+</div>
 </main>
 
 <footer>
@@ -190,6 +198,7 @@ footer a{text-underline-offset:3px}
       h1: 'This page can\u2019t be found',
       lede: 'The address may have a typo, or the page has moved. You can start with one of the stories below. Most pages here are in Chinese.',
       hub: 'Back to Story home', main: 'Visit Knitting Hiyori', picks: 'Start with one of these',
+      sites: 'More from Knitting Hiyori:', names: { game: 'Games', poem: 'Poems', tool: 'Tools', study: 'Study notes' },
       novel: ['Try another novel', 'This novel page can\u2019t be found. The address may have a typo, or the page is still being prepared.'],
       drama: ['Try another drama', 'This drama page can\u2019t be found. The address may have a typo, or the page has moved.'],
       comic: ['Try another comic', 'This comic page can\u2019t be found. The address may have a typo, or the page is still being prepared.']
@@ -199,6 +208,7 @@ footer a{text-underline-offset:3px}
       h1: 'このページは見つかりませんでした',
       lede: 'URLが間違っているか、ページが移動した可能性があります。下の作品からどうぞ。作品ページの多くは中国語です。',
       hub: 'ストーリーのトップへ', main: '編織日和のサイトへ', picks: 'こちらの作品からどうぞ',
+      sites: 'ほかのコンテンツ：', names: { game: 'ミニゲーム', poem: '詩', tool: 'ツール', study: '学習ノート' },
       novel: ['ほかの小説を読む', 'この小説のページが見つかりません。URLが間違っているか、まだ準備中かもしれません。'],
       drama: ['ほかのドラマを見る', 'このドラマのページが見つかりません。URLが間違っているか、ページが移動した可能性があります。'],
       comic: ['ほかの漫画を読む', 'この漫画のページが見つかりません。URLが間違っているか、まだ準備中かもしれません。']
@@ -211,6 +221,8 @@ footer a{text-underline-offset:3px}
     document.title = T.doc;
     setText('lost-tag', T.tag); setText('lost-title', T.h1); setText('lost-lede', T.lede);
     setText('lost-hub', T.hub); setText('lost-main', T.main); setText('picks-title', T.picks);
+    setText('nf-sites-label', T.sites);
+    Array.prototype.forEach.call(document.querySelectorAll('.nf-sites a'), function (a) { a.textContent = T.names[a.getAttribute('data-k')]; });
   }
   if (area) {
     setText('picks-title', T ? T[area.type][0] : area.title);
