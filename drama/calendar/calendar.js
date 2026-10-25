@@ -83,6 +83,31 @@
     return drama.platforms[0];
   }
 
+  // 沿著 sameAs 找到真正排日期的平台
+  function rootPlatform(drama, pid) {
+    var p = findPlatform(drama, pid), guard = 0;
+    while (p.sameAs && guard++ < 10) p = findPlatform(drama, p.sameAs);
+    return p;
+  }
+  function officialEnd(plat) {
+    return (plat.phases || []).reduce(function (m, p) { return p.to > m ? p.to : m; }, '');
+  }
+
+  // 讀者的調整：{ per, days, skip: [日期], u: { d: 日期, to: 集數 } }
+  // per／days／skip 只改官方還沒公布的日子（套在 sameAs 的源頭，所以同步的平台一起變）；u（超點）只套在選中的平台
+  function applyAdjust(drama, pid, adj) {
+    if (!adj) return drama;
+    var d = JSON.parse(JSON.stringify(drama));
+    var root = rootPlatform(d, pid), end = officialEnd(root);
+    if (root.after && (adj.per > 0 || adj.days)) {
+      root.after = { perDay: adj.per > 0 ? adj.per : root.after.perDay, days: adj.days && adj.days.length && adj.days.length < 7 ? adj.days : (adj.days ? null : root.after.days) };
+      if (!root.after.days) delete root.after.days;
+    }
+    if (adj.skip && adj.skip.length) d.skip = (d.skip || []).concat(adj.skip.filter(function (s) { return s > end; }));
+    if (adj.u && adj.u.d) findPlatform(d, pid).unlock = { date: adj.u.d, to: adj.u.to > 0 ? Math.min(adj.u.to, d.episodes) : d.episodes };
+    return d;
+  }
+
   // 今天（含）以前最後一次更新
   function progress(sch, today) {
     var seen = 0, todayRow = null, next = null;
@@ -94,7 +119,7 @@
     return { seen: seen, todayRow: todayRow, next: next };
   }
 
-  if (typeof module !== 'undefined') module.exports = { schedule: schedule, progress: progress, addDays: addDays };
+  if (typeof module !== 'undefined') module.exports = { schedule: schedule, progress: progress, addDays: addDays, applyAdjust: applyAdjust };
   if (typeof document === 'undefined') return;
 
   // ---------- 介面文字 ----------
@@ -124,7 +149,11 @@
       evt: function (t, a, b) { return t + ' ' + T.ep(a, b) + '更新'; },
       evtFinale: function (t) { return t + ' 大結局'; },
       article: function (t) { return '看《' + t + '》追劇日曆全文：幾點更新、人物關係與劇情'; },
-      copied: '已複製分享連結', manualTitle: '我的追劇', tzLabel: '台灣時間', zone: '+08:00',
+      copied: '已複製分享連結', manualTitle: '我的追劇', tzLabel: '台灣時間', zone: '+08:00', nextDay: '（隔天）',
+      unlockOpen: function (n) { return '超點：可看到' + T.ep(n, n); },
+      unlockSoon: function (d, n) { return '超點：' + T.date(d) + '開放，可看到' + T.ep(n, n); },
+      skipOfficial: function (e) { return T.date(e) + '以前是官方已公布的日子，不能改；請選之後的日期。'; },
+      unlock: '超點', adjusted: '已套用你的調整（只改官方還沒公布的日子）', skipped: '停更',
       shareText: function (t) { return '《' + t + '》追劇日曆：每天更新第幾集、哪天大結局'; }
     },
     en: {
@@ -150,7 +179,12 @@
       evt: function (t, a, b) { return t + ' ' + T.ep(a, b); },
       evtFinale: function (t) { return t + ' finale'; },
       article: function (t) { return 'Read the full ' + t + ' guide'; },
-      copied: 'Link copied', manualTitle: 'My drama', tzLabel: 'China time (UTC+8)', zone: '',
+      copied: 'Link copied', manualTitle: 'My drama', zone: '', nextDay: ' (next day)',
+      tzLabel: function (tz) { return tz === '+09:00' ? 'Japan time (UTC+9)' : 'China time (UTC+8)'; },
+      unlockOpen: function (n) { return 'Paid early access: up to ' + T.ep(n, n); },
+      unlockSoon: function (d, n) { return 'Paid early access from ' + T.date(d) + ': up to ' + T.ep(n, n); },
+      skipOfficial: function (e) { return 'Dates up to ' + T.date(e) + ' are official and cannot be changed. Pick a later date.'; },
+      unlock: 'Early access', adjusted: 'Your changes are applied (only to dates not announced yet)', skipped: 'Break',
       shareText: function (t) { return t + ' episode schedule: what airs each day and when it ends'; }
     },
     ja: {
@@ -176,7 +210,11 @@
       evt: function (t, a, b) { return t + ' ' + T.ep(a, b) + '配信'; },
       evtFinale: function (t) { return t + ' 最終回'; },
       article: function (t) { return '『' + t + '』配信スケジュールの記事を読む'; },
-      copied: 'リンクをコピーしました', manualTitle: 'わたしのドラマ', tzLabel: '日本時間', zone: '+09:00',
+      copied: 'リンクをコピーしました', manualTitle: 'わたしのドラマ', tzLabel: '日本時間', zone: '+09:00', nextDay: '（翌日）',
+      unlockOpen: function (n) { return '有料先行（超点）：' + T.ep(n, n) + 'まで視聴可'; },
+      unlockSoon: function (d, n) { return '有料先行（超点）：' + T.date(d) + 'から' + T.ep(n, n) + 'まで'; },
+      skipOfficial: function (e) { return T.date(e) + 'までは公式発表済みのため変更できません。それ以降の日付を選んでください。'; },
+      unlock: '先行', adjusted: '調整を反映しています（公式未発表の日だけ）', skipped: '休止',
       shareText: function (t) { return '『' + t + '』配信スケジュール：毎日何話まで、最終回はいつ'; }
     }
   }[LANG];
@@ -184,6 +222,7 @@
   // ---------- 狀態 ----------
   var $ = function (id) { return document.getElementById(id); };
   var list = [], drama = null, pid = null, sch = null, isManual = false;
+  var base = null, adj = null;  // base＝原始資料，drama＝套用調整後
 
   function title(d) { return (d.title && (d.title[LANG] || d.title.zh)) || T.manualTitle; }
   function pname(p) { return (p.name && (p.name[LANG] || p.name.zh)) || ''; }
@@ -195,9 +234,10 @@
     if (!t) return '';
     var a = t.split(':'), min = a[0] * 60 + +a[1];
     if (T.zone) min += offMin(T.zone) - offMin(tz);
-    var plus = min >= 1440 ? T.paren('+1') : '';
+    var plus = min >= 1440 ? T.nextDay : '';
     min = ((min % 1440) + 1440) % 1440;
-    return String(Math.floor(min / 60)).padStart(2, '0') + ':' + String(min % 60).padStart(2, '0') + ' ' + T.tzLabel + plus;
+    var label = typeof T.tzLabel === 'function' ? T.tzLabel(tz) : T.tzLabel;
+    return String(Math.floor(min / 60)).padStart(2, '0') + ':' + String(min % 60).padStart(2, '0') + ' ' + label + plus;
   }
 
   // ---------- 畫面 ----------
@@ -216,6 +256,7 @@
     var box = $('dc-result');
     if (!drama) { box.hidden = true; return; }
     box.hidden = false;
+    drama = isManual ? base : applyAdjust(base, pid, adj);
     var memo = {};
     sch = schedule(drama, pid, memo);
     var today = localToday();
@@ -233,6 +274,7 @@
       if (!g.todayRow && g.next) bits.push(T.next(g.next));
       var t = showTime(p.time || drama.time, drama.tz);
       if (t) bits.push(t);
+      if (p.unlock) bits.push(today >= p.unlock.date ? T.unlockOpen(p.unlock.to) : T.unlockSoon(p.unlock.date, p.unlock.to));
       var flag = p.guess ? ' <span class="dc-tag">' + esc(T.guess) + '</span>' : '';
       return '<li><b>' + esc(pname(p)) + '</b>' + flag + '<span>' + esc(bits.join('・')) + '</span></li>';
     });
@@ -253,11 +295,12 @@
     }).join('');
 
     renderCalendar(today);
+    renderAdjust();
     renderLinks();
   }
 
   function renderCalendar(today) {
-    var byDate = {};
+    var byDate = {}, plat = findPlatform(drama, pid), skips = drama.skip || [];
     sch.days.forEach(function (d) { byDate[d.date] = d; });
     if (!sch.days.length) { $('dc-cal').innerHTML = ''; return; }
     var start = sch.days[0].date, stop = sch.days[sch.days.length - 1].date;
@@ -275,6 +318,8 @@
           if (d === sch.finale) cls.push('fin');
           label = '<span class="dc-ep">' + esc(T.cell(r.from, r.to)) + '</span>' + (d === sch.finale ? '<span class="dc-fin">' + esc(T.finale) + '</span>' : '');
         }
+        if (plat.unlock && d === plat.unlock.date) { cls.push('unl'); label += '<span class="dc-badge">' + esc(T.unlock) + '</span>'; }
+        if (!r && skips.indexOf(d) >= 0 && d > start && d < stop) { cls.push('skip'); label += '<span class="dc-badge">' + esc(T.skipped) + '</span>'; }
         if (d === today) cls.push('today');
         var aria = r ? T.date(d) + ' ' + T.ep(r.from, r.to) + (r.est ? T.paren(T.est) : '') : '';
         cells.push('<td class="' + cls.join(' ') + '"' + (aria ? ' aria-label="' + esc(aria) + '"' : '') + '><span class="dc-d">' + +d.slice(8) + '</span>' + label + '</td>');
@@ -289,9 +334,10 @@
   }
 
   function shareUrl() {
-    var base = location.origin + location.pathname;
-    if (isManual) return base + '#m=' + encodeURIComponent(JSON.stringify(manualState()));
-    return base + '?d=' + encodeURIComponent(drama.id) + (pid !== drama.platforms[0].id ? '&p=' + encodeURIComponent(pid) : '');
+    var here = location.origin + location.pathname;
+    if (isManual) return here + '#m=' + encodeURIComponent(JSON.stringify(manualState()));
+    return here + '?d=' + encodeURIComponent(drama.id) + (pid !== drama.platforms[0].id ? '&p=' + encodeURIComponent(pid) : '') +
+      (adj ? '#a=' + encodeURIComponent(JSON.stringify(adj)) : '');
   }
 
   function renderLinks() {
@@ -310,6 +356,51 @@
       g.hidden = false;
     } else g.hidden = true;
   }
+
+  // ---------- 調整推算 ----------
+  var draftSkip = [];
+  function adjKey() { return 'dc-adj-' + base.id; }
+  function loadAdj() {
+    try { var v = localStorage.getItem(adjKey()); return v ? JSON.parse(v) : null; } catch (e) { return null; }
+  }
+  function saveAdj() {
+    try { if (adj) localStorage.setItem(adjKey(), JSON.stringify(adj)); else localStorage.removeItem(adjKey()); } catch (e) { /* 私密模式：只是記不住 */ }
+  }
+  function renderSkips() {
+    $('dc-a-skips').innerHTML = draftSkip.map(function (d, i) {
+      return '<li>' + esc(T.date(d)) + ' <button type="button" class="dc-x" data-i="' + i + '" data-interact="adjust_skip_remove" aria-label="×">×</button></li>';
+    }).join('');
+  }
+  function renderAdjust() {
+    var box = $('dc-adj');
+    var root = isManual ? null : rootPlatform(base, pid);
+    box.hidden = !root || !root.after;
+    if (box.hidden) return;
+    var a = adj || {}, after = root.after;
+    $('dc-a-per').value = a.per || after.perDay || '';
+    var days = a.days || after.days;
+    document.querySelectorAll('#dc-adj input[name="awd"]').forEach(function (c) { c.checked = !days || days.indexOf(+c.value) >= 0; });
+    draftSkip = (a.skip || []).slice(); renderSkips();
+    var u = a.u || {};
+    $('dc-a-ud').value = u.d || ''; $('dc-a-uto').value = u.to || '';
+    $('dc-a-end').textContent = officialEnd(root) ? T.date(officialEnd(root)) : '';
+    $('dc-a-state').hidden = !adj;
+    $('dc-a-reset').hidden = !adj;
+  }
+  function readAdjust() {
+    var days = [];
+    document.querySelectorAll('#dc-adj input[name="awd"]').forEach(function (c) { if (c.checked) days.push(+c.value); });
+    var root = rootPlatform(base, pid), a = {};
+    var per = +$('dc-a-per').value;
+    if (per > 0 && per !== root.after.perDay) a.per = Math.min(per, 50);
+    var orig = root.after.days || [0, 1, 2, 3, 4, 5, 6];
+    if (days.length && days.slice().sort().join() !== orig.slice().sort().join()) a.days = days;
+    var end = officialEnd(root), skip = draftSkip.filter(function (d) { return d > end; }).sort();
+    if (skip.length) a.skip = skip;
+    if ($('dc-a-ud').value) a.u = { d: $('dc-a-ud').value, to: +$('dc-a-uto').value || 0 };
+    return Object.keys(a).length ? a : null;
+  }
+  function syncUrl() { if (!isManual) history.replaceState(null, '', shareUrl().replace(location.origin, '')); }
 
   // ---------- 行事曆 .ics ----------
   function icsEsc(s) { return String(s).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n'); }
@@ -377,17 +468,24 @@
     var d = fromManual(manualState());
     if (!d) { msg(T.bad); return; }
     msg('');
-    isManual = true; drama = d; pid = 'custom'; $('dc-pick').value = '';
+    isManual = true; base = drama = d; adj = null; pid = 'custom'; $('dc-pick').value = '';
     history.replaceState(null, '', location.pathname + '#m=' + encodeURIComponent(JSON.stringify(manualState())));
     render();
+  }
+
+  function fromHashAdj() {
+    var m = /#a=(.+)$/.exec(location.hash);
+    if (!m) return null;
+    try { var a = JSON.parse(decodeURIComponent(m[1])); return a && typeof a === 'object' ? a : null; } catch (e) { return null; }
   }
 
   function choose(id, p) {
     var d = null;
     for (var i = 0; i < list.length; i++) if (list[i].id === id) d = list[i];
     if (!d) { drama = null; render(); return false; }
-    isManual = false; drama = d;
+    isManual = false; base = drama = d;
     pid = (p && d.platforms.some(function (x) { return x.id === p; })) ? p : d.platforms[0].id;
+    adj = fromHashAdj() || loadAdj();
     $('dc-pick').value = d.id;
     return true;
   }
@@ -396,17 +494,30 @@
   function bind() {
     $('dc-pick').addEventListener('change', function () {
       if (!this.value) return;
-      choose(this.value); msg('');
       history.replaceState(null, '', location.pathname + '?d=' + encodeURIComponent(this.value));
-      render();
+      choose(this.value); msg('');
+      render(); syncUrl();
     });
     $('dc-plat').addEventListener('click', function (e) {
       var b = e.target.closest('[data-pid]'); if (!b) return;
-      pid = b.getAttribute('data-pid'); render();
-      if (!isManual) history.replaceState(null, '', shareUrl().replace(location.origin, ''));
+      pid = b.getAttribute('data-pid'); render(); syncUrl();
     });
     $('dc-manual').addEventListener('submit', function (e) { e.preventDefault(); runManual(); });
     $('dc-ics').addEventListener('click', downloadIcs);
+    $('dc-a-skip-add').addEventListener('click', function () {
+      var v = $('dc-a-skip').value, end = officialEnd(rootPlatform(base, pid));
+      var am = $('dc-a-msg');
+      am.hidden = !(v && v <= end); am.textContent = am.hidden ? '' : T.skipOfficial(end);
+      if (!am.hidden) return;
+      if (v && draftSkip.indexOf(v) < 0) { draftSkip.push(v); draftSkip.sort(); renderSkips(); }
+      $('dc-a-skip').value = '';
+    });
+    $('dc-a-skips').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-i]'); if (!b) return;
+      draftSkip.splice(+b.getAttribute('data-i'), 1); renderSkips();
+    });
+    $('dc-a-apply').addEventListener('click', function () { adj = readAdjust(); saveAdj(); render(); syncUrl(); });
+    $('dc-a-reset').addEventListener('click', function () { adj = null; saveAdj(); render(); syncUrl(); });
     $('dc-share').addEventListener('click', share);
   }
 

@@ -3,7 +3,11 @@
   "dramas": [
     {
       "id": "where-the-mask-ends",
-      "title": { "zh": "嫁金釵", "en": "Where the Mask Ends", "ja": "嫁金釵" },
+      "title": {
+        "zh": "嫁金釵",
+        "en": "Where the Mask Ends",
+        "ja": "嫁金釵"
+      },
       "episodes": 30,
       "episodesConfirmed": false,
       "tz": "+08:00",
@@ -12,24 +16,50 @@
       "platforms": [
         {
           "id": "youku-svip",
-          "name": { "zh": "優酷 SVIP", "en": "Youku SVIP", "ja": "Youku SVIP" },
+          "name": {
+            "zh": "優酷 SVIP",
+            "en": "Youku SVIP",
+            "ja": "Youku SVIP"
+          },
           "phases": [
-            { "from": "2026-10-16", "to": "2026-10-16", "perDay": 4 },
-            { "from": "2026-10-17", "to": "2026-10-21", "perDay": 2 },
-            { "from": "2026-10-22", "to": "2026-10-28", "perDay": 1 }
+            {
+              "from": "2026-10-16",
+              "to": "2026-10-16",
+              "perDay": 4
+            },
+            {
+              "from": "2026-10-17",
+              "to": "2026-10-21",
+              "perDay": 2
+            },
+            {
+              "from": "2026-10-22",
+              "to": "2026-10-28",
+              "perDay": 1
+            }
           ],
-          "after": { "perDay": 1 }
+          "after": {
+            "perDay": 1
+          }
         },
         {
           "id": "youku-vip",
-          "name": { "zh": "優酷 VIP", "en": "Youku VIP", "ja": "Youku VIP" },
+          "name": {
+            "zh": "優酷 VIP",
+            "en": "Youku VIP",
+            "ja": "Youku VIP"
+          },
           "sameAs": "youku-svip",
           "behindEps": 1,
           "guess": true
         },
         {
           "id": "netflix-tw",
-          "name": { "zh": "Netflix 台灣", "en": "Netflix Taiwan", "ja": "Netflix 台湾" },
+          "name": {
+            "zh": "Netflix 台灣",
+            "en": "Netflix Taiwan",
+            "ja": "Netflix 台湾"
+          },
           "sameAs": "youku-svip",
           "guess": true
         }
@@ -37,6 +67,52 @@
       "articles": {
         "zh": "https://knittinghiyori.com/where-the-mask-ends/",
         "ja": "https://knittinghiyori.com/where-the-mask-ends-ja/"
+      },
+      "aff": {}
+    },
+    {
+      "id": "welcome-back-first-love",
+      "title": {
+        "zh": "歡迎回來，初戀。",
+        "en": "Welcome Back, First Love",
+        "ja": "おかえり、初恋。"
+      },
+      "episodes": 8,
+      "episodesConfirmed": true,
+      "tz": "+09:00",
+      "time": "25:29",
+      "status": "airing",
+      "lastChecked": "2026-10-25",
+      "platforms": [
+        {
+          "id": "mbs",
+          "name": {
+            "zh": "MBS（日本）",
+            "en": "MBS (Japan)",
+            "ja": "MBS"
+          },
+          "phases": [
+            {
+              "from": "2026-10-08",
+              "to": "2026-10-22",
+              "perDay": 1,
+              "days": [
+                4
+              ]
+            }
+          ],
+          "after": {
+            "perDay": 1,
+            "days": [
+              4
+            ]
+          }
+        }
+      ],
+      "articles": {
+        "zh": "https://knittinghiyori.com/welcome-back-first-love/",
+        "ja": "https://knittinghiyori.com/welcome-back-first-love-ja/",
+        "en": "https://knittinghiyori.com/welcome-back-first-love-en/"
       },
       "aff": {}
     }

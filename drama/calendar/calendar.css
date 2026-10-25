@@ -89,3 +89,17 @@ footer a{color:var(--label)}
   .dc-ep{font-size:13px}
   .dc-cards{grid-template-columns:1fr}
 }
+/* 調整推算、超點與停更 */
+details.dc-adj{margin-top:16px;border:1px dashed var(--line-d);border-radius:14px;padding:4px 14px 12px}
+details.dc-adj summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:700;color:var(--accent)}
+.dc-adj-note{font-size:13px;color:var(--sub);margin:0 0 8px}
+.dc-skip-row{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+.dc-skip-row label{flex:1 1 180px}
+.dc-skips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.dc-skips:empty{display:none}
+.dc-skips li{display:inline-flex;align-items:center;gap:2px;font-size:14px;background:var(--block);border-radius:999px;padding:0 4px 0 12px}
+.dc-x{font:inherit;font-size:18px;line-height:1;min-width:44px;min-height:44px;border:0;background:none;color:var(--sub);cursor:pointer}
+.dc-adj-state{margin:10px 0 0;font-size:13px;font-weight:700;color:#1d6b45}
+.dc-badge{display:block;font-size:10.5px;font-weight:700;color:#fff;background:var(--ink);border-radius:4px;padding:0 3px;margin-top:2px;width:max-content;max-width:100%}
+.dc-month td.skip .dc-badge{background:var(--label)}
+.dc-month td.unl{box-shadow:inset 0 -3px 0 var(--ink)}
