@@ -5,6 +5,10 @@
 - 語言：繁體中文（早春晴朗、難哄、折月亮另有日文、英文版）
 - 內容含劇情，引用時請附上原頁連結
 
+## 工具
+
+- [追劇日曆計算機](https://story.knittinghiyori.com/drama/calendar/): 選一部劇或自己輸入，算出每天更新第幾集、各平台進度與大結局日，可加到行事曆；每週新增一部正在播的劇（[日本語](https://story.knittinghiyori.com/drama/calendar/ja/)、[English](https://story.knittinghiyori.com/drama/calendar/en/)）
+
 ## 劇集與原著小說（互動頁）
 
 - [早春晴朗](https://story.knittinghiyori.com/drama/the-early-spring/): 原著《姑娘別哭》，十年三幕的劇情解析、原著金句與權力翻轉（[日本語](https://story.knittinghiyori.com/drama/the-early-spring/ja/)、[English](https://story.knittinghiyori.com/drama/the-early-spring/en/)）
