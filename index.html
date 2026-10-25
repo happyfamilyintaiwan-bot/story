@@ -271,6 +271,14 @@ section{padding-block:clamp(64px,11vw,132px)}
   color:var(--ink-3); margin-bottom:12px; font-weight:400;
 }
 .brief li span{font-size:15px; font-weight:300; color:var(--ink-2); line-height:2.1}
+.brief-sub{color:var(--ink-2); font-size:15.5px; font-weight:300; margin:-14px 0 22px; max-width:34em}
+.brief li a{color:var(--ink); text-decoration:none; display:block}
+.brief li a:hover strong{text-decoration:underline; text-underline-offset:4px}
+.brief li strong{display:block; font-family:var(--serif); font-size:19px; font-weight:600; margin-bottom:6px}
+.brief li .dc-h-fin{display:block; margin-top:4px; font-size:13.5px; color:var(--ink-3)}
+.brief-cta{margin-top:24px}
+.brief-about{margin:28px 0 0; font-size:13.5px; font-weight:300; color:var(--ink-3); line-height:1.9; max-width:46em}
+.brief-about b{font-family:var(--latin); font-size:11px; letter-spacing:.2em; font-weight:400; margin-right:10px; color:var(--ink-3)}
 
 /* ══════════════════════════════════════════════════════════════
    6. 作品目錄
@@ -633,18 +641,23 @@ footer .ad-note{margin-top:32px; font-size:12.5px; color:var(--ink-3); line-heig
 <main>
 
 <!-- ══════════════════════════════════════════════════════════════
-     重點先看：給讀者也給 AI 引擎的快答區
+     追劇日曆：首頁的「今天第幾集」，資料同 /drama/calendar/dramas.json
+     ── 劇清單由 drama/calendar/_tools/sync.py 自動更新（dc-home 標記之間不要手改）
+     ── 最下面一行是 GEO 快答（本站是什麼），精簡保留
      ══════════════════════════════════════════════════════════════ -->
-<section class="brief">
+<section class="brief" id="calendar">
   <div class="wrap">
-    <p class="selvedge" style="--thread:var(--m-wheat)">SUMMARY <b>重點先看</b></p>
-    <h2>這個網站在做什麼</h2>
+    <p class="selvedge" style="--thread:var(--m-wheat)">CALENDAR <b>追劇日曆</b></p>
+    <h2>今天追到第幾集？</h2>
+    <p class="brief-sub">正在播的陸劇、日劇，每天更新第幾集、哪天大結局，打開就算好；停更、超點也能自己調整。</p>
+    <!--dc-home:start-->
     <ul>
-      <li><b>WHAT</b><span>編織日和・故事是一個故事分析站，用繁體中文寫作。目前以華語劇集與原著小說為主，也陸續收錄日本漫畫與電影。</span></li>
-      <li><b>HOW</b><span>不分媒材，每部作品固定看三件事：原著與改編差在哪、伏筆埋在哪又在哪回收、反覆出現的意象在說什麼。</span></li>
-      <li><b>WHO</b><span>寫給看完之後還想再想一想的人，以及想在動筆前先確認角度的創作者。</span></li>
-      <li><b>WHERE</b><span>互動頁放在本站，其餘文章與生活紀錄在母站 knittinghiyori.com。</span></li>
+      <li><a href="https://story.knittinghiyori.com/drama/calendar/?d=where-the-mask-ends" data-cta="home_calendar_where-the-mask-ends" data-cta-type="story"><strong>嫁金釵</strong><span data-dc-home="where-the-mask-ends">播出中・全 30 集</span><span class="dc-h-fin"></span></a></li>
+      <li><a href="https://story.knittinghiyori.com/drama/calendar/?d=welcome-back-first-love" data-cta="home_calendar_welcome-back-first-love" data-cta-type="story"><strong>歡迎回來，初戀。</strong><span data-dc-home="welcome-back-first-love">播出中・全 8 集</span><span class="dc-h-fin"></span></a></li>
     </ul>
+    <!--dc-home:end-->
+    <a class="btn btn--solid brief-cta" href="https://story.knittinghiyori.com/drama/calendar/" data-cta="home_calendar" data-cta-type="story">打開追劇日曆計算機</a>
+    <p class="brief-about"><b>關於本站</b>編織日和・故事是繁體中文的故事分析站，以華語劇集與原著小說為主，也收錄日本漫畫與電影；每部作品看原著與改編、伏筆與回收、反覆出現的意象。互動頁在本站，其他文章在母站 knittinghiyori.com。</p>
   </div>
 </section>
 
@@ -1167,5 +1180,31 @@ footer .ad-note{margin-top:32px; font-size:12.5px; color:var(--ink-3); line-heig
 })();
 </script>
 
+<script src="/drama/calendar/calendar.js?v=2" defer></script>
+<script>
+/* 首頁追劇日曆：用 calendar.js 的算法填「今天第幾集」；讀不到資料時保留靜態文字 */
+document.addEventListener('DOMContentLoaded', function () {
+  var C = window.HyDramaCalendar, spots = document.querySelectorAll('[data-dc-home]');
+  if (!C || !spots.length) return;
+  fetch('/drama/calendar/dramas.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (data) {
+    var wk = '日一二三四五六', today = C.today();
+    var fmt = function (s) { var a = s.split('-'); return +a[1] + '/' + +a[2] + '（' + wk[new Date(s + 'T00:00:00Z').getUTCDay()] + '）'; };
+    var ep = function (a, b) { return a === b ? '第 ' + a + ' 集' : '第 ' + a + '～' + b + ' 集'; };
+    spots.forEach(function (el) {
+      var d = (data.dramas || []).filter(function (x) { return x.id === el.getAttribute('data-dc-home'); })[0];
+      if (!d) return;
+      var sch = C.schedule(d, d.platforms[0].id), g = C.progress(sch, today), first = sch.days[0];
+      var line = g.todayRow ? '今天更新' + ep(g.todayRow.from, g.todayRow.to) : (g.seen ? '目前可看到' + ep(g.seen, g.seen) : '還沒開播');
+      if (!g.todayRow && g.next) line += '・下次 ' + fmt(g.next.date);
+      el.textContent = line;
+      var fin = el.parentNode.querySelector('.dc-h-fin');
+      if (fin && sch.finale) {
+        var n = C.diffDays(today, sch.finale);
+        fin.textContent = first && today < first.date ? fmt(first.date) + '開播・大結局 ' + fmt(sch.finale) : (n > 0 ? '距離大結局 ' + n + ' 天：' + fmt(sch.finale) : (n === 0 ? '今天大結局' : '已完結：' + fmt(sch.finale)));
+      }
+    });
+  }).catch(function () {});
+});
+</script>
 </body>
 </html>
