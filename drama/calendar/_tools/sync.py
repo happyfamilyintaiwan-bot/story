@@ -2,6 +2,7 @@
 1. 三語頁「目前收錄的劇」清單（爬蟲不跑 JS 也讀得到）
 2. FAQ 的 JSON-LD（從頁面 .dc-faq 逐字抓，保證一致）
 3. 標題字型的 &text= 子集（只載用到的字）
+4. story 首頁「追劇日曆」區的劇清單（播出中、即將開播的前 4 部）
 用法：在 story 資料夾執行  python3 drama/calendar/_tools/sync.py
 （_tools 底線開頭，GitHub Pages 不會公開）
 """
@@ -62,3 +63,17 @@ for lang, (path, prefix) in PAGES.items():
 
     open(p, 'w', encoding='utf-8').write(s)
     print('✅', path, '劇', len(items), '部、FAQ', len(qa), '題、字型', len(chars), '字')
+
+# story 首頁（hub）追劇日曆區
+ROOT = os.path.dirname(os.path.dirname(HERE))
+hub = os.path.join(ROOT, 'index.html')
+s = open(hub, encoding='utf-8').read()
+STAT = {'airing': '播出中', 'upcoming': '即將開播', 'ended': '已完結'}
+live = [d for d in sorted(data['dramas'], key=lambda d: ORDER.get(d.get('status'), 0)) if d.get('status') != 'ended'][:4]
+lis = []
+for d in live:
+    lis.append('<li><a href="%s?d=%s" data-cta="home_calendar_%s" data-cta-type="story"><strong>%s</strong><span data-dc-home="%s">%s・全 %d 集</span><span class="dc-h-fin"></span></a></li>' % (
+        BASE, d['id'], d['id'], html.escape(d['title']['zh']), d['id'], STAT.get(d.get('status'), ''), d['episodes']))
+s = put(s, 'dc-home', '\n    <ul>\n      ' + '\n      '.join(lis) + '\n    </ul>\n    ')
+open(hub, 'w', encoding='utf-8').write(s)
+print('✅ story 首頁追劇日曆', len(lis), '部')

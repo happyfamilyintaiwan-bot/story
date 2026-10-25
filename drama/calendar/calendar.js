@@ -119,8 +119,11 @@
     return { seen: seen, todayRow: todayRow, next: next };
   }
 
-  if (typeof module !== 'undefined') module.exports = { schedule: schedule, progress: progress, addDays: addDays, applyAdjust: applyAdjust };
+  var API = { schedule: schedule, progress: progress, addDays: addDays, applyAdjust: applyAdjust, diffDays: diffDays, today: localToday };
+  if (typeof module !== 'undefined') module.exports = API;
   if (typeof document === 'undefined') return;
+  window.HyDramaCalendar = API;  // story 首頁的「今天第幾集」也用同一套算法
+  if (!document.getElementById('dc-app')) return;
 
   // ---------- 介面文字 ----------
   var LANG = (document.documentElement.lang || 'zh').slice(0, 2);
