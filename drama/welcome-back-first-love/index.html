@@ -118,7 +118,8 @@ h3{font-size:17px;margin:26px 0 10px}
 .wb-back .wb-q{border-left-color:var(--coral)}
 .wb-q span{display:block;font-family:var(--hand);font-weight:600;font-size:19px;line-height:1.5}
 .wb-q small{display:block;font-size:14px;color:var(--ink2)}
-.wb-pic{display:block;width:100%;height:220px;object-fit:cover;object-position:center 12%;border-radius:12px;margin:0 0 12px}
+.wb-pic{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin:0 0 12px}
+.wb-pic.tall{aspect-ratio:auto}
 .wb-big{font-family:var(--hand);font-size:64px;line-height:1;color:rgba(127,156,196,.35);margin:2px 0 8px;text-align:right}
 .wb-flip{margin-top:auto;align-self:stretch;min-height:46px;border-radius:999px;border:1.5px solid currentColor;background:#fff;font:inherit;font-weight:700;cursor:pointer}
 .wb-front .wb-flip{color:var(--sky-d)}
@@ -209,15 +210,15 @@ footer a{color:var(--ink3)}
         <div class="wb-face wb-front">
           <span class="wb-tag">十年前・高中</span>
           <p class="wb-topic">冰</p>
+          <img class="wb-pic" src="/assets/welcome-back-first-love/ep1-ice-handing-ice-pop-high-school.webp" width="960" height="540" loading="lazy" decoding="async" alt="歡迎回來，初戀。第1集高中回憶，田口涼介把冰棒遞給山根詩織">
           <p class="wb-scene">上課時間，田口突然說想吃冰。詩織說福利社這時候應該沒開，他想了一下：</p>
           <p class="wb-q" lang="ja"><span>じゃあ抜け出すか</span><small lang="zh-Hant">那就溜出去吧</small></p>
-          <p class="wb-big" aria-hidden="true">01</p>
           <button type="button" class="wb-flip" data-interact="flip_ice">翻到十年後 ↻</button>
         </div>
         <div class="wb-face wb-back">
           <span class="wb-tag">十年後・現在</span>
           <p class="wb-topic">冰</p>
-          <img class="wb-pic" src="/assets/welcome-back-first-love/ep1-ice-pop-flashback.webp" width="720" height="1237" loading="lazy" decoding="async" alt="歡迎回來，初戀。第1集，山根詩織在公司拿到冰，想起高中時和田口涼介一起吃冰">
+          <img class="wb-pic" src="/assets/welcome-back-first-love/ep1-ice-pop-at-office.webp" width="960" height="540" loading="lazy" decoding="async" alt="歡迎回來，初戀。第1集，大熱天的辦公室，山根詩織接過主管發的冰">
           <p class="wb-scene">十年後的大熱天，公司發冰給大家。接過冰的那一刻，她又想起了他。</p>
           <p class="wb-q" lang="ja"><span>ふとした瞬間に思い出す</span><small lang="zh-Hant">在不經意的瞬間想起</small></p>
           <button type="button" class="wb-flip" data-interact="flip_ice">翻回十年前 ↻</button>
@@ -238,7 +239,7 @@ footer a{color:var(--ink3)}
         <div class="wb-face wb-back">
           <span class="wb-tag">十年後・現在</span>
           <p class="wb-topic">並肩坐</p>
-          <img class="wb-pic" src="/assets/welcome-back-first-love/ep1-reunion-side-by-side.webp" width="720" height="1237" loading="lazy" decoding="async" alt="歡迎回來，初戀。第1集，同學會上田口涼介坐到山根詩織身旁，兩人十年後再次並肩而坐">
+          <img class="wb-pic" src="/assets/welcome-back-first-love/ep1-reunion-sitting-side-by-side.webp" width="960" height="540" loading="lazy" decoding="async" alt="歡迎回來，初戀。第1集，同學會上田口涼介坐到山根詩織身旁，兩人十年後再次並肩而坐">
           <p class="wb-scene">十年後的同學會，她又一個人坐在角落。他走過來，問了一句：</p>
           <p class="wb-q" lang="ja"><span>座っていい？</span><small lang="zh-Hant">可以坐這裡嗎？</small></p>
           <button type="button" class="wb-flip" data-interact="flip_seat">翻回十年前 ↻</button>
@@ -259,7 +260,7 @@ footer a{color:var(--ink3)}
         <div class="wb-face wb-back">
           <span class="wb-tag">十年後・現在</span>
           <p class="wb-topic">耳洞</p>
-          <img class="wb-pic" src="/assets/welcome-back-first-love/ep1-welcome-back-taguchi.webp" width="720" height="1076" loading="lazy" decoding="async" alt="歡迎回來，初戀。第1集，山根詩織摸著田口涼介的耳洞，對他說歡迎回來，田口君">
+          <img class="wb-pic" src="/assets/welcome-back-first-love/ep1-touching-ear-piercing.webp" width="960" height="540" loading="lazy" decoding="async" alt="歡迎回來，初戀。第1集，山根詩織伸手摸田口涼介的耳洞">
           <p class="wb-scene">他把頭髮染黑、拿掉耳環，耳洞卻還在。這次，她真的伸手摸了。</p>
           <p class="wb-q" lang="ja"><span>おかえり、田口君</span><small lang="zh-Hant">歡迎回來，田口君</small></p>
           <button type="button" class="wb-flip" data-interact="flip_ear">翻回十年前 ↻</button>
@@ -280,7 +281,7 @@ footer a{color:var(--ink3)}
         <div class="wb-face wb-back">
           <span class="wb-tag">十年後・現在</span>
           <p class="wb-topic">再一次</p>
-          <img class="wb-pic" src="/assets/welcome-back-first-love/ep1-eye-contact.webp" width="720" height="1175" loading="lazy" decoding="async" alt="歡迎回來，初戀。第1集，山根詩織與田口涼介互相凝視，結尾田口說想當的不只是朋友">
+          <img class="wb-pic tall" src="/assets/welcome-back-first-love/ep1-again-more-than-friends.webp" width="720" height="966" loading="lazy" decoding="async" alt="歡迎回來，初戀。第1集，田口涼介靠近山根詩織說不只是朋友、兩人在夜裡對望、高中時兩人笑著對看">
           <p class="wb-scene">十年後，換她鼓起勇氣問能不能再變熟。他的回答，比她想的多一點：</p>
           <p class="wb-q" lang="ja"><span>友達以上にな</span><small lang="zh-Hant">不只是朋友那種喔</small></p>
           <button type="button" class="wb-flip" data-interact="flip_again">翻回十年前 ↻</button>
@@ -346,7 +347,7 @@ footer a{color:var(--ink3)}
     <li><a href="https://story.knittinghiyori.com/drama/the-early-spring/" data-cta="wb_more_the-early-spring" data-cta-type="story">早春晴朗：十年三幕的劇情解析<small>另一個關於「十年」的故事</small></a></li>
     <li><a href="https://story.knittinghiyori.com/" data-cta="wb_more_hub" data-cta-type="story">看全部故事<small>追劇、小說與漫畫的互動頁</small></a></li>
   </ul>
-  <p class="wb-src">資料來源：MBS 官方網站、Real Sound、日本維基百科；台詞依第 1 集對白整理，只引用短句，劇情段落為本站整理的摘要。</p>
+  <p class="wb-src">資料來源：MBS 官方網站、Real Sound、日本維基百科；台詞依第 1 集對白整理，只引用短句，劇情段落為本站整理的摘要。劇照：©2026 Welcome back, First love. Production committee, MBS。</p>
 </section>
 </main>
 
