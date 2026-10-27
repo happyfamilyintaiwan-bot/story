@@ -1,6 +1,6 @@
 # 編織日和 · 故事 story.knittinghiyori.com
 
-> 編織日和（knittinghiyori.com）的姊妹站，專門做華語劇集、原著小說與書籍的深度分析與互動解析頁：原著與改編對照、伏筆與回收、反覆出現的意象。目前有 7 部劇集與 1 本書的互動頁，另有 4 篇放在主站的長文。
+> 編織日和（knittinghiyori.com）的姊妹站，專門做華語與日本劇集、原著小說與書籍的深度分析與互動解析頁：原著與改編對照、伏筆與回收、反覆出現的意象。目前有 8 部劇集與 1 本書的互動頁，另有 4 篇放在主站的長文。
 
 - 語言：繁體中文（早春晴朗、難哄、折月亮另有日文、英文版）
 - 內容含劇情，引用時請附上原頁連結
@@ -11,6 +11,7 @@
 
 ## 劇集與原著小說（互動頁）
 
+- [歡迎回來，初戀。](https://story.knittinghiyori.com/drama/welcome-back-first-love/): 日劇（MBS，全 8 集），原著かめみずとら漫畫，十年前／十年後回憶翻面卡，附日文台詞與中文翻譯；每播一集追加
 - [早春晴朗](https://story.knittinghiyori.com/drama/the-early-spring/): 原著《姑娘別哭》，十年三幕的劇情解析、原著金句與權力翻轉（[日本語](https://story.knittinghiyori.com/drama/the-early-spring/ja/)、[English](https://story.knittinghiyori.com/drama/the-early-spring/en/)）
 - [難哄 The First Frost](https://story.knittinghiyori.com/drama/the-first-frost/): 原著竹已，從溫以凡的夢境出發的互動頁（[日本語](https://story.knittinghiyori.com/drama/the-first-frost/ja/)、[English](https://story.knittinghiyori.com/drama/the-first-frost/en/)）
 - [折月亮 When I Meet the Moon](https://story.knittinghiyori.com/drama/when-i-meet-the-moon/): 原著竹已，用月亮的盈虧重走一次故事（[日本語](https://story.knittinghiyori.com/drama/when-i-meet-the-moon/ja/)、[English](https://story.knittinghiyori.com/drama/when-i-meet-the-moon/en/)）
