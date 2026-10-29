@@ -133,7 +133,6 @@
       paren: function (x) { return '（' + x + '）'; },
       wk: ['日', '一', '二', '三', '四', '五', '六'],
       ep: function (a, b) { return a === b ? '第 ' + a + ' 集' : '第 ' + a + '～' + b + ' 集'; },
-      cell: function (a, b) { return a === b ? String(a) : a + '～' + b; },
       date: function (s) { var a = s.split('-'); return +a[1] + '/' + +a[2] + '（' + T.wk[weekday(s)] + '）'; },
       month: function (y, m) { return y + ' 年 ' + m + ' 月'; },
       seen: function (n) { return n ? '目前可看到' + T.ep(n, n) : '還沒開播'; },
@@ -163,7 +162,6 @@
       paren: function (x) { return ' (' + x + ')'; },
       wk: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
       ep: function (a, b) { return a === b ? 'Ep ' + a : 'Ep ' + a + '-' + b; },
-      cell: function (a, b) { return a === b ? String(a) : a + '-' + b; },
       date: function (s) { var d = new Date(toMs(s)); return T.wk[d.getUTCDay()] + ', ' + ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][d.getUTCMonth()] + ' ' + d.getUTCDate(); },
       month: function (y, m) { return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][m - 1] + ' ' + y; },
       seen: function (n) { return n ? 'Out now: up to ' + T.ep(n, n) : 'Not started yet'; },
@@ -194,7 +192,6 @@
       paren: function (x) { return '（' + x + '）'; },
       wk: ['日', '月', '火', '水', '木', '金', '土'],
       ep: function (a, b) { return a === b ? '第' + a + '話' : '第' + a + '〜' + b + '話'; },
-      cell: function (a, b) { return a === b ? String(a) : a + '〜' + b; },
       date: function (s) { var a = s.split('-'); return +a[1] + '/' + +a[2] + '（' + T.wk[weekday(s)] + '）'; },
       month: function (y, m) { return y + '年' + m + '月'; },
       seen: function (n) { return n ? '現在' + T.ep(n, n) + 'まで配信中' : 'まだ配信前'; },
@@ -319,7 +316,7 @@
           cls.push('has');
           if (r.est) cls.push('est');
           if (d === sch.finale) cls.push('fin');
-          label = '<span class="dc-ep">' + esc(T.cell(r.from, r.to)) + '</span>' + (d === sch.finale ? '<span class="dc-fin">' + esc(T.finale) + '</span>' : '');
+          label = '<span class="dc-ep"><span class="dc-ep-k">EP</span> <span class="dc-ep-n">' + (r.from === r.to ? r.from : r.from + '-' + r.to) + '</span></span>' + (d === sch.finale ? '<span class="dc-fin">' + esc(T.finale) + '</span>' : '');
         }
         if (plat.unlock && d === plat.unlock.date) { cls.push('unl'); label += '<span class="dc-badge">' + esc(T.unlock) + '</span>'; }
         if (!r && skips.indexOf(d) >= 0 && d > start && d < stop) { cls.push('skip'); label += '<span class="dc-badge">' + esc(T.skipped) + '</span>'; }
