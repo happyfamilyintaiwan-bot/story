@@ -48,13 +48,13 @@
         last = addDays(b.date, lag);
         if (cum > prev) { out.push({ date: last, from: prev + 1, to: cum, est: b.est || !!plat.guess }); prev = cum; }
       });
-      // 比基準平台慢幾集：基準播完後，照官方排完後的速度補完
+      // 比基準平台慢幾集：基準播完後，照官方排完後的速度補完（exact＝補完的日子官方也公布了）
       var tail = basePlat.after || basePlat.phases[basePlat.phases.length - 1];
-      var day = last, guard = 0;
+      var day = last, guard = 0, tailEst = !plat.exact || !!(base.days.length && base.days[base.days.length - 1].est);
       while (prev < total && day && guard++ < 400) {
         day = addDays(day, 1);
         var r = skip.indexOf(day) >= 0 ? 0 : rateOn(tail, day);
-        if (r > 0) { out.push({ date: day, from: prev + 1, to: Math.min(total, prev + r), est: true }); prev = Math.min(total, prev + r); }
+        if (r > 0) { out.push({ date: day, from: prev + 1, to: Math.min(total, prev + r), est: tailEst }); prev = Math.min(total, prev + r); }
       }
       res = { days: out, finale: prev >= total ? out[out.length - 1].date : null };
     } else {
@@ -104,6 +104,8 @@
       if (!root.after.days) delete root.after.days;
     }
     if (adj.skip && adj.skip.length) d.skip = (d.skip || []).concat(adj.skip.filter(function (s) { return s > end; }));
+    // 讀者改了速度或停更，跟播平台補完的日子就變成推算
+    if (adj.per > 0 || adj.days || (adj.skip && adj.skip.length)) d.platforms.forEach(function (p) { if (p.sameAs) delete p.exact; });
     if (adj.u && adj.u.d) findPlatform(d, pid).unlock = { date: adj.u.d, to: adj.u.to > 0 ? Math.min(adj.u.to, d.episodes) : d.episodes };
     return d;
   }
