@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25",
+  "updated": "2026-10-29",
   "dramas": [
     {
       "id": "where-the-mask-ends",
@@ -9,10 +9,15 @@
         "ja": "嫁金釵"
       },
       "episodes": 30,
-      "episodesConfirmed": false,
+      "episodesConfirmed": true,
       "tz": "+08:00",
       "status": "airing",
-      "lastChecked": "2026-10-25",
+      "lastChecked": "2026-10-29",
+      "skip": [
+        "2026-11-04",
+        "2026-11-05",
+        "2026-11-06"
+      ],
       "platforms": [
         {
           "id": "youku-svip",
@@ -34,12 +39,21 @@
             },
             {
               "from": "2026-10-22",
-              "to": "2026-10-28",
+              "to": "2026-11-03",
+              "perDay": 1
+            },
+            {
+              "from": "2026-11-07",
+              "to": "2026-11-09",
               "perDay": 1
             }
           ],
           "after": {
             "perDay": 1
+          },
+          "unlock": {
+            "date": "2026-11-03",
+            "to": 30
           }
         },
         {
@@ -50,8 +64,7 @@
             "ja": "Youku VIP"
           },
           "sameAs": "youku-svip",
-          "behindEps": 1,
-          "guess": true
+          "behindEps": 1
         },
         {
           "id": "netflix-tw",
@@ -66,7 +79,8 @@
       ],
       "articles": {
         "zh": "https://knittinghiyori.com/where-the-mask-ends/",
-        "ja": "https://knittinghiyori.com/where-the-mask-ends-ja/"
+        "ja": "https://knittinghiyori.com/where-the-mask-ends-ja/",
+        "en": "https://knittinghiyori.com/where-the-mask-ends-en/"
       },
       "aff": {}
     },
