@@ -48,13 +48,13 @@
         last = addDays(b.date, lag);
         if (cum > prev) { out.push({ date: last, from: prev + 1, to: cum, est: b.est || !!plat.guess }); prev = cum; }
       });
-      // 比基準平台慢幾集：基準播完後，照官方排完後的速度補完
+      // 比基準平台慢幾集：基準播完後，照官方排完後的速度補完（exact＝補完的日子官方也公布了）
       var tail = basePlat.after || basePlat.phases[basePlat.phases.length - 1];
-      var day = last, guard = 0;
+      var day = last, guard = 0, tailEst = !plat.exact || !!(base.days.length && base.days[base.days.length - 1].est);
       while (prev < total && day && guard++ < 400) {
         day = addDays(day, 1);
         var r = skip.indexOf(day) >= 0 ? 0 : rateOn(tail, day);
-        if (r > 0) { out.push({ date: day, from: prev + 1, to: Math.min(total, prev + r), est: true }); prev = Math.min(total, prev + r); }
+        if (r > 0) { out.push({ date: day, from: prev + 1, to: Math.min(total, prev + r), est: tailEst }); prev = Math.min(total, prev + r); }
       }
       res = { days: out, finale: prev >= total ? out[out.length - 1].date : null };
     } else {
@@ -104,6 +104,8 @@
       if (!root.after.days) delete root.after.days;
     }
     if (adj.skip && adj.skip.length) d.skip = (d.skip || []).concat(adj.skip.filter(function (s) { return s > end; }));
+    // 讀者改了速度或停更，跟播平台補完的日子就變成推算
+    if (adj.per > 0 || adj.days || (adj.skip && adj.skip.length)) d.platforms.forEach(function (p) { if (p.sameAs) delete p.exact; });
     if (adj.u && adj.u.d) findPlatform(d, pid).unlock = { date: adj.u.d, to: adj.u.to > 0 ? Math.min(adj.u.to, d.episodes) : d.episodes };
     return d;
   }
@@ -133,7 +135,6 @@
       paren: function (x) { return '（' + x + '）'; },
       wk: ['日', '一', '二', '三', '四', '五', '六'],
       ep: function (a, b) { return a === b ? '第 ' + a + ' 集' : '第 ' + a + '～' + b + ' 集'; },
-      cell: function (a, b) { return a === b ? String(a) : a + '～' + b; },
       date: function (s) { var a = s.split('-'); return +a[1] + '/' + +a[2] + '（' + T.wk[weekday(s)] + '）'; },
       month: function (y, m) { return y + ' 年 ' + m + ' 月'; },
       seen: function (n) { return n ? '目前可看到' + T.ep(n, n) : '還沒開播'; },
@@ -163,7 +164,6 @@
       paren: function (x) { return ' (' + x + ')'; },
       wk: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
       ep: function (a, b) { return a === b ? 'Ep ' + a : 'Ep ' + a + '-' + b; },
-      cell: function (a, b) { return a === b ? String(a) : a + '-' + b; },
       date: function (s) { var d = new Date(toMs(s)); return T.wk[d.getUTCDay()] + ', ' + ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][d.getUTCMonth()] + ' ' + d.getUTCDate(); },
       month: function (y, m) { return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][m - 1] + ' ' + y; },
       seen: function (n) { return n ? 'Out now: up to ' + T.ep(n, n) : 'Not started yet'; },
@@ -194,7 +194,6 @@
       paren: function (x) { return '（' + x + '）'; },
       wk: ['日', '月', '火', '水', '木', '金', '土'],
       ep: function (a, b) { return a === b ? '第' + a + '話' : '第' + a + '〜' + b + '話'; },
-      cell: function (a, b) { return a === b ? String(a) : a + '〜' + b; },
       date: function (s) { var a = s.split('-'); return +a[1] + '/' + +a[2] + '（' + T.wk[weekday(s)] + '）'; },
       month: function (y, m) { return y + '年' + m + '月'; },
       seen: function (n) { return n ? '現在' + T.ep(n, n) + 'まで配信中' : 'まだ配信前'; },
@@ -319,7 +318,7 @@
           cls.push('has');
           if (r.est) cls.push('est');
           if (d === sch.finale) cls.push('fin');
-          label = '<span class="dc-ep">' + esc(T.cell(r.from, r.to)) + '</span>' + (d === sch.finale ? '<span class="dc-fin">' + esc(T.finale) + '</span>' : '');
+          label = '<span class="dc-ep"><span class="dc-ep-k">EP</span> <span class="dc-ep-n">' + (r.from === r.to ? r.from : r.from + '-' + r.to) + '</span></span>' + (d === sch.finale ? '<span class="dc-fin">' + esc(T.finale) + '</span>' : '');
         }
         if (plat.unlock && d === plat.unlock.date) { cls.push('unl'); label += '<span class="dc-badge">' + esc(T.unlock) + '</span>'; }
         if (!r && skips.indexOf(d) >= 0 && d > start && d < stop) { cls.push('skip'); label += '<span class="dc-badge">' + esc(T.skipped) + '</span>'; }

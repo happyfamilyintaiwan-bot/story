@@ -64,7 +64,8 @@
             "ja": "Youku VIP"
           },
           "sameAs": "youku-svip",
-          "behindEps": 1
+          "behindEps": 1,
+          "exact": true
         },
         {
           "id": "netflix-tw",

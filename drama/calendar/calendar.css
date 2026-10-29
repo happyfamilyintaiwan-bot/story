@@ -52,7 +52,10 @@ details.dc-manual summary{cursor:pointer;min-height:44px;display:flex;align-item
 .dc-month th{font-size:12px;color:var(--label);font-weight:700;padding:4px 0}
 .dc-month td{border:1px solid var(--line);height:58px;vertical-align:top;padding:4px;font-size:12px;line-height:1.3;overflow:hidden}
 .dc-d{display:block;color:var(--label);font-size:11px}
-.dc-ep{display:block;font-weight:700;font-size:14px;color:var(--ink);word-break:break-all}
+.dc-ep{display:block;font-weight:700;font-size:14px;color:var(--ink);margin-top:1px;word-spacing:-.15em}
+/* EP 和集數之間可換行，集數本身不拆（手機格子窄時 EP 自成一行） */
+.dc-ep-k{font-size:10px;letter-spacing:.02em}
+.dc-ep-n{white-space:nowrap}
 .dc-month td.has{background:#fff}
 .dc-month td.est .dc-ep{color:var(--label);font-weight:400}
 .dc-month td.fin{background:var(--accent-bg)}
