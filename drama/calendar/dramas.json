@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-10-31",
   "dramas": [
     {
       "id": "where-the-mask-ends",
@@ -128,6 +128,45 @@
         "zh": "https://knittinghiyori.com/welcome-back-first-love/",
         "ja": "https://knittinghiyori.com/welcome-back-first-love-ja/",
         "en": "https://knittinghiyori.com/welcome-back-first-love-en/"
+      },
+      "aff": {}
+    },
+    {
+      "id": "when-i-meet-the-moon",
+      "title": {
+        "zh": "折月亮",
+        "en": "When I Meet the Moon",
+        "ja": "折月亮"
+      },
+      "episodes": 27,
+      "episodesConfirmed": false,
+      "tz": "+08:00",
+      "status": "upcoming",
+      "lastChecked": "2026-10-31",
+      "platforms": [
+        {
+          "id": "iqiyi-vip",
+          "name": {
+            "zh": "愛奇藝 VIP",
+            "en": "iQIYI VIP",
+            "ja": "iQIYI VIP"
+          },
+          "phases": [
+            {
+              "from": "2026-11-05",
+              "to": "2026-11-05",
+              "perDay": 4
+            }
+          ],
+          "after": {
+            "perDay": 2
+          },
+          "guess": true
+        }
+      ],
+      "articles": {
+        "zh": "https://knittinghiyori.com/when-i-meet-the-moon-drama-calendar/",
+        "ja": "https://knittinghiyori.com/when-i-meet-the-moon-drama-calendar-ja/"
       },
       "aff": {}
     }
