@@ -4,8 +4,10 @@
  *   1. GA4 載入碼（config 要有 cookie_domain: '.knittinghiyori.com'）
  *   2. <script src="/hy-story.js"></script>
  *
- * story_id 預設用作品資料夾名稱，略過類別資料夾（例如 /drama/hidden-love/ → hidden-love），
+ * 作品 id（work）預設用作品資料夾名稱，略過類別資料夾（例如 /drama/hidden-love/ → hidden-love），
  * 要自訂就在它前面寫 <script>var HY_STORY_ID = '…';</script>
+ * 依 story.md §3：送 content_group=story、work；story_id 是舊名稱，過渡期一起送（值相同）。
+ * interaction_id 只用 data-interact 或 id（英文代碼），不送按鈕上的文字。
  *
  * 自動送出的標準事件：
  *   story_start / story_progress(25,50,75,100) / section_view / interaction /
@@ -23,16 +25,19 @@
   if (/^(books|drama|comics)$/.test(seg[0] || '')) seg.shift();
   var STORY_ID = window.HY_STORY_ID || seg[0] || 'home';
   var IS_HUB = STORY_ID === 'home';
-  var LANG = window.HY_PAGE_LANG || document.documentElement.lang || 'zh-Hant';
+  /* page_lang 只用 core 值域：zh-Hant／en／ja */
+  var HTML_LANG = (document.documentElement.lang || 'zh-Hant').toLowerCase();
+  var LANG = window.HY_PAGE_LANG || (HTML_LANG.indexOf('zh') === 0 ? 'zh-Hant' : HTML_LANG.slice(0, 2));
 
   window.dataLayer = window.dataLayer || [];
   if (typeof window.gtag !== 'function') {
     window.gtag = function () { window.dataLayer.push(arguments); };
   }
   gtag('set', {
+    work: STORY_ID,
     story_id: STORY_ID,
     page_lang: LANG,
-    content_group: IS_HUB ? 'story-hub' : 'interactive-story'
+    content_group: 'story'
   });
 
   var started = false, completed = false, interactions = 0, maxScroll = 0;
@@ -40,6 +45,7 @@
 
   window.hyEvent = function (name, params) {
     var p = params || {};
+    p.work = STORY_ID;
     p.story_id = STORY_ID;
     gtag('event', name, p);
   };
@@ -48,13 +54,14 @@
   document.addEventListener('click', function (e) {
     if (!e.target.closest) return;
     var el = e.target.closest('[data-cta]');
-    if (!el && IS_HUB) {
+    if (IS_HUB ? !el : false) {
       var card = e.target.closest('a.card, a.pola');
       if (card) {
         var li = card.closest('li');
+        var slug = (card.getAttribute('href') || '').split('/').filter(Boolean).pop() || 'card';
         hyEvent('cta_click', {
-          cta_id: (li && li.id) || card.getAttribute('href'),
-          cta_type: 'story_card',
+          cta_id: (li ? li.id : '') || slug,
+          cta_type: 'story',
           link_url: card.getAttribute('href') || ''
         });
       }
@@ -105,7 +112,8 @@
     if (pct > maxScroll) maxScroll = Math.min(pct, 100);
     if (maxScroll > 5) hyStart('scroll');
     [25, 50, 75, 100].forEach(function (m) {
-      if (!marks[m] && maxScroll >= m) {
+      if (marks[m]) return;
+      if (maxScroll >= m) {
         marks[m] = true;
         hyEvent('story_progress', { percent_scrolled: m });
       }
@@ -121,9 +129,7 @@
     if (!e.target.closest) return;
     var el = e.target.closest(INTERACTIVE);
     if (!el || el.closest('[data-cta]')) return;
-    var id = el.getAttribute('data-interact') || el.id ||
-             (el.getAttribute('aria-label') || el.textContent || '').trim().slice(0, 40) ||
-             el.tagName.toLowerCase();
+    var id = el.getAttribute('data-interact') || el.id || el.tagName.toLowerCase();
     hyInteract('click', id);
   }, true);
 
