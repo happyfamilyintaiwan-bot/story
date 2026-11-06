@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31",
+  "updated": "2026-11-06",
   "dramas": [
     {
       "id": "where-the-mask-ends",
@@ -141,8 +141,8 @@
       "episodes": 27,
       "episodesConfirmed": false,
       "tz": "+08:00",
-      "status": "upcoming",
-      "lastChecked": "2026-10-31",
+      "status": "airing",
+      "lastChecked": "2026-11-06",
       "platforms": [
         {
           "id": "iqiyi-vip",
@@ -156,12 +156,36 @@
               "from": "2026-11-05",
               "to": "2026-11-05",
               "perDay": 4
+            },
+            {
+              "from": "2026-11-06",
+              "to": "2026-11-11",
+              "perDay": 2
             }
           ],
           "after": {
-            "perDay": 2
+            "perDay": 1
+          }
+        },
+        {
+          "id": "jstv",
+          "name": {
+            "zh": "江蘇衛視",
+            "en": "Jiangsu TV",
+            "ja": "江蘇衛視"
           },
-          "guess": true
+          "phases": [
+            {
+              "from": "2026-11-05",
+              "to": "2026-11-05",
+              "perDay": 2
+            },
+            {
+              "from": "2026-11-07",
+              "to": "2026-11-11",
+              "perDay": 2
+            }
+          ]
         }
       ],
       "articles": {
