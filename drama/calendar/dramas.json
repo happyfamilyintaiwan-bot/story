@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06",
+  "updated": "2026-11-12",
   "dramas": [
     {
       "id": "where-the-mask-ends",
@@ -139,10 +139,14 @@
         "ja": "折月亮"
       },
       "episodes": 27,
-      "episodesConfirmed": false,
+      "episodesConfirmed": true,
       "tz": "+08:00",
       "status": "airing",
-      "lastChecked": "2026-11-06",
+      "lastChecked": "2026-11-12",
+      "skip": [
+        "2026-11-16",
+        "2026-11-17"
+      ],
       "platforms": [
         {
           "id": "iqiyi-vip",
@@ -159,12 +163,18 @@
             },
             {
               "from": "2026-11-06",
-              "to": "2026-11-11",
+              "to": "2026-11-15",
               "perDay": 2
+            },
+            {
+              "from": "2026-11-18",
+              "to": "2026-11-20",
+              "perDay": 1
             }
           ],
-          "after": {
-            "perDay": 1
+          "unlock": {
+            "date": "2026-11-15",
+            "to": 27
           }
         }
       ],
