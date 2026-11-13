@@ -1,4 +1,4 @@
-"""上線前檢查：每一頁都要有 Travelpayouts Drive、AdSense、手動廣告格、GA4 故事事件、og:image、spec-version，sitemap 有收錄、沒有 href="#" 空連結。
+"""上線前檢查：每一頁都要有 Travelpayouts Drive、AdSense、手動廣告格、GA4 故事事件、og:image、spec-version，sitemap 有收錄、沒有 href="#" 空連結、聯盟連結都有 data-cta。
 作品頁（books／drama／comics 底下）不開自動廣告：AdSense 載入碼不帶 ?client=，連結有 vignette 標記；只有首頁開自動廣告。
 舊網址轉址頁（有 meta refresh）不檢查。
 用法：在 story-home 資料夾裡執行  python3 _template/check.py
@@ -67,6 +67,10 @@ for p in pages:
     live_lines = [l for l in s.splitlines() if not l.lstrip().startswith('//')]
     if any('href="#"' in l for l in live_lines):
         miss.append('有 href="#" 空連結')
+    # 聯盟連結要加 data-cta（位置），GA4 才記得到 cta_click；平台名寫在 data-cta-type（core 3-2）
+    for a in re.findall(r'<a\s[^>]*href="https?://[^"]*(?:shopee\.|shp\.ee|klook\.|kkday\.|agoda\.|booking\.com|trip\.com)[^>]*>', s):
+        if 'data-cta' not in a:
+            miss.append('聯盟連結沒加 data-cta（' + re.search(r'href="([^"]{0,40})', a).group(1) + '）')
     print(('✅ ' if not miss else '❌ ') + rel + ('' if not miss else '　缺：' + '、'.join(miss)))
     bad += bool(miss)
 print(f'\n共 {len(pages)} 頁，{bad} 頁有問題')
