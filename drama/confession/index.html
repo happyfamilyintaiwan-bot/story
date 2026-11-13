@@ -205,8 +205,9 @@ footer a{color:#3B2A18}
   gtag('js', new Date());
   /* set 的參數會自動附加到「所有」事件，包含 GA4 自動蒐集的 page_view 與外連 click */
   gtag('set', {
+    work: window.HY_STORY_ID,
     story_id: window.HY_STORY_ID,
-    content_group: 'interactive-story'
+    content_group: 'story'
   });
   gtag('config', 'G-ZQZHTYTRMQ', {
     page_title: window.HY_STORY_TITLE,
