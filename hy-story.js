@@ -44,6 +44,14 @@
     gtag('event', name, p);
   };
 
+  // 沒寫 data-cta-type 時看網址猜去哪裡：聯盟一律填平台名（core 3-2），其他維持 article
+  var PLATFORMS = [['shopee.', 'shopee'], ['shp.ee', 'shopee'], ['klook.', 'klook'], ['kkday.', 'kkday'],
+    ['agoda.', 'agoda'], ['booking.com', 'booking'], ['trip.com', 'trip']];
+  function ctaType(href) {
+    for (var i = 0; i < PLATFORMS.length; i++) { if (href.indexOf(PLATFORMS[i][0]) > -1) return PLATFORMS[i][1]; }
+    return 'article';
+  }
+
   // 首頁點擊（作品卡片、data-cta 連結）
   document.addEventListener('click', function (e) {
     if (!e.target.closest) return;
@@ -63,7 +71,7 @@
     if (!el) return;
     hyEvent('cta_click', {
       cta_id: el.getAttribute('data-cta'),
-      cta_type: el.getAttribute('data-cta-type') || 'article',
+      cta_type: el.getAttribute('data-cta-type') || ctaType(el.getAttribute('href') || ''),
       link_url: el.getAttribute('href') || ''
     });
   }, true);
